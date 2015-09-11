@@ -1,0 +1,15 @@
+				<div class="product"><div class="go"><img src="<?{$arrGWeb.templats_root}?>/images/go.jpg" /></div><span style="float:left;">友情链接</span><div class="more"><a href="<?{url url='/links/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/more.jpg" /></a></div></div>
+				<div class="clr"></div>
+				<ul>
+				<?{foreach from=$arrLinkList item=arrLink}?>
+					<li>
+					<?{if $arrLink.UploadFile != ""}?>
+						<?{if $arrLink.FileExt == ".swf"}?><embed src="<?{$linkImg}?>/<?{$arrLink.UploadFile}?>" menu="false" quality="high" height="<?{$arrLink.height}?>" width="<?{$arrLink.width}?>"  boder="1"> 
+						<?{else}?><a href="<?{$arrLink.webhost }?>" title="<?{$arrLink.summary}?>" target="_blank"><img src="<?{$linkImg}?>/<?{$arrLink.UploadFile}?>" <?{ if $arrLink.height!=0}?> height="<?{$arrLink.height}?>" <?{/if}?> <?{ if $arrLink.width!=0}?> width="<?{$arrLink.width}?>"  <?{/if}?> boder="1"></a> 
+						<?{/if}?>
+					<?{else}?>
+					<img src="<?{$arrGWeb.templats_root}?>/images/ico.jpg" /><a href="<?{$arrLink.webhost}?>"  title="<?{$arrLink.summary}?>" target="_blank" ><?{$arrLink.webname}?></a>
+					<?{/if}?>
+					</li>
+				<?{/foreach}?>	
+				</ul>

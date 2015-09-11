@@ -1,0 +1,164 @@
+<div class="area">
+	<div class="col1">
+		<div id="focuspic">
+			<script type=text/javascript>
+				var pic_width=326; //图片宽度
+				var pic_height=217; //图片高度
+				var button_pos=4; //按扭位置 1左 2右 3上 4下
+				var stop_time=3000; //图片停留时间(1000为1秒钟)
+				var show_text=0; //是否显示文字标签 1显示 0不显示
+				var txtcolor="000000"; //文字色
+				var bgcolor="DDDDDD"; //背景色
+
+				//可编辑内容结束
+				var swf_height=show_text==1?pic_height+20:pic_height;
+				<?{if empty($arrTopads.4.pics)}?>
+					var pics='<?{$arrGWeb.templats_root}?>/images/1.jpg|<?{$arrGWeb.templats_root}?>/images/2.jpg'
+					var links='#|#'
+					var texts='aa|bb'
+				<?{else}?>
+					var pics='<?{$arrTopads.4.pics}?>'
+					var links='<?{$arrTopads.4.links}?>'
+					var texts='<?{$arrTopads.4.texts}?>'
+				<?{/if}?>
+				document.write('<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cabversion=6,0,0,0" width="'+ pic_width +'" height="'+ swf_height +'">');
+				document.write('<param name="movie" value="<?{$arrGWeb.templats_root}?>/images/focus.swf">');
+				document.write('<param name="quality" value="high"><param name="wmode" value="opaque">');
+				document.write('<param name="FlashVars" value="pics='+pics+'&links='+links+'&texts='+texts+'&pic_width='+pic_width+'&pic_height='+pic_height+'&show_text='+show_text+'&txtcolor='+txtcolor+'&bgcolor='+bgcolor+'&button_pos='+button_pos+'&stop_time='+stop_time+'">');
+				document.write('<embed src="<?{$arrGWeb.templats_root}?>/images/focus.swf" FlashVars="pics='+pics+'&links='+links+'&texts='+texts+'&pic_width='+pic_width+'&pic_height='+pic_height+'&show_text='+show_text+'&txtcolor='+txtcolor+'&bgcolor='+bgcolor+'&button_pos='+button_pos+'&stop_time='+stop_time+'" quality="high" width="'+ pic_width +'" height="'+ swf_height +'" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />');
+				document.write('</object>');
+			</script>
+		</div><!--focuspic[焦点图片] end-->
+		<div class="block9"></div>
+		<div id="mzsearch">
+			<div class="logo"><img src="<?{$arrGWeb.templats_root}?>/images/search_logo.gif" alt="本站搜索" /></div>
+			<div id="search1">
+				<ul>
+					<li class="curMenu"><a target="_blank" onclick="secBoard('search1','selist',1)">供求</a></li>
+					<li class="ocurMenu"><a  onclick="secBoard('search1','selist',2)">新闻</a></li>
+					<li class="ocurMenu"><a  onclick="secBoard('search1','selist',3)">商展</a></li>
+					<li class="ocurMenu"><a  onclick="secBoard('search1','selist',4)">黄页</a></li>
+				</ul>			
+			</div><!--search1 end-->
+			<div class="fjclear"></div>
+			<div id="search2">
+				<div id="selist_1">
+				<form id="search_fm" action="<?{$arrGWeb.WEB_ROOT_pre}?>/trade/search.php" name="formsearch" method="post">
+				<p class="hang1"><input type="text" class="input1" name="keywords" id="keyword" value="请输入关键词" onfocus="if(this.value==this.defaultValue){this.value='';}" />
+				<input type="submit" class="input2" value="搜 索" /></p>
+				</form>
+				<p class="hang2">在供求信息栏目中查询</p>
+				</div><!--供求 end-->
+				<div id="selist_2" class="a_hide">
+				<form action="<?{$arrGWeb.WEB_ROOT_pre}?>/news/search.php" name="form1" method="post">
+				<p class="hang1"><input type="text" class="input1" name="keywords" value="请输入关键词" onfocus="if(this.value==this.defaultValue){this.value='';}" /><input type="submit" class="input2" value="搜 索" /></p></form>
+				<p class="hang2">在行业资讯栏目中查询</p>
+				</div><!--资讯 end-->
+				<div id="selist_3" class="a_hide">
+				<form action="<?{$arrGWeb.WEB_ROOT_pre}?>/product/search.php" name="form1" method="post">
+				<p class="hang1"><input type="text" class="input1" name="keywords" value="请输入关键词" onfocus="if(this.value==this.defaultValue){this.value='';}" /><input type="submit" class="input2" value="搜 索" /></p></form>
+				<p class="hang2">在网上商展栏目中查询</p>
+				</div><!--商展 end-->
+				<div id="selist_4" class="a_hide">
+				<form action="<?{$arrGWeb.WEB_ROOT_pre}?>/company/search.php" name="form1" method="post">
+				<p class="hang1"><input type="text" class="input1" name="keywords" value="请输入关键词" onfocus="if(this.value==this.defaultValue){this.value='';}" /><input type="submit" class="input2" value="搜 索" /></p></form>
+				<p class="hang2">在企业黄页栏目中查询</p>
+				</div><!--黄页 end-->
+			</div><!--search2 end-->
+		</div><!--mzsearch end-->
+	</div><!--area[1]>col1 end-->
+	
+	<div class="col2">
+<?{include file = "news/block/top_index.html"}?>
+	   
+	  <script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/plug-in/commonJS/scrolljs.js"></script> 	
+	  <div id="Scroll">
+		<div id=marqueeBox style="overflow:hidden;padding-left:15px; height:22px;">
+			<?{foreach from=$arrCommendtrade item=arrCommendtrade}?>
+				<a href="<?{$arrGWeb.WEB_ROOT_pre}?>/trade/detail.php?id=<?{$arrCommendtrade.id}?>" target="_blank"><?{$arrCommendtrade.title|csubstr:0:20:'...'}?></a><br/>
+			<?{/foreach}?>
+		</div>
+		<script>new srcMarquee("marqueeBox", 0, 1, 300, 22, 30, 3000, 3000, 22);</script> 
+	</div><!--live[滚动字] end-->
+	</div><!--area[1]>col2 end-->
+
+	<div class="col3">
+<?{include file = "user/block/login.html"}?>
+		<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/5.js"></script>
+	</div><!--area[1]>col3 end-->
+	<div class="fjclear"></div>
+</div><!--area[1] end-->
+<div class="block10"></div>
+
+<!-- 区块2 -->
+<div class="area">
+<?{include file = "video/block/top_index.html"}?>
+	<!-- 供求 start -->
+<?{include file = "trade/block/top_index.html"}?>
+	<!-- 供求 end -->
+	<div class="col3">
+		<div id="precinct">
+			<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/6.js"></script>
+		</div><!--precinct end-->
+	</div><!--area[2]>col3 end-->
+	<div class="fjclear"></div>
+</div><!--area[2] end-->
+<div class="block10"></div>
+
+<!-- 区块3 -->
+<div class="area">
+<!--首页二三栏广告位-->
+	<div class="col4">
+	<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/2.js">
+	</script></div><!--area[3]>col4 end-->
+<!--首页二三栏广告位-->
+	<div class="col3">
+		<div id="precinct">
+			<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/7.js"></script>
+		</div><!--precinct end-->
+		<div class="block7"></div>
+		
+		<div id="precinct">
+			<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/8.js"></script>
+		</div><!--precinct end-->
+	</div><!--area[3]>col3 end-->
+
+
+	
+	<div class="col1">
+
+<?{include file = "ask/block/top_index.html"}?>
+<?{include file = "company/block/top_index.html"}?>
+
+	</div><!--area[3]>col1 end-->
+	
+	<div class="col2">
+<?{include file = "job/block/top_index.html"}?>	
+
+<?{include file = "product/block/company_index.html"}?>		
+	</div><!--area[3]>col2 end-->
+	<div class="fjclear"></div>
+</div><!--area[3] end-->
+<div class="block10"></div>
+<div class="area">
+		<div class="col4"><script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/3.js"></script></div><!--area[4]>col4 end-->
+
+	<div class="col3">
+		<div id="precinct">
+			<script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/9.js"></script>
+		</div><!--precinct end-->
+		<!--process end-->
+	</div><!--area[4]>col3 end-->
+	<!-- 会展信息 开始 -->
+<?{include file = "exhibition/block/top_index.html"}?>
+	
+	
+</div><!--area[4] end-->
+
+
+<div class="block10"></div>
+
+<?{include file = "product/block/top_index.html"}?>
+<?{include file = "links/block/top_index.html"}?>
+<!--link end-->
+<div class="block10"></div>

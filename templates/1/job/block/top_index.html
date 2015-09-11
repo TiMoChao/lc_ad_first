@@ -1,0 +1,29 @@
+		<div class="block7"></div>
+		<div id="blog">
+			<div id="bl1">
+				<ul>
+					<li class="clickfirst_tt3"><a  href="<?{url url='/job/'}?>" target="_blank" onmouseover="secBoard_tt3('bl1','tt3_list',1)">招聘</a></li>
+				</ul>
+			</div><!--bl1 end-->
+			<div class="bl2">
+				<div id="tt3_list_1">
+					<div class="r">
+						<ul>
+						<?{foreach name=from from=$arrTopjob1.datas item=arrData}?>
+						<?{if $smarty.foreach.from.first}?>
+							<div class="r1">
+								<div class="r2r">
+									<h3><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/job/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title=""><?{$arrData.title|csubstr:0:15}?> (<?{$arrData.companyname}?>)</a></h3>
+									<p class="co"><?{$arrData.summary|csubstr:0:25}?></p>
+								</div>
+							</div>
+						<?{else}?>
+							<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/job/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:40}?></a></li>
+						<?{/if}?>
+						<?{/foreach}?>
+						</ul>
+					</div>
+				</div><!--1[博客] end-->
+				
+			</div><!--bl2 end-->
+		</div><!--blog end-->

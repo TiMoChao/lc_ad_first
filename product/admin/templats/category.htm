@@ -1,0 +1,57 @@
+<script type="text/javascript" language="javascript">
+function menuClick(menuid)
+{
+	var tr = document.getElementsByTagName("tr");
+	for (var i = 0; i < tr.length; i++){
+		var rmenu = document.getElementsByTagName("tr")[i];
+		if(tr[i].id == menuid) rmenu.style.display = (rmenu.style.display == '') ? 'none' : '';
+		
+	}
+	return false;
+}
+</script>
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="location.href='category.php?action=add'" value="新增<?{$arrGWeb.module_name}?>分类" class="gray mini"></span>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form action='?id=<?{$id}?>&action=' method="post" name="delform">
+	<tr class="firstr">
+		<th width='6%'>ID</th>
+		<th><?{$arrGWeb.module_name}?>分类名称</th>
+		<th width='12%'>用户阅读星级</th>
+		<th width='12%'>用户发布星级</th>
+		<th width='10%'>分类排序</th>
+		<th width='6%'>状态</th>
+		<th width='12%'>操作</th>
+	</tr>
+	<?{foreach key=key  item=arrData from=$arrData}?>
+	<tr align=center
+	 <?{if $arrData.type_parentid == 0}?>
+			<?{assign var="menu" value="`$key`"}?>
+			onClick="menuClick('<?{$key}?>');" style="font-weight:bold;background:#dff6ff;"
+		<?{else}?>				
+			style="display:none;" id="<?{$menu}?>" 		 
+		<?{/if}?>
+	>
+		<td><?{$arrData.type_id}?></td>
+		<td align='left'><?{$arrData.type_title}?></td>
+		<td><?{if $arrData.type_read_grade==0}?><i>无</i><?{/if}?><?{section name=i loop=$arrData.type_read_grade}?>★<?{/section}?></td>
+		<td><?{if $arrData.type_write_grade==0}?><i>无</i><?{/if}?><?{section name=i loop=$arrData.type_write_grade}?>★<?{/section}?></td>
+		<td><?{$arrData.type_sort}?></td>
+		<td><?{if $arrData.type_pass == 1}?>公布<?{else}?>隐藏<?{/if}?></td>
+		<td><a href='category.php?action=edit&id=<?{$arrData.type_id}?>'>编辑</a> | <a href='category.php?action=del&id=<?{$arrData.type_id}?>' onclick="return confirm('确认删除');">删除</a></td> 		
+	</tr>
+	<?{/foreach}?>
+	<tr>
+		<td colspan='7'>
+		<?{$strPage}?>
+		</td>
+	</tr>
+</form>
+</table>
+</div>

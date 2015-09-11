@@ -1,0 +1,82 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+
+<div class="block7"></div>
+<div class="area">
+	<!-- 会展信息 开始 -->
+	<div class="main-left">
+		<table class="exhibition-table">
+			<tr class="exhibition-tr">
+				<td>公司名称：</td>
+				<td colspan="3"><span class="right">发布时间：<?{$arrData.submit_date}?> 浏览率：<script language='javascript' src='../../plug-in/click/getclick.php?module_id=<?{$arrGWeb.module_id}?>&id=<?{$arrData.id}?>'></script></span><strong><?{$arrData.title}?></strong></td>
+			</tr>
+			<tr>
+				<td width="15%">公司类别：</td>
+				<td width="35%"><?{$strTypeTitle}?></td>
+				<td width="15%">公司区域：</td>
+				<td width="35%">
+				<?{if !empty($arrData.province)}?>
+				<?{$arrMArea[$arrData.province]}?>
+				<?{/if}?>
+				
+				<?{if !empty($arrData.city)}?>
+				<?{$arrMArea[$arrData.city]}?>
+				<?{/if}?>
+
+				<?{if !empty($arrData.area)}?>
+				<?{$arrMArea[$arrData.area]}?>
+				<?{/if}?>				
+			</tr>
+			<tr class="exhibition-tr">
+				<td>免费电话：</td>
+				<td><?{$arrData.free_tel}?></td>
+				<td>公司网址：</td>
+				<td><?{if $arrData.company_web != ''}?><a href="http://<?{$arrData.company_web}?>" target="_blank"><?{$arrData.company_web}?></a><?{/if}?></td>
+			</tr>
+			<tr>
+				<td>公司电话：</td>
+				<td><?{$arrData.company_tel}?></td>
+				<td>公司传真：</td>
+				<td><?{$arrData.company_fax}?></td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td>联系人：</td>
+				<td><?{$arrData.linkman}?></td>
+				<td>邮编： </td>
+				<td><?{$arrData.company_code}?></td>
+			</tr>
+			<tr>
+				<td>详细地址：</td>
+				<td colspan="3"><?{$arrData.company_address}?></td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td>主营产品：</td>
+				<td colspan="3"><?{$arrData.main_product}?></td>
+			</tr>
+			<tr>
+				<td>公司简介：</td>
+				<td colspan="3"><?{$arrData.intro}?></td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td>公司图片展示：</td>
+				<td colspan="3">
+				<?{foreach from=$arrData.photo key=key item=photo}?>
+				<?{if $photo.photo != ""}?><center><img src="<?{$FileCallPath}?>b/<?{$photo.photo}?>" align="center" border="0" alt="<?{$photo.photo_narrate}?>"  onload='resizepic(this,480)' /><br><?{if $photo.photo_narrate}?><?{$photo.photo_narrate}?><?{/if}?></center><br><?{/if}?>
+			<?{/foreach}?>
+				</td>
+			</tr>
+		</table>
+
+		<div class="block7"></div>
+		<div class="type-info">
+			<div class="tit"><h2>分类信息</h2></div>
+			<div class="type-info-list">
+					<ul><script language="JavaScript" src="../../uploadfile/textads/3.js"></ul></script>
+			</div>
+		</div><!--diseases1 end-->
+		
+	</div><!--area[2]>col2 end-->
+
+<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+</div>
+<div class="block10"></div>

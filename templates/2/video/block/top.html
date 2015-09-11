@@ -1,0 +1,18 @@
+		<div class="block7"></div>
+		<div class="news-box">
+			<div class="tit"><h2>热门视频列表</h2><span class="gengduo"><a href="<?{url url = "/`$arrGWeb.module_id`/list"}?>">>>更多</a></span></div>
+			<?{foreach from=$arrInfoListHot item=arrData}?>
+			<div class="flash3">
+				<div class="flash2"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>" target="_blank"><img src="<?{if $arrData.photo != ''}?><?{$FileCallPath}?>s/<?{$arrData.photo}?><?{else}?><?{$arrGWeb.templats_root}?>/images/video.jpg<?{/if}?>" /></a></div>
+				<div class="vflash2">
+					<ul class="">
+						<li class="font-red"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>" target="_blank"><?{$arrData.title|csubstr:0:20}?></a></li>
+						<li >分类：<a href="<?{url url = "/`$arrGWeb.module_id`/list.php?type_id=`$arrData.type_id`" }?>"><span>[<?{$arrMType[$arrData.type_id]}?>]</span></a>&nbsp;&nbsp;&nbsp;发布时间：<?{$arrData.submit_date|date_format:"%Y/%m/%d"}?>&nbsp;&nbsp;&nbsp;人气：<?{$arrData.clicktimes}?></li>
+						<li class="vend">简介：<?{$arrData.summary}?></li>
+					</ul>
+				</div>
+			</div>
+			<?{/foreach}?>
+			<div class="clearboth">
+			</div>	  
+		</div>	

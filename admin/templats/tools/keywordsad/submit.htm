@@ -1,0 +1,40 @@
+<div class="ccc2">
+	<ul>
+		<li><span class="right"><input type="button" onClick="javascript:history.back()" value="返回关键词列表" class="gray mini"/></span>关键字广告功能可根据您设定的关键字和链接，在其他栏目发布信息时，系统会自动将内容中的关键字加上链接；
+	<font color="#ff6600">（影响效率，不建议大量使用）</font>
+		</li>
+	</ul>
+</div>
+<div id="biweb">
+<form name="form1" id="form1" onsubmit="return check()" action="" method="post">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr align="left">
+		<td width='15%'>关键字名称：</td>
+		<td><input value="<?{$smarty.get.id}?>" name="title" size="50"/>设置关键字</td>
+	</tr>
+	<tr align="left">
+		<td>广告链接：</td>
+		<td><input value="<?{$arrData.url|default:'http://'}?>" name="url" size="50"/>关键字要加的链接</td>
+	</tr>
+	<tr>
+		 <td align='middle' colspan='3'><input type='submit' id="okgo" name="okgo" value='确　定'/> <input type='reset' value="重 置"/></td></tr>
+		<input type='hidden' name='id' value="<?{$smarty.get.id}?>"/>
+	</tr>	
+</table>
+</form>
+<script language="javascript">
+	function check(){
+	if(this.form1.title.value==""){
+	     alert("关键字名称不能为空！");
+		 return false;
+	 }
+	if(this.form1.url.value.length<8){
+	     alert("广告链接输入非法！请重新输入！");
+		 return false;
+	 }
+	 this.form1.okgo.disabled=true;
+	 return true;
+	}
+</script> 
+</div>
+

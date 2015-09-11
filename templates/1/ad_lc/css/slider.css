@@ -1,0 +1,94 @@
+#slides{
+    float:left;
+    width:698px;
+    height:250px;
+    margin:10px 0px 0px 0px;
+    display:inline;
+}
+
+.slides_box{
+    float:left;
+}
+
+.slides_img{
+    width:650px; 
+    height: 250px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.slides_container {
+	width:650px;
+	overflow:hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+
+.slides_container a {
+	width:650px;
+	height:250px;
+	display:block;
+}
+
+.slides_container a img {
+	display:block;
+}
+
+/*
+	Next/prev buttons
+*/
+
+#slides .next {
+	float:right;
+    margin:100px 0px 0px 0px;
+}
+
+#slides .prev{
+    float:left;
+    margin:100px 0px 0px 0px;
+}
+
+/*#slides .next {
+	left:585px;
+}*/
+
+/*
+	Pagination
+*/
+
+.pagination {
+	margin:26px auto 0;
+	width:250px;
+}
+
+.pagination li {
+	float:left;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image:url("../images/pagination.png")/*tpa=http://www.mmggxx.cn/images/pagination.png*/;
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li.current a {
+	background-position:0 -12px;
+}

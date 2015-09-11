@@ -1,0 +1,12 @@
+<div class="bottom_blockbox">
+			<div class="tit"><h2>相关新闻</h2></div>
+			<div class="bottom_blockbox-list">
+				<ul class=newest>
+				<?{foreach from=$arrRelative item=arrData_relative key=key}?>
+					<li><a href="<?{url url="/`$arrGWeb.module_id`/detail.php?id=`$arrData_relative.id`"}?>"><?{$arrData_relative.title|csubstr:0:25}?></a></li>
+				<?{/foreach}?>
+				</ul>
+				<script language="JavaScript" src="/uploadfile/adjs/adbottom12text.js"></script>
+				<div class="clr"></div>
+			</div>
+		</div>

@@ -1,0 +1,113 @@
+<html>
+<head>
+</head>
+<style>
+#biweb{
+background:#dff6ff;
+margin:0 auto 5px;
+width:100%;
+clear:both;
+}
+
+#biweb .biweb {
+border:1px #b3ccdd solid;
+border-bottom:none;
+margin:3px;
+width:99.4%;
+background:#f5fbff;
+
+}
+
+#biweb .biweb td,#biweb .biweb th{
+border-bottom:1px #c5d8e8 solid;
+padding:4px 8px;
+font-size:14px;
+}
+#biweb .biweb span.actionform{
+display:block;
+float:right;
+}
+#biweb .biweb .firstr{
+border-bottom:1px #b3ccdd solid;
+background:#e1f2fa;
+font-weight:700;
+color:#069;
+clear:both;
+}
+#biweb .biweb .firstr th{
+font-size:12px;
+}
+
+#biweb .biweb .firstr .left,.biweb .biweb .firstr .left {
+float:left;
+margin:2px 0 0;
+}
+
+#biweb .biweb .firstr .right,.biweb .biweb .firstr .right {
+float:right;
+margin:0 4px 0 0;
+}
+
+#biweb .biweb .firstr td{
+border-bottom:1px #b3ccdd solid!important;
+}
+
+#biweb .biweb h5{
+display:block;
+width:120px;
+float:left;
+}
+
+#biweb .biweb2 {
+width:100%;
+}
+
+#biweb .biweb2 td {
+border-bottom:none;
+}
+</style>
+<body>
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+		<tr class="firstr">
+      <td width="50%">Smarty</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan=2 >BIWEB常规的Smarty tag为 &lt;?{   }?&gt;
+			</td>
+    </tr>
+    <tr class="firstr">
+      <td width="50%">模板的结构</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan=2 >templates/目录下的每一个目录为独立的一套模板，BIWEB程序中设定的模板文件为frame.html，所以所有的模板中include的文件必须从frame.html所在位置开始计算。theme目录是里面的title.html、head.html和foot.html是模板的重要组成部分。其他的各个html模板仅仅是frame.html中MAIN部分。</td>
+    </tr>
+		<tr class="firstr">
+      <td width="50%">模板图片调用规则</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan=2 >由于image和css都是在模板目录中所调用，所以模板中图片调用必须使用<?{$arrGWeb.templats_root}?>/images/调用图片，css亦是。前台模板提交数据时，必须在提交路径前加上网站前缀<?{$arrGWeb.WEB_ROOT_pre}?>变量。例如：<br />
+			&lt;link href="&lt;?{$arrGWeb.templats_root}?&gt;/css/style.css" rel="stylesheet" type="text/css" /&gt;<br />
+			&lt;scriptsrc="&lt;?{$arrGWeb.WEB_ROOT_pre}?&gt;/plug-in/commonJS/common.js" type="text/javascript"&gt;&lt;/script&gt;
+		</td>
+    </tr>
+		<tr class="firstr">
+      <td width="50%">模板文件存放规则</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td colspan=2 >BIWEB的模板的命名是对应栏目程序文件命名的。<br />
+			例如：prdocut/include/index.inc.php对应的模板就是 templates/模板名/product/index.html<br />
+<br />
+			模板目录下存放的模板文件只能是跟栏目程序对应的文件，模板中的block，存放在该模板目录中的block目录中。切记block模板文件不能放在跟主模板文件同目录下。<br />
+			例如：首页调用了最新产品的block（product/block/top_index.php），其模板是存放在templates/模板名/product/top_index.html<br />
+		</td>
+    </tr>
+	<tr><td colspan=2><h3><font color=red><br/>请您选择左边相应的文件,然后在右边修改保存即可!!</font></h3></td></tr>
+</table>
+</div>
+</body>
+</html>

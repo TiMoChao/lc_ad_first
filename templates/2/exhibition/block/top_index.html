@@ -1,0 +1,14 @@
+	<div class="col1">
+	<div class="block7"></div>
+		<div id="diseases">
+			<div class="tit"><h2><a class='left' href="<?{url url='/exhibition/'}?>">会展信息</a></h2></div>
+			<div class="fjclear"></div>
+			<div class="r">
+				<ul>
+				<?{foreach from=$arrexhibitionList item=arrData}?>
+					<li><span class="time"><?{$arrData.start_time|date_format:"%Y/%m/%d"}?></span><span class="city"><?{$arrMArea[$arrData.city]}?></span><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/exhibition/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:40}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div>
+		</div><!--diseases end-->
+	</div>

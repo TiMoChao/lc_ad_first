@@ -1,0 +1,53 @@
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="javascript:history.back()" value="返回邮局列表" class="gray mini"></span>
+			<?{$strNav}?>功能可设定您发送邮件的SMTP邮局，在发送邮件时，系统会根据设定的邮局进行连接发送；
+	<font color="#ff6600">（建议设定大量的SMTP邮局增加发送的成功机率）</font>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+  <form name=form1 id=form1 onsubmit="return check()" action="" method="post">
+  <tr>
+  	<td>SMTP邮局主机：</td>
+    <td><input value="<?{$arrData.host}?>" name="host" size="50"> 端口：<input value="<?{$arrData.port|default:25}?>" name="port" size="5"> 【<font style="CURSOR: hand" 
+      onclick="document.form1.port.value='465'" color=green>465</font>】邮局主机</td>
+	</tr>
+  <tr>
+  	<td>SMTP邮局用户名：</td>
+    <td><input value="<?{$arrData.username}?>" name="username" size="50"></td>
+	</tr>
+  <tr>
+  	<td>SMTP邮局密码：</td>
+    <td><input value="<?{$arrData.password}?>" name="password" size="50"></td>
+	</tr>
+  <tr>
+  	<td>SMTP邮局设置：</td>
+    <td><label><input type="checkbox" value="ssl" <?{if $arrData.ssl == 'ssl'}?>checked<?{/if}?> name="ssl">SSL连接</label> <label><input type="checkbox" value="1" <?{if $arrData.auth}?>checked<?{/if}?> name="auth">用户验证</label></td>
+	</tr>
+	<tr>
+  	<td>回复收件人：</td>
+    <td><input value="<?{$arrData.replyuname}?>" name="replyuname" size="50"></td>
+	</tr>
+	<tr>
+  	<td>回复邮件地址：</td>
+    <td><input value="<?{$arrData.replymail}?>" name="replymail" size="50"></td>
+	</tr>
+<tr>
+    <td align=middle colspan=2><input type=submit id="okgo" name="okgo" value=确　定> <input type=reset value="重 置"></td></tr>
+		<input type=hidden name=id value="<?{$smarty.get.id}?>">
+</form>
+</table>
+</div>
+
+<script language="javascript">
+	function check(){
+	if(this.form1.host.value==""){
+	     alert("邮局主机不能为空！");
+		 return false;
+	 }
+	 return true;
+	}
+</script> 

@@ -1,0 +1,49 @@
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="mainright">
+<?{include file = "useradmin/_cloumnright.html"}?>
+	</div>
+	<!-- 介绍 开始 -->
+	<div class="mainleft">
+		<div class="help-right">
+		<div id="companies-list-box">
+			<div class="tit"><h2><?{$arrGWeb.module_name}?></h2></div>
+			<table class="showes-list">
+			<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+				<tr class="showes-listes">
+					<th width="15%">设置名称</th>
+					<th width="55%">基本参数设置</th>
+					<th width="30%">设置说明</th>
+				</tr>
+				<tr>
+					<td>所属分类：<span class='font-red'>(必填)</span></td>
+					<td><select size=1 name=type_id>
+						<option value="0">请选择分类</option>
+						<?{foreach from=$arrType item=type key=key}?>
+						<option value=<?{$key}?> <?{if $key == $arrData.type_id}?>selected=selected<?{/if}?>><?{$type}?></option>
+						<?{/foreach}?>
+						</select></td>
+					<td>信息分类</td>
+				</tr>
+				<tr>
+					<td>问题标题：<span class='font-red'>(必填)</span></td>
+					<td><input maxLength="210" size="55" name="title" value="<?{$arrData.title}?>"></td>
+					<td>标题，最大70个中文</td>
+				</tr>
+				<tr>
+					<td>问题内容：<span class='font-red'>(必填)</span></td>
+					<td colspan="2"><textarea name="intro" cols="70" rows="8" class="textarea"><?{$arrData.intro}?></textarea></td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type=reset value="重 置"></td>
+				</tr>
+    			<input type="hidden" name="id" value="<?{$arrData.id}?>">
+				<input type="hidden" name="submitpass" value="<?{$smarty.session.submitpasskey}?>">
+				</form>
+			</table>
+		</div>
+	</div>
+	</div>
+	<!-- 介绍 结束 -->
+</div>
+<div class="block10"></div>

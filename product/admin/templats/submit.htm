@@ -1,0 +1,307 @@
+<script language='javascript' src='../../plug-in/splidword/prototype.js'></script>
+<script language="javascript" src="../../plug-in/splidword/splidword.js"></script>
+<script language="javascript" src="../../plug-in/PopCalender/popcalendar.js"></script> 
+<script language="javascript" src="../../plug-in/area/myjsframe.js"></script> 
+<script language="javascript" src="../../plug-in/area/area.js"></script> 
+<script Language="JavaScript">dateformat='yyyy-mm-dd'</script>
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="javascript:history.back();" value="返回<?{$arrGWeb.module_name}?>列表" class="gray mini"></span>
+			当前位置：<?{$arrGWeb.module_name}?>管理
+	 </li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return checkform()" action="?page=<?{$smarty.get.page}?>" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table class="biweb" align="center" cellspacing="0">
+	<tr class="firstr">
+		<td colspan="3">编辑<?{$arrGWeb.module_name}?>：</td> 
+	</tr>	
+	<tr>
+    <td width="15%">所属分类：</td>
+    <td><select size="1" name="type_id">
+		<option value="0">请选择分类</option>
+		<?{foreach from=$arrMType key=key item=type}?>
+		<?{if is_array($type) && array_key_exists('type_title',$type) }?>
+		<option value="<?{$type.type_id}?>" <?{if $type.type_id == $arrData.type_id}?>selected=selected class="selected"<?{/if}?>><?{$type.type_title}?></option>
+		<?{else}?>
+		<option value="<?{$key}?>" <?{if $key == $arrData.type_id}?>selected=selected class="selected"<?{/if}?>><?{$type}?></option>    	
+		<?{/if}?>
+		<?{/foreach}?>
+    	</select></td>
+	<td width="23%"><font color="red">*</font><span class=gray>产品类别</span></td>
+    </tr>
+  <tr>
+  	<td>标题：</td>
+    <td><select size=1 name=bedeck>
+	<option value="0">无修饰</option>
+	<option value="1" <?{if $arrData.bedeck == 1}?>selected<?{/if}?>>1[加粗]</option>
+	<option value="2" <?{if $arrData.bedeck == 2}?>selected<?{/if}?>>2[标红]</option>
+	<option value="3" <?{if $arrData.bedeck == 3}?>selected<?{/if}?>>3[标绿]</option>
+	<option value="4" <?{if $arrData.bedeck == 4}?>selected<?{/if}?>>4[标蓝]</option>
+	<option value="5" <?{if $arrData.bedeck == 5}?>selected<?{/if}?>>5[标橙]</option>
+	<option value="6" <?{if $arrData.bedeck == 6}?>selected<?{/if}?>>6[红粗]</option>
+	<option value="7" <?{if $arrData.bedeck == 7}?>selected<?{/if}?>>7[绿粗]</option>
+	<option value="8" <?{if $arrData.bedeck == 8}?>selected<?{/if}?>>8[蓝粗]</option>
+	<option value="9" <?{if $arrData.bedeck == 9}?>selected<?{/if}?>>9[橙粗]</option>
+	</select>
+	<input maxLength='210' size='55' id='title' name='title' value="<?{$arrData.title}?>" onblur="dodivde();"></td>
+    <td width="23%"><font color="red">*</font><span class=gray>标题，最大70个中文</span></td>
+	</tr>
+	<tr>
+    <td>供货公司：</td>
+    <td><input maxLength=210 size=55 name=company value="<?{$arrData.company}?>"></td>
+	<td width="23%"><font color="red">*</font><span class=gray>供货公司</span></td>
+    </tr>
+  <tr>
+    <td>所属品牌：</td>
+    <td><input maxLength=210 size=55 name=brand value="<?{$arrData.brand}?>"></td>
+	<td width="23%"><font color="red">*</font><span class=gray>所属品牌</span></td>
+  </tr>
+  <tr>
+    <td>产品型号：</td>
+    <td><input maxLength=210 size=55 name=model value="<?{$arrData.model}?>"></td>
+	<td width="23%"><font color="red">*</font><span class=gray>产品型号</span></td>
+  </tr>
+  <tr>
+    <td>市场价格：</td>
+    <td><input maxLength=210 size=55 name=market_price value="<?{$arrData.market_price}?>"></td>
+	<td width="23%"><span class=gray>市场价格</span></td>
+  </tr>
+  <tr>
+    <td>本站价格：</td>
+    <td><input maxLength=210 size=55 name=my_price value="<?{$arrData.my_price}?>"></td>
+	<td width="23%"><span class=gray>本站价格</span></td>
+  </tr>
+  <tr>
+    <td>送货时间：</td>
+    <td><input maxLength=210 size=55 name=sendtime value="<?{$arrData.sendtime}?>"></td>
+	<td width="23%"><span class=gray>送货时间</span></td>
+  </tr>
+  <tr>
+    <td>页面标题：</td>
+    <td><input maxLength='210' size='55' name='meta_Title' value="<?{$arrData.meta_Title}?>"></td>
+	<td width="23%"><span class=gray>用于搜索引擎优化，不填系统会自动生成</span></td>
+  </tr>
+   <tr>
+    <td>页面摘要：</td>
+    <td><textarea name='meta_Description' rows='3' cols='50'><?{$arrData.meta_Description}?></textarea></td>
+	<td width="23%"><span class=gray>用于搜索引擎优化，不填系统会自动生成</span></td>
+   </tr>
+  <tr>
+    <td>页面关键字：</td>
+    <td><textarea name='meta_Keywords' rows='3' cols='50'><?{$arrData.meta_Keywords}?></textarea></td>
+	<td width="23%"><span class=gray>用于搜索引擎优化，不填系统会自动生成</span></td>
+  </tr> 
+  <tr>
+    <td>标签：</td>
+    <td><input maxLength='50' size='50' id='tag' name='tag' value="<?{$arrData.tag}?>"></td>
+	<td width="23%"><span class=gray>文章关键字，可为多个，用空格间隔，用于相关文章关联</span></td>
+  </tr> 
+  <tr>
+    <td>转向链接：</td>
+    <td><input id='linkurl' type="text" <?{if $arrData.linkurl==''}?>disabled<?{/if}?> maxLength=100 size=50 value='<?{$arrData.linkurl|default:"http://"}?>' name='linkurl'><label><input id='uselink' onclick=UseLinkUrl(); type='checkbox' <?{if $arrData.linkurl!=''}?>checked='checked'<?{/if}?> 
+      value='Yes' name='uselink'></label></td>
+	<td width="23%"><span class=gray>文章内容直接连接到其他网站</span></td>
+  </tr> 
+  <tr>
+    <td>发布者：</td>
+    <td><input maxLength='50' size='50' name='author' value="<?{$arrData.author}?>">【<font style="CURSOR: hand" 
+      onclick="document.form1.author.value='未知'" color=green>未知</font>】【<font 
+      style="CURSOR: hand" onclick="document.form1.author.value='<?{$smarty.session.user_name}?>'" 
+      color=green><?{$smarty.session.user_name}?></font>】【<font style="CURSOR: hand" 
+      onclick="document.form1.author.value='<?{$smarty.session.real_name}?>'" 
+    color=green><?{$smarty.session.real_name}?></font>】</td>
+	<td width="23%"><span class=gray>文章的作者</span></td>
+  </tr>
+  <tr>
+		<td>所在区域</td>	
+		<td><script type="text/javascript">	
+    	var area = new AreaCtrl("省份:","城市:","地区:");
+		area.value = <?{if $arrData.area != ""}?><?{$arrData.area}?><?{else}?><?{$arrData.city|default:"310100"}?><?{/if}?>;
+		area.name = ["province","city","area"];
+		area.write();
+    </script></td>	
+	<td width="23%"><span class=gray>所在区域</span></td>
+	</tr>
+  <tr>
+    <td>摘要：</td>
+    <td><textarea name='summary' rows='6' cols='50'><?{$arrData.summary}?></textarea></td>
+	<td width="23%"><span class=gray>不填系统自动生成摘要，最大<?{$arrGWeb.db_summary_len}?>个中文</span></td>
+  </tr>   
+  <tr id='ArticleContent' <?{if $arrData.linkurl!=''}?>style='display:none'<?{/if}?>>
+    <td>内容：</td>
+    <td colspan='2'><?{if $smarty.session.browser.0 == 'ie'}?>
+	<input type=hidden name=intro value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> <iframe id=eWebEditor1 
+      src="../../plug-in/eWebEditor/ewebeditor.htm?id=intro&style=light" frameBorder=0 width=600 scrolling=no 
+      height=350></iframe>
+	<?{else}?>
+	<input id='content' style="DISPLAY: none" type='hidden' name="intro" value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> 
+	<input id='content___Config' style="DISPLAY: none" type=hidden> 
+	<iframe id='content___Frame' src="../../plug-in/fckeditor/editor/fckeditor.html?InstanceName=intro&Toolbar=ArthurXF" frameBorder=0 width=600 scrolling=no height=350> 
+	</iframe>
+	<?{/if}?><font color="red">*</font><span class=gray>必填项</span></td>
+  </tr> 
+  <tr>
+    <td>电源标准：</td>
+    <td><textarea name=power rows=4 cols=60><?{$arrData.power}?></textarea></td>
+	<td width="23%"><span class=gray>电源标准</span></td>
+  </tr>
+ <tr>
+    <td>标准配置：</td>
+    <td><textarea name=fittings rows=4 cols=60><?{$arrData.fittings}?></textarea></td>
+	<td width="23%"><span class=gray>标准配置</span></td>
+  </tr>
+ <tr>
+    <td>选购附件：</td>
+    <td><textarea name=options rows=4 cols=60><?{$arrData.options}?></textarea></td>
+	<td width="23%"><span class=gray>选购附件</span></td>
+  </tr>
+ <tr>
+    <td>标准证书：</td>
+    <td><textarea name=certificate rows=4 cols=60><?{$arrData.certificate}?></textarea></td>
+	<td width="23%"><span class=gray>标准证书</span></td>
+  </tr>
+  <tr>
+    <td>联系方式：</td>
+    <td><textarea name=contact rows=8 cols=60><?{$arrData.contact|default:"公司地址：\n邮政编码：\n联 系 人：\n电　　话：\n传　　真：\n电子邮箱：\n"}?></textarea></td>
+	<td width="23%"><span class=gray>联系方式</span></td>
+  </tr>
+ <tr>
+    <td>上传图片：</td>
+    <td colSpan=2>
+	<table id="tb1" border=0 cellspacing=0 cellpadding=3 >
+	<?{foreach from=$arrData.photo key=key item=photo name=photo}?>
+	<tr>
+	<td>
+	<span>图片<?{$smarty.foreach.photo.index+1}?>：</span><input id="Filedata<?{$smarty.foreach.photo.index}?>" size=70 type=file value="上 传" name="Filedata<?{$smarty.foreach.photo.index}?>" />  <input type=button onclick='return deloldFj(this,<?{$smarty.foreach.photo.index}?>)' value='删除'><br />
+	说明<?{$smarty.foreach.photo.index+1}?>：<input maxLength=50 size=70 name=photo_narrate<?{$smarty.foreach.photo.index}?> value="<?{$photo.photo_narrate}?>" />
+	<div id="tip<?{$smarty.foreach.photo.index}?>" class=red></div>
+	<div id="preview<?{$smarty.foreach.photo.index}?>"><?{if !empty($photo.photo)}?><img src="<?{$FileCallPath}?>b/<?{$photo.photo}?>" boder="1" width=150 onload="resizepic(this,150)"><?{/if}?></div>
+	</td>
+	</tr>
+	<?{/foreach}?>
+	<tr>
+	<td>
+	<span>图片<?{$smarty.foreach.photo.total+1}?>：</span><input id="Filedata<?{$smarty.foreach.photo.total}?>" size=70 type=file value="上 传"  name="Filedata<?{$smarty.foreach.photo.total}?>" /> <input type=button onclick='return delFj(this,<?{$smarty.foreach.photo.total+1}?>)' value='删除'><br/>
+	说明<?{$smarty.foreach.photo.total+1}?>：<input maxLength=50 size=70 name=photo_narrate<?{$smarty.foreach.photo.total}?> value="" />
+    <div id="tip<?{$smarty.foreach.photo.total+1}?>" class=red></div>
+    <div id="preview<?{$smarty.foreach.photo.total+1}?>"></div>
+	</td>
+	</tr>
+	</table>
+    <a href="#" onclick="return addFj()">添加一张图片</a><input type="hidden" name="fjCnt" value="<?{$smarty.foreach.photo.total+1}?>" />
+	</td>
+  </tr> 
+  <tr>
+    <td>生成缩略：</td>
+    <td><input maxLength=50 size=35 name=FileListPicSize value='<?{$arrData.FileListPicSize}?>'></td>
+    <td><span class=gray>设定缩略图宽像素,等比缩放,0为不生成缩略图</span></td>
+  </tr>
+  <tr>
+    <td>发布时间：</td>
+    <td><input type="text" name="submit_date" value="<?{$arrData.submit_date}?>">
+		<input TYPE="button" value="" onclick='popUpCalendar(this, form1.submit_date, dateformat,-1,-1,true)' style="background-image:url(../../plug-in/PopCalender/img/Button.gif);width:25px;height:17px;border:0px;padding:0px;"></td>
+    <td><span class=gray>修改文章发布时间</span></td>
+  </tr> 
+  <tr>
+    <td>文章属性：</td>
+    <td><label><input id='topflag' type='checkbox' value='1' name='topflag' <?{if $arrData.topflag == 1}?>checked='checked'<?{/if}?>>固顶(列表) </label>
+    	<label><input id='recommendflag' type='checkbox' value='1' name='recommendflag' <?{if $arrData.recommendflag == 1}?>checked='checked'<?{/if}?>>推荐(首页) </label>
+		<label><input id='hotflag' onclick="javascript:document.form1.clicktimes.value=Math.round(Math.random()*1000)" 
+      type=checkbox >随机点击 </label>
+      会员访问等级：<select size='1' name='stars'>
+      <option value='5' <?{if $arrData.stars == 5}?>selected='selected'<?{/if}?>>★★★★★</option>
+      <option value='4' <?{if $arrData.stars == 4}?>selected='selected'<?{/if}?>>★★★★</option>
+      <option value='3' <?{if $arrData.stars == 3}?>selected='selected'<?{/if}?>>★★★</option>
+      <option value='2' <?{if $arrData.stars == 2}?>selected='selected'<?{/if}?>>★★</option>
+      <option value='1' <?{if $arrData.stars == 1}?>selected='selected'<?{/if}?>>★</option>
+      <option value='0' <?{if $arrData.stars == 0}?>selected='selected'<?{/if}?>>无</option></select></td>
+	  <td><span class=gray>选择文章的一些属性</span></td>
+  </tr>   
+  <tr>
+    <td>点击初始值：</td>
+    <td><input maxLength='50' size='10' value="<?{$arrData.clicktimes}?>" name='clicktimes'/></td>
+	<td><span class=gray>这功能是提供给管理员作弊用的</span></td>
+  </tr>  
+	<tr>
+      <td>&nbsp;</td>
+      <td align='middle' colspan=3><input type='submit' id="okgo" name="okgo" value='确　定'> <input type='reset' value="重 置"></td>
+    </tr>
+	<?{foreach from=$arrData.photo key=key item=photo name=photo}?>
+	<input type=hidden name=savephoto[] value="<?{$photo.photo}?>">
+	<?{/foreach}?>
+	<table id="delphoto" border=0 cellspacing=0 cellpadding=0 >
+	</table>
+	<?{foreach from=$arrData.video key=key item=video name=video}?>
+	<input type=hidden name=savevideo[] value="<?{$video.video}?>">
+	<input type=hidden name=savevideopic[] value="<?{$video.videopic}?>">
+	<?{/foreach}?>
+	<table id="delvideo" border=0 cellspacing=0 cellpadding=0 >
+	</table>
+	<input type=hidden name=savefilename1 value="<?{$arrData.software}?>">
+	<input type=hidden name=savefilename2 value="<?{$arrData.package}?>">
+	<input type=hidden name=user_id value="<?{$arrData.user_id}?>">
+  <input type=hidden name=id value="<?{$arrData.id}?>">
+</table>
+</div>
+</form>
+<script language="javascript">
+	function addFj(){
+	  var oTb = document.getElementById("tb1");
+	  var oTr = oTb.insertRow(-1);
+	  var num = parseInt(document.form1.fjCnt.value)+1;
+	  var no = parseInt(document.form1.fjCnt.value);
+	  document.form1.fjCnt.value=num;
+	  oTr.insertCell(0).innerHTML = "<span>图片"+num+"：</span><input id='file' name='Filedata"+no+"' type=file  size='70' /> <input type=button onclick='return delFj(this,"+num+")' value='删除'><br /><span>说明"+num+"：</span><input maxLength=50 size=70 name=photo_narrate"+no+"  /><br /><div id=tip"+num+" class=red></div><div id=preview"+num+"></div>";
+	  return false;
+	}
+
+	function deloldFj(obj,No){
+		var oTb = document.getElementById("delphoto");
+		var oTr = oTb.insertRow(-1);
+		var new_tr = obj.parentNode.parentNode.parentNode;
+		oTr.insertCell(0).innerHTML = "<input type=hidden name=delphoto[] value="+No+">";
+		new_tr.removeChild(obj.parentNode.parentNode);
+		return false;
+	}
+	function delFj(obj,No){
+		var num = parseInt(document.form1.fjCnt.value);
+		var new_tr = obj.parentNode.parentNode.parentNode;
+		new_tr.removeChild(obj.parentNode.parentNode);
+		if (num == No){
+			document.form1.fjCnt.value=num-1;
+		}
+		return false;
+	}
+</script>
+<script language="javascript">
+	function addFj1(){
+	  var oTb = document.getElementById("tb2");
+	  var oTr = oTb.insertRow(-1);
+	  var num = parseInt(document.form1.fjCnt1.value)+1;
+	  var no = parseInt(document.form1.fjCnt1.value);
+	  document.form1.fjCnt1.value=num;
+	  oTr.insertCell(0).innerHTML = "<span>视频"+num+"：</span><INPUT size=70 type=file value='上 传' name='vFiledata"+no+"' > <input type=button onclick='return delFj1(this,"+num+")' value='删除'><br/><span>截图"+num+"：</span><INPUT size=70 type=file value='上 传' name='pFiledata"+no+"' /><br/>标题"+num+"：<INPUT maxLength=50 size=70 name=video_title"+no+" /><br />简介"+num+"：<INPUT maxLength=200 size=70 name=video_narrate"+no+" /><br />时长"+num+"：<input type='text' name='video_time"+no+"'> 例如：几分几秒<br /><div id=tip99"+num+" class=red></div><div id=preview99"+num+"></div>";
+	  return false;
+	}
+
+	function deloldFj1(obj,No){
+		var oTb = document.getElementById("delvideo");
+		var oTr = oTb.insertRow(-1);
+		var new_tr = obj.parentNode.parentNode.parentNode;
+		oTr.insertCell(0).innerHTML = "<INPUT type=hidden name=delvideo[] value="+No+">";
+		new_tr.removeChild(obj.parentNode.parentNode);
+		return false;
+	}
+	function delFj1(obj,No){
+		var num = parseInt(document.form1.fjCnt1.value);
+		var new_tr = obj.parentNode.parentNode.parentNode;
+		new_tr.removeChild(obj.parentNode.parentNode);
+		if (num == No){
+			document.form1.fjCnt1.value=num-1;
+		}
+		return false;
+	}
+</script>

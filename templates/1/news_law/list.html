@@ -1,0 +1,33 @@
+	
+<div class="hwv3_lf">
+<div class="hwv3_mi">
+<div class="hwv3_mi_tjv4">
+
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+</div>
+
+
+
+
+<div class="v4_zy2" id="pageContent">
+ <div class="tit"><h2><?{if !empty($strKeywords)}?><?{$strKeywords}?>搜索结果<?{else}?><?{/if}?></h2></div>
+<div id="content">
+
+<?{foreach from=$arrInfoList item=arrData}?>
+<div class="listContentDiv">
+	<div class="listTextContent">
+		  <a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary|csubstr:0:100}?>"><img border="0" src="<?{$arrGWeb.WEB_ROOT_pre}?>/templates/1/ad_lc/images/dian.gif"><?{$arrData.title|csubstr:0:25}?></a>
+	</div>
+	<div class="listDateContent"><?{$arrData.submit_date|date_format:"%Y-%m-%d"}?></div>
+</div>
+<?{/foreach}?>
+</div>
+</div>
+</div>
+</div>
+		<div class="clearboth">
+				<ul class="sea-page">
+					<li class="right"><?{$strPage}?></li>
+				</ul>
+	</div>	
+		

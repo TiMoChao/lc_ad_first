@@ -1,0 +1,31 @@
+<div class="block7"></div>
+<div id="menu">
+	<div class="menu_l">
+		您的位置：<A href="/">首页</A> &gt; <A href="<?{url url = "/`$arrGWeb.module_id`/"}?>"><?{$arrGWeb.module_name}?></A><?{if $strTypeTitle != ''}?> &gt; <?{$strTypeTitle}?><?{/if}?>
+	</div>
+	<div class="menu_r">
+	</div>
+	<div class="fjclear"></div>
+</div>
+<div class="block7"></div>
+<div id="link">
+	<div class="tites"><span><strong>所有友情链接</strong></span></div>
+	<div class="piclink">
+		<ul>
+		<?{foreach from=$arrLinkPic item=arrPic}?>
+			<li><a href="<?{$arrPic.webhost}?>"><img src="<?{if $arrPic.weblogo != ''}?><?{$arrPic.weblogo}?><?{else}?><?{$FileCallPath}?><?{$arrPic.UploadFile}?><?{/if}?>"	title="<?{$arrPic.webname}?>" onload='resizepic(this,100)'/></a></li>			
+		<?{/foreach}?>
+		<div class="clearboth"></div>
+		</ul>
+	</div>
+	<div class="textlink">
+		<ul>
+		<?{foreach from=$arrLinkText item=arrText}?>
+			<li><a target="_blank" href="<?{$arrPic.webhost}?>" ><?{$arrText.webname|csubstr:0:8}?></a></li>
+		<?{/foreach}?>
+		</ul>
+	</div>
+	
+	<div class="block7"></div>
+</div><!--link end-->
+<div class="block10"></div>

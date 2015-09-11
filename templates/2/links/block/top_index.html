@@ -1,0 +1,13 @@
+<div id="link">
+	<div class="tit"><span><a href="<?{url url='/links/'}?>">友情链接</a></span></div>
+	<div class="piclink">
+		<ul>
+			<?{foreach from=$arrLinkText item=arrTxt}?>
+				 <li>
+					<a href="<?{$arrTxt.webhost}?>" title="<?{$arrTxt.summary}?>" target="_blank"><?{$arrTxt.webname}?></a>
+				</li>
+			 <?{/foreach}?>
+			<div class="piclinkclr2"></div>
+		 </ul>
+	</div>
+</div>

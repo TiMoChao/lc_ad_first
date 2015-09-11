@@ -1,0 +1,15 @@
+/*
+	author：ArthurXF;
+	explain：CSS引导页;
+	copyright： 上海网务网络 www.bizeway.com
+*/
+
+
+
+
+/* CSS Document */
+@charset "utf-8";
+@import url(globe.css);/*常用公用类CSS*/
+@import url(index.css);/*页面公用大结构及主页面CSS文件(公用大结构如：header,main,footer)*/
+@import url(main.css);/*除主页以外的页面CSS*/
+@import url(manage.css);/*用户管理中心所有CSS*/

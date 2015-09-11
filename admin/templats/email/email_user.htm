@@ -1,0 +1,56 @@
+<div class="ccc2">
+	<ul>
+		<li><img src="../images/warn.gif" align="absmiddle"> BIWEB系统中的邮件营销的一个功能，您设定会员搜索关键字，系统会根据您的设定去会员数据库提取email地址；<br />
+		<font color="#ff6600">
+	由于不同的服务商提供的免费邮箱一次可以发从10到20封，VIP邮箱30到100封之间，故本功能可以按照指定的数量进行分步提取！</font>
+		</li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return check()" action="" method="post">
+<input type=hidden name=page value="<?{$smarty.post.page}?>">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="2"><?{$strNav|default:"`$arrGWeb.module_name`管理"}?></td>
+    </tr>
+    <tr>
+      <td width="15%">搜索关键字：</td>
+      <td>
+			<select size="1" name="type_id">
+				<option value="10" <?{if $smarty.post.type_id == 10}?>selected<?{/if}?>>10个</option>
+				<option value="20" <?{if $smarty.post.type_id == 20}?>selected<?{/if}?>>20个</option>
+				<option value="30" <?{if $smarty.post.type_id == 30}?>selected<?{/if}?>>30个</option>
+				<option value="50" <?{if $smarty.post.type_id == 50}?>selected<?{/if}?>>50个</option>
+				<option value="100" <?{if $smarty.post.type_id == 100}?>selected<?{/if}?>>100个</option>
+			</select>
+			<input name="title" size="50" value="<?{$smarty.post.title}?>">
+			间隔符：<input id="spacemark" name="spacemark" size="5" value="<?{$smarty.post.spacemark|default:';'}?>">
+			</td>
+    </tr>
+		<tr>
+      <td width="15%">搜索结果：</td>
+      <td>
+			<textarea id="email" name="strEmail" rows="10" cols="65"><?{$strEmail}?></textarea>
+			</td>
+    </tr>
+		<?{if !empty($strEmail)}?>
+		<tr>
+      <td width="15%">结果说明：</td>
+      <td>
+			本次查询 <?{$smarty.post.title}?> 取到EMAIL共<font color="red"><?{$strEmailCount}?></font>,可点击下方复制按钮，生成可群发的格式，粘贴到邮件地址栏进行发送。
+			</td>
+    </tr>
+		<?{/if}?>
+		<tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" id="Submit" value="提 交" class="mini" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="copyEmailCode('email');return false;" value="复 制" class="mini" /></td>
+    </tr>
+</table>
+</div>
+</form>
+<script language="javascript">
+	function check(){
+	 this.form1.Submit.disabled=true;
+	 return true;
+	}
+</script>

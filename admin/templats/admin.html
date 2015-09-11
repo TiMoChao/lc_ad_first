@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<title>广告业务信息网系统管理首页  - powered by LUOCHAO</title>
+<link href='<?{$arrGWeb.WEB_ROOT_pre}?><?{$smarty.const.__WEBADMIN_ROOT}?>/css/biweb.css' rel='stylesheet' type='text/css'>
+<script type='text/javascript' src='<?{$arrGWeb.WEB_ROOT_pre}?><?{$smarty.const.__WEBADMIN_ROOT}?>/js/biweb.js'></script>
+</head>
+<body ondblclick="Submit_onDoubleclick()">
+<div class='bodytitle' style="height:33px;">
+    <div class='bodytitleleft'></div>
+    <div class='bodytitletxt'><?{$strNav|default:"`$arrGWeb.module_name`管理"}?></div>
+    <div class='bodytitleright'></div>
+    <div class='iicon'>
+        <a href='javascript:window.location.reload();' class='img1'>　　 刷新</a>
+        <a href='javascript:history.back();' class='img2'>　　 后退</a>
+        <a href='javascript:history.go(1);' class='img3'>　　 前进</a>
+    </div>
+	<div class="clr"></div>
+</div>
+<?{include file = $MAIN }?>
+<div class="copyright">Copyright © 2015-2015 广告信息网, All Rights Reserved .</div>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<?php /* Smarty version 2.6.20, created on 2015-06-05 01:05:39
+         compiled from useradmin/_cloumnright.html */ ?>
+
+	<div class="block7"></div>
+		<div class="help-left" >	
+		<div id="left-porduct-type">	
+			<div class="tit"><h2>基本设置</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/user/adminu/modify_user.php">修改用户资料</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/user/adminu/modify_userpwd.php">修改密码</a></li>
+			</ul>			
+		</div>		
+		<div class="block7"></div>
+		<div id="left-porduct-type">		    
+			<div class="tit"><h2>广告招标</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/tender_ad/adminu/addinfo.php">发布广告招标信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/tender_ad/adminu/index.php">管理广告招标信息</a></li>
+			</ul>			
+		</div>	
+		<div id="left-porduct-type">
+		<div class="block7"></div>
+			<div class="tit"><h2>车体广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/car_ad/adminu/addinfo.php">发布车体广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/car_ad/adminu/index.php">管理车体广告信息</a></li>
+			</ul>		
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">	  
+			<div class="tit"><h2>阅报亭广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/read_ad/adminu/addinfo.php">发布阅读亭广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/read_ad/adminu/index.php">管理阅读亭广告信息</a></li>
+			</ul>	
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">	  
+			<div class="tit"><h2>候车亭广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/shelter_ad/adminu/addinfo.php">发布候车亭广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/shelter_ad/adminu/index.php">管理候车亭广告信息</a></li>
+			</ul>	
+		</div>
+		<div class="block7"></div>		
+		<div id="left-porduct-type">	    
+			<div class="tit"><h2>户外广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/outdoor_ad/adminu/addinfo.php">发布户外广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/outdoor_ad/adminu/index.php">管理户外信息</a></li>
+		</ul>			
+		</div>		
+		<div class="block7"></div>
+		<div id="left-porduct-type">	   
+			<div class="tit"><h2>小区广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Community_ad/adminu/addinfo.php">发布小区广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Community_ad/adminu/index.php">管理小区广告信息</a></li>
+			</ul>			
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">		   
+			<div class="tit"><h2>平面广告</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/plane_ad/adminu/addinfo.php">发布平面广告信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/plane_ad/adminu/index.php">管理平面广告信息</a></li>
+			</ul>	
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">		   
+			<div class="tit"><h2>多媒体</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/multimedia_ad/adminu/addinfo.php">发布多媒体信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/multimedia_ad/adminu/index.php">管理多媒体信息</a></li>
+			</ul>		
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">
+		   
+			<div class="tit"><h2>报纸杂志</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Newspapers_magazines/adminu/addinfo.php">发布报纸杂志信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Newspapers_magazines/adminu/index.php">管理报纸杂志信息</a></li>
+			</ul>		
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">
+		    
+			<div class="tit"><h2>策划制作</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Planning_production/adminu/addinfo.php">发布策划制作信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Planning_production/adminu/index.php">管理策划制作信息</a></li>
+			</ul>			
+		</div>
+		<div class="block7"></div>
+		<div id="left-porduct-type">		    
+			<div class="tit"><h2>个性定制</h2></div>
+			<ul class="help-list">
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Personality_customization/adminu/addinfo.php">发布革新定制信息</a></li>
+				<li><a href="<?php echo $this->_tpl_vars['arrGWeb']['WEB_ROOT_pre']; ?>
+/Personality_customization/adminu/index.php">管理个性定制信息</a></li>
+			</ul>			
+		</div>
+		</div>
+		
+
+
+

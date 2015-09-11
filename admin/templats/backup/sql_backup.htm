@@ -1,0 +1,32 @@
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan='2'>数据备份</td>
+    </tr>
+	<tr>
+		<td width='15%'>添加 DROP table：</td>
+      <td><input type="radio" name="drop_tab" class="radio" value='1' checked="checked">是&nbsp;&nbsp;<input type="radio" name="drop_tab" class="radio" value='0'>否<p>恢复数据时，可直接删除已经存在的表</p></td>
+    </tr>
+	<tr>
+	<td>扩展插入：</td>
+      <td><input type="radio" name="ext_insert" class="radio" value='1'>是&nbsp;&nbsp;<input type="radio" name="ext_insert" class="radio" value='0' checked="checked">否<p>使用扩展插入(Extended Insert)方式</p></td>
+    </tr>
+	<tr>
+	<td>分卷备份：</td>
+      <td><input type="text" name="vol_size" value="1260"><p>文件长度限制(kb),设置太大可能导致出错</p></td>
+    </tr>	
+	<tr>
+	<td>备份文件名：</td>
+      <td><input type="text" size="50" name="sql_name" value="<?{$db_name}?>_<?{php}?>echo date('Y-m-d');<?{/php}?>.sql.zip"><p>可填写多个</p></td>
+    </tr>	
+	<tr>
+	<td colspan="2"><br/></td>
+	</tr>
+
+	<tr>
+		<td align="middle" colSpan="2"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type="reset" value="重 置"></td>
+	</tr>
+</table>
+</div>
+</form>

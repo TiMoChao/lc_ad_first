@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//Dtd html 4.01 Frameset//EN" "http://www.w3c.org/tr/1999/REC-html401-19991224/frameset.dtd">
+<html><head>
+<link rel="StyleSheet" href="<?{$arrGWeb.WEB_ROOT_pre}?>/plug-in/dtree/dtree.css" type="text/css" />
+<script language='javascript' src='<?{$arrGWeb.WEB_ROOT_pre}?>/plug-in/dtree/dtree.js'></script>
+<script language="javascript" type="text/javascript" src="../../plug-in/edit_area/edit_area_full.js"></script>
+<script type="text/javascript">
+	var init_syn = "<?{$strType}?>";
+</script>
+<script language="javascript" type="text/javascript" src="../../plug-in/edit_area/edit_area_init.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<div style='width:100%; height:200px; '>
+<table style='margin-left:15px;font-size:12px;'>
+<form action='' method='POST'>
+	<tr>
+		<td>当前编辑文件：<?{$smarty.get.path}?>
+		<textarea id="textarea_1" name="content" cols=100 rows="30"><?{$contents}?></textarea>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<input type='submit' value='保存修改' onclick="return confirm('你确定修改吗?');" />	
+		</td>
+	</tr>
+</form>
+</table>
+</div>
+</body>
+</html>

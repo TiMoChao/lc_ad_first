@@ -1,0 +1,24 @@
+<div id="pic">
+	<div class="tit">
+		<div class="l"><h2><a href="<?{url url='/product/'}?>">产品展示</a></h2>
+		</div>
+		<div class="r">
+			<ul>
+				<li style="background: none;"><a href="#"></a></li>
+			</ul>
+		</div>
+	</div><!--tit end-->
+	<div id="topindexpro">		
+		<ul>
+			<?{foreach from=$arrTopproduct item=arrData}?>
+			<li>
+				<div>
+				<div id="topindexproimg"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/product/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>" target="_blank"><img src="<?{if $arrData.thumbnail != ''}?><?{$FileCallPathP}?>b/<?{$arrData.thumbnail}?><?{else}?><?{$arrGWeb.templats_root}?>/images/nopic.gif<?{/if}?>" onload='resizepic(this,100)'/></a></div>
+				<div id="protitle"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/product/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>" target="_blank"><?{$arrData.title|csubstr:0:9}?></a><br/><?{$arrData.brand|csubstr:0:9}?><br/><?{$arrData.model|csubstr:0:9}?></div>			
+				</div>				
+			</li>	
+			<?{/foreach}?>			
+		</ul>
+	</div>
+</div><!--pic end-->
+<div class="block10"></div>

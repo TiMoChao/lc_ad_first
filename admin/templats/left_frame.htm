@@ -1,0 +1,104 @@
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+<link rel="stylesheet" type="text/css" href="css/menu.css" />
+<script type="text/javascript" src="js/ShowLeft.js"></script>
+</head>
+<body>
+<div id="my_menu" class="biweb">
+<span class="top">
+<a href="../" target="_blank">网站首页</a> <a href="main_frame.php" target="main">后台首页</a>
+</span>
+<dl id="webmanage">
+<?{if $arrPop.webmanage == 1}?>
+<?{foreach key=key  item=item from=$arrLeft}?>
+	<?{if $arrPop.$key == 1}?>
+	<div>
+	<span><?{$key}?></span>
+	<?{foreach item=arrData from=$arrLeft.$key}?>
+	<a href="<?{$arrData.href}?>" target="main"><?{$arrData.name}?></a>
+	<?{/foreach}?>	
+	</div>
+	<?{/if}?>
+<?{/foreach}?>
+<?{/if}?>
+</dl>
+<dl id="siteset" style="display:none" >
+<?{if $arrPop.siteset ==1}?>
+	<div>
+	<span>系统设置</span>
+	<a href="siteset/siteset.php" target="main" >信息设置</a>
+	<a href="siteset/phpinfo.php" target="main" >系统环境</a>
+	<a href="siteset/skin_set.php" target="main" >模板设定</a>
+	<a href="siteset/template_index.php" target="main" >模板编辑</a>
+	<a href="siteset/module_set.php" target="main" >栏目装卸</a>
+	<a href="siteset/cache_set.php" target="main" >缓存设置</a>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="fetch" style="display:none" >
+<?{if $arrPop.fetch ==1}?>
+	<div>
+	<span>数据采集</span>
+	<?{foreach key=key  item=item from=$arrFetch}?>
+		<?{foreach item=arrData from=$arrFetch.$key}?>
+	<a href="<?{$arrData.href}?>" target="main" ><?{$arrData.name}?></a>
+		<?{/foreach}?>
+	<?{/foreach}?>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="archives" style="display:none" >
+<?{if $arrPop.archives ==1}?>
+	<div>
+	<span>介绍单页</span>
+	<?{foreach key=key  item=item from=$arrMArchivesType}?>
+	<a href="../archives/admin/index.php?id=<?{$key}?>" target="main" ><?{$item}?></a>
+	<?{/foreach}?>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="seo" style="display:none" >
+<?{if $arrPop.seo ==1}?>
+	<div>
+	<span>网站优化</span>
+	<a href="seo/meta_set.php" target="main" >网页SEO优化</a>
+	<a href="seo/link_set.php" target="main" >链接优化</a>
+	<a href="seo/web_update.php" target="main" >更新静态页面</a>
+	<a href="seo/google_sitemap.php" target="main" >Google Sitemaps</a>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="backup" style="display:none" >
+<?{if $arrPop.backup ==1}?>
+	<div>
+	<span>数据管理</span>
+	<a href="backup/sql_backup.php" target="main" >数据备份</a>
+	<a href="backup/sql_restore.php" target="main" >数据还原</a>
+	<a href="backup/sql_optimize.php" target="main" >数据优化</a>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="tools" style="display:none" >
+<?{if $arrPop.tools ==1}?>
+	<div>
+	<span>网站工具</span>
+	<a href="tools/keywordsad/" target="main" >关键字广告</a>
+	<a href="tools/illegal/" target="main" >非法信息过滤</a>
+  </div>
+<?{/if}?>
+</dl>
+<dl id="email" style="display:none" >
+<?{if $arrPop.email ==1}?>
+	<div>
+	<span>营销宣传</span>
+	<a href="http://www.socorp.cn" target="main" >搜索邮件提取</a>
+	<a href="email/email_user.php" target="main" >会员邮件提取</a>
+	<a href="email/smtp/index.php" target="main" >SMTP邮局管理</a>
+	<a href="email/email_sender.php" target="main" >邮件设定发送</a>
+  </div>
+<?{/if}?>
+</dl>
+</div>
+</body>
+</html>

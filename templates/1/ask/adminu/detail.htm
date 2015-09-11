@@ -1,0 +1,60 @@
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="mainright">
+<?{include file = "useradmin/_cloumnright.html"}?>
+	</div>
+	<!-- 介绍 开始 -->
+	<div class="mainleft">
+		<div class="help-right">
+		<div id="companies-list-box">
+			<div class="tit"><h2><?{if $arrData.status == 1}?>已解决<?{else}?>待解决<?{/if}?>问题</h2></div>
+			<div class="issues">
+				<ul class="r">
+					<li class="title"><strong><?{$arrData.title}?></strong></li>
+					<li><pre><?{$arrData.intro}?></pre></li>
+					<li class="response">人气：<script language='javascript' src='../../plug-in/click/getclick.php?module_id=<?{$arrGWeb.module_id}?>&id=<?{$arrData.id}?>'></script>　回答：<?{$arrData.replytimes}?>  作者： <?{$arrData.user_name|ip_replace}?>(<?{$arrData.zone}?>)　<?{$arrData.submit_date}?>　<a href="#reply"><span class="color2">【回答此问题】</span></a></li>
+				</ul>
+			</div>
+			<div class="block7"></div>
+		</div>
+		
+		<?{if $arrData.replytimes != 0}?>
+		<div class="block7"></div>
+		<div id="companies-list-box">
+			<div class="tit"><h2>回答</h2></div>
+			<?{foreach name=reply from=$arrData.reply key=key item=arrReply}?>
+			<div class="issues">
+				<ul class="r">
+					<li class="response"><?{if $arrData.status == 1 && $key==0}?>最佳答案<?{else}?>回答<?{/if}?><?{$smarty.foreach.reply.index+1}?>：<?{$arrData.title}?></li>
+					<li <?{if $arrData.status==1 && $key==0}?>class="good-quiz"<?{/if}?>><pre><?{$arrReply.intro}?></pre></li>
+					<li class="response">作者： <?{$arrReply.user_name|ip_replace}?>(<?{$arrReply.zone}?>)　<?{$arrReply.replydate}?>　<a href="#reply"><span class="color2">【有其他回答】</span></a><?{if $smarty.session.user_group==3 or $smarty.session.user_group==2 or $smarty.session.user_id==$arrData.user_id}?> <a href="?id=<?{$arrData.id}?>&page=<?{$page}?>&&ac=best&rid=<?{$key}?>"><span class="color2">【设为最佳答案】</span></a><?{/if}?><?{if ($smarty.session.user_group==3 or $smarty.session.user_group==2 or $smarty.session.user_id==$arrData.user_id) and $key!=0}?> <a href="?id=<?{$arrData.id}?>&page=<?{$page}?>&ac=del&rid=<?{$key}?>"><span class="color2">【删除此答案】</span></a><?{/if}?></li>
+				</ul>
+			</div>
+			<?{/foreach}?>
+			<div class="block7"></div>
+		</div>
+		<?{/if}?>
+		<?{if $arrData.status != 1}?>
+		<div class="block7"></div>
+		<div id="companies-list-box">
+			<div class="tit"><h2>回答区</h2><a name="reply"></a></div>
+			<div class="">
+				<ul class="submit-quiz">
+				<form action="" method="post">
+				<input type="hidden" name="ac" value="reply">
+				<input type="hidden" name="id" value="<?{$smarty.get.id}?>">
+				<input type="hidden" name="type_id" value="<?{$arrData.type_id}?>">
+				<input type="hidden" name="page" value="<?{$page}?>">
+					<li><span>详细内容：</span><textarea name="intro" cols="50" rows="6" class="textarea"></textarea></li>
+					<li><span>&nbsp;</span><input name="button" class="btn" type="submit" value="提交答案" /></li>
+				</form>
+				</ul>
+			</div>
+			<div class="block7"></div>
+		</div>
+		<?{/if}?>
+		</div>
+	</div>
+	<!-- 介绍 结束 -->
+</div>
+<div class="block10"></div>

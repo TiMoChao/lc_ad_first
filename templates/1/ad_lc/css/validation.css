@@ -1,0 +1,86 @@
+@CHARSET "UTF-8";
+/******* FORM *******/
+#adComRegDiv{
+	padding: 0px 0px 10px 0px;
+}
+
+#userRegDiv{
+	padding: 0 10px 10px;
+}
+
+.inputClass{
+	width: 350px;
+	padding: 2px;
+	color: #949494;
+	border: 1px solid #cecece;
+}
+
+.selectClass{
+	width: 175px;
+	padding: 2px;
+	color: #949494;
+	border: 1px solid #cecece;
+}
+
+#adComRegDiv input.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+#userRegDiv input.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+#adComRegDiv textarea{
+	width: 550px;
+	height: 80px;
+	padding: 6px;
+	border: 1px solid #cecece;
+}
+
+#adComRegDiv textarea.error{
+	background: #f8dbdb;
+	border-color: #e77776;
+}
+
+#adComRegDiv span{
+	margin-left: 10px;
+	color:#a40000;
+	font-size: 11px;
+}
+
+#userRegDiv span{
+	margin-left: 10px;
+	color:#a40000;
+	font-size: 11px;
+}
+
+#adComRegDiv span.error{
+	color: #e46c6e;
+}
+
+#userRegDiv span.error{
+	color: #e46c6e;
+}
+
+#error{
+	margin-bottom: 20px;
+	border: 1px solid #efefef;
+}
+#error ul{
+	list-style: square;
+	padding: 5px;
+	font-size: 11px;
+}
+#error ul li{
+	list-style-position: inside;
+	line-height: 1.6em;
+}
+#error ul li strong{
+	color: #e46c6d;
+}
+#error.valid ul li strong{
+	color: #93d72e;
+}
+/******* /FORM *******/

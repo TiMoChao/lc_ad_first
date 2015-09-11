@@ -1,0 +1,26 @@
+<div id="menu">
+	<div class="menu_l">
+		您的位置：<A href="/">首页</A> &gt; <?{$arrGWeb.module_name}?><?{if $strTypeTitle != ''}?> &gt; <?{$strTypeTitle}?><?{/if}?>
+	</div>
+	<div class="menu_r">
+	</div>
+	<div class="fjclear"></div>
+</div>
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="mainright">
+<?{include file = "archives/_cloumnleft.html"}?>
+	</div>
+	<!-- 介绍 开始 -->
+	<div class="mainleft">
+		<div class="help-right">
+		<div id="companies-list-box">
+			<div class="join-tit"><?{$arrInfo.id}?></div>
+			<div class="help-text-box">
+				<?{$arrInfo.intro}?>
+ 			</div>
+		</div>
+		</div>
+	</div>
+	<!-- 介绍 结束 -->
+</div>

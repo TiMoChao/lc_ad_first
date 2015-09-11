@@ -1,0 +1,1 @@
+<script>document.body.oncopy = function () { setTimeout( function () { var text = clipboardData.getData("text"); if (text) { text = text + "\r\n\r\n欢迎转载，但请保留出处，本文章转自[网务通] 原文链接："+location.href; clipboardData.setData("text", text); } }, 100 ) }</script>

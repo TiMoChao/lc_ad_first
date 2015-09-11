@@ -1,0 +1,24 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="area">
+<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+
+<!-- 块 开始 -->
+<?{foreach from=$arrTopcompany item=arrMainType}?>
+	<div class="col<?{cycle values="1,2"}?>">
+		<div id="special" class="news-box">
+			<div class="tit"><span><a href="<?{url url = "/`$arrGWeb.module_id`/list?type_id=`$arrMainType.type_id`"}?>">>>更多</a></span><h2><a href="<?{url url = "/`$arrGWeb.module_id`/list?type_id=`$arrMainType.type_id`"}?>"><?{$arrMainType.type_title}?></a></h2></div>
+			<div class="news-text-box">
+				<ul class="new-list">
+				<?{foreach from=$arrMainType.datas item=arrData}?>
+					<li><span><?{$arrData.submit_date|date_format:"%Y/%m/%d"}?></span><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div>
+		</div><!--special end-->
+		<div class="block7"></div>
+	</div>
+<?{/foreach}?>	<div class="fjclear"></div>
+</div>
+<div class="block10"></div>

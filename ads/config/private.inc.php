@@ -1,0 +1,26 @@
+<?php
+/**
+ * 图形广告功能私有全局变量配置文件（不被block访问的网站配置全局变量）
+ *
+ * @author		Arthur(ArthurXF@gmail.com)
+ * @copyright	(c) 2006 by bizeway.com
+ * @version		$Id$
+ * @package		ArthurXF
+ * @subpackage	news
+ */
+
+//翻页参数
+$arrGPage = array();
+$arrGPage['page_size'] = 10;		//每页显示的记录数目
+$arrGPage['link_num'] = 3;		//显示页码链接的数目
+$arrGPage['page'] = 1;			//页码
+$arrGPage['records'] = 0;		//表中记录总数
+$arrGPage['page_count'] = 0;		//总页数
+$arrGPage['pagestring'] = '';	//前后分页链接字符串
+$arrGPage['page_link'] = '';		//页码链接字符串
+$arrGPage['page_select'] = '';	//表单跳转页字符串
+$arrGPage['page_jump'] = '';		//text输入页码跳转
+$arrGSmarty['main_dir'] = $arrGSmarty['template_dir'].'/'.$arrGWeb['module_id'].'/';
+$arrGSmarty['admin_main_dir'] = __WEB_ROOT.'/'.$arrGWeb['module_id'].'/admin/templats/';
+
+?>

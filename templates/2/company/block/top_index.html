@@ -1,0 +1,23 @@
+
+		<div class="block7"></div>
+		<div id="special">
+			<div class="tit">
+			  <h2><a href="<?{url url='/company/'}?>">企业黄页</a></h2>
+			</div>
+			
+			
+			<div class="sp2">
+				<ul>
+				<?{foreach name=toplist from=$arrTopcompany.datas item=arrData}?>
+				<?{if $smarty.foreach.toplist.first}?>
+					<div class="sp1">
+							<h3><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/company/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>"><?{$arrData.title|csubstr:0:40}?></a></h3>
+							<p class="co"> <?{$arrData.summary|csubstr:0:50}?></p>
+					</div><!--sp1 end-->
+				<?{else}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/company/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:40}?></a></li>
+				<?{/if}?>
+				<?{/foreach}?>
+				</ul>
+			</div><!--sp2 end-->
+		</div><!--special end-->

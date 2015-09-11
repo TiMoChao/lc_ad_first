@@ -1,0 +1,53 @@
+<p>
+欢迎您：<?{$arrUser}?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.php">签到</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="out.php">外出</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="leave.php">请假</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="adminu/change_password.php">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="logout.php">退出登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<p>
+今天日期为：<?{$smarty.now|date_format:"%Y-%m-%d"}?>&nbsp;&nbsp;&nbsp;&nbsp;
+现在时间为：<?{$smarty.now|date_format:"%H:%M:%S"}?>
+</p>
+<?{if $arrTData.0.start !=""}?>
+	<p>
+	您今天的上班时间为：<?{$arrTData.0.start}?><br /><br />
+	<?{if $intLate == 1}?>
+		您已经<font color=red>迟到</font>，请注意自己的下班时间！
+	<?{/if}?>
+	<?{if $intLate == 0}?>
+		太好了，您今天按时来上班！
+	<?{/if}?>
+	</p>
+<?{/if}?>
+
+<?{if $arrTData.0.end !=""}?>
+	您今天的下班时间为：<?{$arrTData.0.end}?><br /><br />
+	<?{if $arrTData.0.late == 0}?>您今天的签到状态为:&nbsp;正常&nbsp;<?{/if}?>
+	<?{if $arrTData.0.late == 1}?>您今天的签到状态为:<font color=red>&nbsp;迟到&nbsp;</font><?{/if}?>
+	<?{if $arrTData.0.late == 2}?>您今天的签到状态为:<font color=#FFFF00>&nbsp;早退&nbsp;</font><?{/if}?>
+	<?{if $arrTData.0.late == 3}?>您今天的签到状态为:<font color=#cc0099>&nbsp;迟到+早退&nbsp;</font><?{/if}?>
+<?{/if}?>
+<form name="Worktime" action="" method="post">
+<p>
+请选择签到类型：
+<input type="radio" name="type" value="1" />上班
+<input type="radio" name="type" value="2" />下班
+</p>
+<p>
+相关原因：<br />
+
+<textarea name="note" cols="75" rows="10"></textarea>
+</p>
+<p>
+<input type="Submit" name="Submit" value="提交" />
+<input type="reset" name="reset" value="重设" />
+</p>
+</form>
+<br />
+<br />

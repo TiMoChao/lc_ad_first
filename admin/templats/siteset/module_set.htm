@@ -1,0 +1,27 @@
+<div class="ccc2">
+	<ul>
+		<li><img src="../images/warn.gif" align="absmiddle"> 本功能可允许您安装和卸载网站功能栏目，有些操作会涉及到数据，请谨慎使用；！<br />
+		<font color="#ff6600">
+	1.配置文件分类的安装，是将分类设定保存在配置文件中，其优势是服务器开销较小，缺点是只能一级分类，适用于一些固定分类的栏目！<br />
+	2.数据库分类的安装，是使用数据库做为分类系统，其优势可以无限级分类，缺点是服务器开销较大，适用于一些增减分类较多的栏目<br />
+	3.保留数据库卸载栏目，是卸载栏目时保留原有的数据库数据，再次安装时数据不变！<br />
+	4.删除数据库卸载栏目，是卸载栏目时将数据库数据同时删除，再次安装时数据已空，删除数据无法还原请谨慎操作！</font>
+		</li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="3"><?{$strNav|default:"`$arrGWeb.module_name`管理"}?></td>
+    </tr>
+		<?{foreach key=key  item=arrData from=$arrModuleDirs}?>
+    <tr>
+      <td width="15%"><?{$arrData.name}?>(<?{$arrData.id}?>)：</td>
+      <td>
+			<?{if $arrData.state == 2}?>系统栏目<?{/if}?><?{if $arrData.state == 1}?>已安装<?{/if}?><?{if $arrData.state == 0}?><font color=red>未安装</font><?{/if}?></td>
+    <td><?{if $arrData.state == 1}?><a href="?id=<?{$arrData.id}?>&type=1&ac=del">1.保留数据库卸载栏目</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?id=<?{$arrData.id}?>&type=0&ac=del" onclick="return confirm('此操作非常危险，会丢失本栏目所有数据，确认卸载吗？');">2.删除数据库卸载栏目</a><?{/if}?><?{if $arrData.state == 0}?><a href="?id=<?{$arrData.id}?>&type=1&ac=install"><font color=red>1.配置文件分类的安装</font></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="?id=<?{$arrData.id}?>&type=0&ac=install"><font color=red>2.数据库分类的安装</font></a><?{/if}?>
+			</td>
+    </tr>
+		<?{/foreach}?>
+</table>
+</div>

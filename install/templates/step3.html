@@ -1,0 +1,100 @@
+<div class="c"></div>
+<div id="content">
+  <div class="wrapD">
+	<div class="wrapE">
+<div class="boxA">
+		<div style="width:56%; float:left">
+		  <h3>检测系统环境</h3>
+  <table class="dlA">
+    <tbody>
+	<tr>
+      <td width="120"></td>
+      <td width="100">所需配置</td>
+      <td>当前服务器</td>
+    </tr>
+    <tr>
+      <td>操作系统</td>
+      <td>不限</td>
+      <td class="s4_color"><?{$arrSysInfo.os}?></td>
+    </tr>
+    <tr>
+      <td>PHP 版本</td>
+      <td>5.0.0+ </td>
+      <td class="s4_color"><?{$arrSysInfo.php}?></td>
+    </tr>
+    <tr>
+      <td>附件上传</td>
+      <td>建议10M+</td>
+      <td><font class="s4_color">允许/最大上传: <?{$arrSysInfo.upload}?></font></td>
+    </tr>
+    <tr>
+      <td>MySQL 数据库</td>
+      <td>3.23+</td>
+      <td><?{if $arrSysInfo.mysql}?><font class="s4_color">支持<?{else}?><font class="s3_color">MYSQL数据库未安装<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>SESSION</td>
+      <td>必须支持</td>
+      <td><?{if $smarty.session.session_test}?><font class="s4_color">已支持<?{else}?><font class="s3_color">SESSION传值故障，请保持php.ini中的session.save_path目录可写<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>GD模块</td>
+      <td>必须开启</td>
+      <td><?{if $arrSysInfo.GD}?><font class="s4_color">已开启<?{else}?><font class="s3_color">GD模块未安装，请将php.ini中的;extension=php_pdo.dll的;去掉<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>PDO模块</td>
+      <td>必须开启</td>
+      <td><?{if $arrSysInfo.PDO}?><font class="s4_color">已开启<?{else}?><font class="s3_color">PDO模块未安装，请在php.ini中加入extension=php_pdo.dll<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>PDO_MySQL模块</td>
+      <td>必须开启</td>
+      <td><?{if $arrSysInfo.pdo_mysql}?><font class="s4_color">已开启<?{else}?><font class="s3_color">PDO_MYSQL模块未安装，请在php.ini中加入extension=php_pdo_mysql.dll<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>Allow_url_fopen</td>
+      <td>需要开启</td>
+      <td><?{if $arrSysInfo.allow_url_fopen}?><font class="s4_color">已开启<?{else}?><font class="s3_color">allow_url_fopen未开启，请到php.ini设置allow_url_fopen = On<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td>服务器DNS解析</td>
+      <td>需要开启</td>
+      <td><?{if $arrSysInfo.file_get_contents}?><font class="s4_color">已开启<?{else}?><font class="s3_color">服务器DNS解析，没有开启(Linux 在/etc/reslov.conf设置正确的DNS)<?{/if}?></font></td>
+    </tr>
+	<tr>
+      <td colspan="3">注意:网站生成静态，必须保证 Allow_url_fopen 和 服务器DNS解析 同时开启<br/>以上两选项，如果没有开启，网站仅不能生成静态页面，但网站仍可正常使用</td>
+    </tr>
+  </tbody></table>
+		</div>
+		<div>
+		  <h3>检查目录可写</h3>
+		  <table class="dlB">
+			<tbody><tr>
+			  <td>目录名称</td>
+			  <td>目录描述</td>
+			  <td>当前状态</td>
+			</tr>
+			<?{foreach from=$arrDirs key=key item=arrData}?>
+			<tr>
+			  <td><?{$key}?></td>
+			  <td><?{$arrData.explain}?></td>
+			  <td><?{if $arrData.writable}?><font class="s4_color">[√]可写<?{else}?><font class="s3_color">[×]不可写<?{/if}?></font></td>
+			</tr>
+			<?{/foreach}?>
+		  </tbody></table>
+		</div>
+		
+	  </div>
+	  <div class="c"></div>
+      <br />
+	</div>
+  </div>
+  <div class="stepbt">
+	<input type="button" onclick="javascript:history.go(-1);" class="biweb large last" value="上一步：阅读安装说明">
+	<input class="next biweb large" type="button" onclick="location.href='?step=4'" value="进入下一步"  <?{if $intStop}?>disabled=true<?{/if}?>>
+  </div>
+
+</div>
+
+	  </div>

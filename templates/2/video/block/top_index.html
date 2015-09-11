@@ -1,0 +1,15 @@
+<div class="col1">
+	<div id="video">
+	  <div class="tit"><h2><a href="<?{url url='/video/'}?>">行业视频</a></h2></div>		
+		<div class="v2">
+			<div class="r">
+			<div style='height:12px;'></div>
+				<ul>
+					<?{foreach name=from from=$arrTopvideo.datas item=arrData}?>
+					<li><div id="left"><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/video/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:40}?></a> <img src="<?{$arrGWeb.templats_root}?>/images/li_video.gif" alt="视频" /></div><div id="right"><?{$arrData.submit_date|date_format:"%Y.%m.%d"}?></div></li>
+					<?{/foreach}?>
+				</ul>
+			</div>
+		</div><!--v2 end-->
+	</div><!--video end-->
+</div><!--area[2]>col1 end-->

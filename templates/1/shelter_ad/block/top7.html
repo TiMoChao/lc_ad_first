@@ -1,0 +1,13 @@
+	<div class="main-left">
+		<div class="news-box">
+			<div class="tit"><span><a href="<?{url url = "/`$arrGWeb.module_id`/list?type_id=7"}?>">>>更多</a></span><h2><a target="_blank" href="<?{url url = "/`$arrGWeb.module_id`/list?type_id=7"}?>">广告天地</a></h2></div>
+			<div class="fjclear"></div>
+			<div class="news-text-box">
+				<ul class="new-list">
+				<?{foreach from=$arrToptrade7.datas item=arrData}?>
+					<li><span><?{$arrData.submit_date|date_format:"%Y/%m/%d"}?></span><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div>
+		</div>
+	</div>

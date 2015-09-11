@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="../css/biweb.css" rel="stylesheet" type="text/css">
+<title>BIWEB Administrator's Control Panel - powered by BIWEB</title>
+<script type="text/javascript" src="../js/menu.js"></script>
+<script>
+var menus = new Array('index','webmanage', 'siteset', 'archives', 'seo', 'backup', 'tools','email');
+function togglemenu(id) {
+	if(parent.left) {
+		for(k in menus) {
+			if(parent.left.document.getElementById(menus[k])) {
+				parent.left.document.getElementById(menus[k]).style.display = menus[k] == id ? '' : 'none';
+			}
+		}
+	}
+}
+function sethighlight(n) {
+	var lis = document.getElementsByTagName('li');
+	for(var i = 0; i < lis.length; i++) {
+		lis[i].id = '';
+	}
+	lis[n].id = 'menuon';
+}
+</script>
+</head>
+<body class="top" onLoad="sethighlight('0')">
+    <div class="logo"><a 
+      onclick='parent.location="../../";' 
+      href="#"><img src="../images/biweb.gif" border="0" alt="BIWEB WMS"/></a></div>
+<div class="nav">
+    <div class="t-menu">您好，欢迎使用<span>广告业务信息管理系统</span></div>
+<li class="home"><a href="#"onclick=sethighlight('0');togglemenu('webmanage');return false; >站 务</a></li>
+<li><a href="#"onclick=sethighlight('1');togglemenu('siteset');return false; >系 统</a></li>
+<li><a href="#"onclick=sethighlight('2');togglemenu('archives');return false; >单 页</a></li>
+<li><a href="#"onclick=sethighlight('3');togglemenu('seo');return false; >优 化</a></li>
+<li><a href="#"onclick=sethighlight('4');togglemenu('backup');return false; >数 据</a></li>
+<li><a href="#"onclick=sethighlight('5');togglemenu('tools');return false; >工 具</a></li>
+<li><a href="#"onclick=sethighlight('6');togglemenu('email');return false; >宣 传</a></li>
+<li class="more"><a href="../logout.php">注 销</a></li>
+</div>
+</body>
+</html>

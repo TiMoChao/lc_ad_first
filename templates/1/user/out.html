@@ -1,0 +1,23 @@
+<p>
+欢迎您：<?{$arrUser}?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.php">签到</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="out.php">外出</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="leave.php">请假</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="adminu/change_password.php">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="logout.php">退出登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<form action="" method="post" name="out">
+外出标题：<br />
+<input type="text" name="out_title" width="100"  /><br />
+(注：非公事外出请到<a href="leave.php">请假</a>栏目中登记)
+<br /><br />
+外出时间：从<input type="text" name="out_start_time" />到<input type="text" name="out_end_time" /><br /><br />
+请填写详细内容：<br />
+<textarea name="out_note" cols="75" rows="10"></textarea><br />
+<input type="submit" name="submin" value="提交" />
+<input type="reset" name="reset" value="重写" />
+</form>

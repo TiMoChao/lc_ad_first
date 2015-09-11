@@ -1,0 +1,11 @@
+		<div class="news-box">
+			<div class="tit"><h2>产品分类</h2></div>
+		
+			<ul class="showroom-list">
+					<?{foreach from=$arrProductType item=arrProductType}?>
+					<li class="showroom-list-ti"><a href="<?{url url="/product/list.php?type_id=`$arrProductType.type_id`"}?>"><?{$arrProductType.type_title}?></a></li>
+					<?{/foreach}?>
+			</ul>
+			
+		</div>
+		<div class="block7"></div>

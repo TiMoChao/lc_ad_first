@@ -1,0 +1,83 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="area">
+	<!-- 会展信息 开始 -->
+	<div class="main-left">
+		<table class="exhibition-table">
+			<tr class="exhibition-tr">
+				<td>招聘标题：</td>
+				<td colspan="3"><strong><?{$arrData.title}?></strong> </td>
+			</tr>
+			<tr>
+				<td width="11%">发布日期：</td>
+				<td width="39%"><?{$arrData.submit_date|date_format:"%Y/%m/%d"}?></td>
+				<td width="11%">工作地点：</td>
+				<td width="39%">
+				<?{if !empty($arrData.province)}?>
+				<?{$arrMArea[$arrData.province]}?>
+				<?{/if}?>
+				
+				<?{if !empty($arrData.city)}?>
+				<?{$arrMArea[$arrData.city]}?>
+				<?{/if}?>
+
+				<?{if !empty($arrData.area)}?>
+				<?{$arrMArea[$arrData.area]}?>
+				<?{/if}?>
+				</td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td>工作经验：</td>
+				<td><?{$arrData.workexperience}?></td>
+				<td>学历要求：</td>
+				<td><?{$arrData.educationrecord}?></td>
+			</tr>
+			<tr>
+				<td>招聘人数： </td>
+				<td><?{$arrData.num}?></td>
+				<td>职位月薪：</td>
+				<td><?{$arrData.salary}?></td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td>职位描述：</td>
+				<td colspan="3"><?{$arrData.intro|nl2br}?></td>
+			</tr>
+		</table>
+		<div class="block7"></div>
+		<table class="exhibition-table">
+			<tr>
+				<td width="11%">公司名称：</td>
+				<td><strong><?{$arrData.companyname}?></strong></td>
+			</tr>
+			<tr class="exhibition-tr">
+				<td width="11%">公司简介：</td>
+				<td><?{$arrData.companyintro}?></td>
+			</tr>
+			<tr>
+				<td>联系方式：</td>
+				<td><?{$arrData.contact|nl2br}?></td>
+			</tr>
+			<tr>
+				<td>公司图片展示：</td>
+				<td>
+				<?{foreach from=$arrData.photo key=key item=photo}?>
+				<?{if $photo.photo != ""}?><center><img src="<?{$FileCallPath}?>b/<?{$photo.photo}?>" align="center" border="0" alt="<?{$photo.photo_narrate}?>"  onload='resizepic(this,400)' /><br><?{if $photo.photo_narrate}?><?{$photo.photo_narrate}?><?{/if}?></center><br><?{/if}?>
+				<?{/foreach}?>
+				</td>
+			</tr>
+		</table>
+
+		<div class="block7"></div>
+		<div class="type-info">
+			<div class="tit"><h2>分类信息</h2></div>
+			<div class="type-info-list">
+				<ul><script language="JavaScript" src="../../uploadfile/textads/3.js"></ul></script>
+			</div>
+		</div><!--diseases1 end-->
+		
+	</div><!--area[2]>col2 end-->
+
+<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+</div>
+<div class="block10"></div>

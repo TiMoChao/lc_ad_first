@@ -1,0 +1,95 @@
+<div class="agreement">
+<h5>BIWEB WMS 软件安装说明</h5> <br />
+特别说明: (用户必读!)<br />
+<br />
+  + 使用本系统前,请详细阅读用户授权文档 License.html.切记!在您认为可以满足授权文档中列出的要求时,方可使用 BIWEB,否则,请不要将安装 BIWEB。<br />
+<br />
+  + 如果您不是从官方得到的本程序,很可能获得的不是最新版本并且无法使用或有很多BUG，请访问<a href="http://www.biweb.cn" target="_blank" class="linkA">www.biweb.cn</a>获取最新版本。<br />
+<br />
+  + 如果您去除了网站底部powered by BIWEB的版权信息，您必须向官方购买版权授权，否则就是违法使用本软件！<br />
+<br />
+安装步骤：<br />
+1.打开压缩包，将压缩包里的biwebcorp文件夹上传至服务器<br />
+2.运行http://您的网址<br />
+3.一路点击下一步 进行简单配置 到安装完成<br />
+注：一定要填写你的E-mail地址，以更好的发挥我们的营销功能<br />
+4.安装成功<br />
+<br />
+程序员必读：<br />
+为了你更好的使用BIWEB WMS v5.8的所有功能，请按照以下方式配置：<br />
+1.注意config/global.inc.php中的两个语句。<br />
+define('__WEBCOMMON_ROOT', __WEB_ROOT .'/web_common5.8');	//web_common在网站目录内<br />
+//define('__WEBCOMMON_ROOT', $_SERVER["DOCUMENT_ROOT"] .'/../web_common5.8');	//web_common在网站目录外<br />
+该语句需要设定正确的路径来调用ArthurXF框架底层。如果您的服务器为虚拟主机，您不需要进行任何设置；<br />
+如果您需要设置该底层程序可以支持整台服务器上所有BIWEB网站系统共享，你可以将web_common目录放到网站根目录外，并将上面的语句设置为下面的即可正常使用了。<br />
+//define('__WEBCOMMON_ROOT', __WEB_ROOT .'/web_common5.8');	//web_common在网站目录内<br />
+define('__WEBCOMMON_ROOT', $_SERVER["DOCUMENT_ROOT"] .'/../web_common5.8');	//web_common在网站目录外<br />
+<br />
+安装过程，如果你选择的是手动配置文件，请执行2.3.两条。自动安装配置请跳过。<br />
+2.修改config/global.inc.php中关于数据库的配置如下变量<br />
+$arrGPdoDB['db_name'] = 'biweb';<br />
+$arrGPdoDB['db_user'] = 'root';<br />
+$arrGPdoDB['db_password'] = '';<br />
+<br />
+3.BIWEB系统会根据您设定的数据库名称自动建立数据库的，如果您的帐号没有权限建立数据库，那么请通过phpmyadmin建立一个和你设定的库名相同的数据库名，例如：建立上面设定的biweb库。<br />
+<br />
+4.将目录cache,complie,data,html,uploadfile设置为777权限，将系统根目录下的sitemap.xml设置为666权限。<br />
+<br />
+5.要在使用404优化功能和静态化链接功能，就需要在apache的配置文件中增加以下的虚拟主机配置，里面的站点名称和路径可以更改为你自己的设定<br />
+<textarea cols="80" rows="10">
+<VirtualHost *:80>
+#    ServerAdmin webmaster@dummy-host.example.com
+	RewriteEngine On
+	ErrorDocument 404 /plug-in/404/404.php
+	DirectoryIndex index.html index.htm index.php index
+	<FilesMatch "^[^\.]*.$">
+		ForceType application/x-httpd-php
+	</FilesMatch>
+	<Directory 您网站存放的地址\uploadfile>
+		php_flag engine off
+	</Directory>
+	<Directory 您网站存放的地址\html>
+		php_flag engine off
+	</Directory>
+
+     DocumentRoot 您网站存放的地址
+     ServerName 您的域名
+#    ErrorLog logs/dummy-host.example.com-error_log
+#    CustomLog logs/dummy-host.example.com-access_log common
+</VirtualHost>
+</textarea><br />
+<br />
+6.windows环境下在php.ini中加入extension=php_pdo.dll和extension=php_pdo_mysql.dll，在linux环境下编译php时必须加入PDO和PDO_MYSQL模块。<br />
+<br />
+7.在本地测试的环境，还需要到C:\WINDOWS\system32\drivers\etc\host文件中增加“127.0.0.1 站点名”<br />
+<br />
+8.如需安装配置文件分类的功能模块，请先设定/功能栏目中/config/type.inc.php的数组，如果该文件不存在或为空，将自动安装数据库分类的功能模块。<br />
+ .配置文件分类的实例：如果需要增加分类可以按此例子增加，但是不支持2维数组。<br />
+ <pre>
+&lt;?php
+$arrMType = array (
+ 1=>'网站公告',
+ 2=>'行业新闻',
+);
+?&gt;
+ </pre>
+ <br />
+官方网站:<a href="http://www.biweb.cn" target="_blank" class="linkA">http://www.biweb.cn/</a><br />
+如有技术难题，欢迎前往官方论坛:<a href="http://bbs.biweb.cn" target="_blank" class="linkA">http://bbs.biweb.cn</a>
+</div>
+<div class="c"></div>
+<div id="content">
+
+<div class="wrapD">
+<div class="wrapE">
+<div class="c"></div>
+</div>
+</div>
+<div class="stepbt">
+<input type="button" onclick="javascript:history.go(-1);" class="biweb large last" value="上一步：阅读版权协议">
+<input class="next biweb large" type="button" onclick="location.href='?step=3'" value="进入下一步">
+</div>
+
+</div>
+
+</div>

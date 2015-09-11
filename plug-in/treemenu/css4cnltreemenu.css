@@ -1,0 +1,58 @@
+/****************************
+CSS Code for CNLTreeMenu
+Version: Ver 1.02
+Author : CNLei, ∑„—“
+E-Mail : CNLei.Y.L@gmail.com
+MySite : http://www.cnlei.net
+Passed : XHtml 1.0, CSS 2.0, IE5.0+, FF1.0+, Opera8.5+
+Update : 2006-2-12
+
+a {text-decoration:none;}
+a,a:visited {color:#000;background:inherit;}
+body {margin:0;padding:20px;font:12px tahoma,ÀŒÃÂ,sans-serif;}
+dt {font-size:22px;font-weight:bold;margin:0 0 0 15px;}
+dd {margin:0 0 0 15px;}
+h4 {margin:0;padding:0;font-size:18px;text-align:center;}
+p {margin:0;padding:0 0 0 18px;}
+p a,p a:visited {color:#00f;background:inherit;}
+****************************/
+/*CNLTreeMenu Start*/
+.CNLTreeMenu img.s {cursor:pointer;vertical-align:middle;}
+.CNLTreeMenu ul {padding:0;}
+.CNLTreeMenu li {list-style:none;padding:0;}
+.Closed ul {display:none;}
+.Child img.s {background:none;cursor:default;}
+
+#CNLTreeMenu1 ul {margin:0 0 0 17px;}
+#CNLTreeMenu1 img.s {width:20px;height:15px;}
+#CNLTreeMenu1 .Opened img.s {background:url(skin1/opened.gif) no-repeat 0 0;}
+#CNLTreeMenu1 .Closed img.s {background:url(skin1/closed.gif) no-repeat 0 0;}
+#CNLTreeMenu1 .Child img.s {background:url(skin1/child.gif) no-repeat 3px 5px;}
+
+#CNLTreeMenu2 ul {margin:0 0 0 17px;}
+#CNLTreeMenu2 img.s {width:17px;height:15px;}
+#CNLTreeMenu2 .Opened img.s {background:url(skin2/opened.gif) no-repeat 4px 6px;}
+#CNLTreeMenu2 .Closed img.s {background:url(skin2/closed.gif) no-repeat 3px 6px;}
+#CNLTreeMenu2 .Child img.s {background:url(skin2/child.gif) no-repeat 3px 5px;}
+
+#CNLTreeMenu3 ul {margin:0 0 0 17px;}
+#CNLTreeMenu3 img.s {width:34px;height:18px;}
+#CNLTreeMenu3 .Opened img.s {background:url(skin3/opened.gif) no-repeat 0 1px;}
+#CNLTreeMenu3 .Closed img.s {background:url(skin3/closed.gif) no-repeat 0 1px;}
+#CNLTreeMenu3 .Child img.s {background:url(skin3/child.gif) no-repeat 13px 2px;}
+
+#CNLTreeMenu4 ul {margin:0 0 0 17px;}
+#CNLTreeMenu4 img.s {width:35px;height:20px;}
+#CNLTreeMenu4 .Opened img.s {background:url(skin4/opened.gif) no-repeat 0 0;}
+#CNLTreeMenu4 .Closed img.s {background:url(skin4/closed.gif) no-repeat 0 0;}
+#CNLTreeMenu4 .Child img.s {background:url(skin4/child.gif) no-repeat 3px 5px;}
+/*CNLTreeMenu End*/
+
+/*Temp CSS for View Demo*/
+#CNLTreeMenu1,#CNLTreeMenu2,#CNLTreeMenu3 {float:left;width:249px;border:1px solid #99BEEF;background:#D2E4FC;color:inherit;margin:3px;padding:3px;}
+#CNLTreeMenu1,#CNLTreeMenu2 {padding-bottom:15px;}
+.ViewCode {
+ clear:both;
+ border:1px solid #FFB900;background:#FFFFCC;color:inherit;margin:3px;padding:3px;
+}
+.ViewCode h6 {color:#00f;}

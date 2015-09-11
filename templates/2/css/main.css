@@ -1,0 +1,536 @@
+/**
+ *
+ *@BIWEB门户建站系统
+ *@版权所有 上海网务网络 www.bizeway.com
+ *@作者：Jerry 
+ *@E-mail:mengzhiqc@163.com
+****/
+
+/*导航开始*/
+#menu {
+	background: #4874b3;
+	margin: 0px auto;
+	width: 910px;
+	height: 26px;
+}
+.menu_l {
+	padding-left: 15px;
+	float: left;
+	width: 600px;
+	color: #fff;
+	line-height: 23px;
+	padding-top: 3px;
+}
+.menu_r {
+	float: right;
+	width: 230px
+}
+.menu_l A {
+	color: #fff
+}
+
+.butt_a {
+	border: #66676b 1px solid;
+	margin-top: 3px; float: left;
+	width: 140px;
+	height: 18px
+}
+.butt_b {
+	margin-top: 2px;
+	float: left;
+	margin-left: 5px;
+	width: 40px;
+	line-height: 19px;
+	height: 22px
+}
+/*导航结束*/
+
+
+/*新闻页*/
+.main-left{
+	width:659px;
+	float:left;
+}
+
+.news-box{
+	border: 1px solid #95CBED;
+	display:table;
+	width:100%;
+}
+
+.exhibition_box{
+	margin-top:5px;	
+}
+
+.news-box .tit{
+	width: 657px;
+	height: 23px;
+	background:url(../images/tit22.gif) ;
+	clear: both;
+}
+
+.news-box .tit span{
+	float: right;
+	margin: 5px 7px 0 7px;
+	display: inline;
+	color: #003363;
+	padding-left: 9px;
+}
+.news-box .news-text-box{
+	padding:6px;
+	line-height:22px;
+	/* min-height:300px; */
+}
+/***调整由于表格引起的穿出界限bug*/
+.news-text-box table{
+	width:655px;
+}
+#fontzoom{
+	font-size:14px;
+}
+
+
+.news-box .news-text-box .new-list li{
+	line-height:24px;
+	padding-left:6px;
+	border-bottom:1px dotted #DDF0FB;
+	background:url(../images/li6.gif) no-repeat 0 48%;
+	
+}
+.news-box .news-text-box .new-list li span{
+	float:right;
+	margin:0 0 0 4px;
+	color:#716F64;
+}
+.news-box .title{
+	font-size:18px;
+	text-align:center;
+	padding:8px 0;
+}
+.news-detail-info{
+	padding:6px;
+	margin:6px auto;
+	text-align:center;
+	width:90%;
+	border-bottom:1px solid #ccc;
+}
+.news-detail-info ul li{
+	display:inline;
+	padding:0 3px;
+}
+
+.news-box .news-text-box p{
+	text-indent:24px;
+	line-height:24px;
+}
+.newstag{
+	color:#444;
+	margin:8px;
+	
+}
+.mbox1co{
+	padding:3px;
+	clear:both;
+	border:1px solid #95CBED;
+	background:#f9fdff;
+}
+.mbox1co ul {
+	PADDING-LEFT: 31px;
+	liST-STYLE-TYPE: none;
+}
+.mbox1co ul li {
+	PADDING-LEFT: 12px;
+	line-height:24px;
+	BACKGROUND: url(../images/li6.gif) no-repeat left center;
+}
+.mbox1co ul li span {
+	MARGIN-LEFT: 8px;
+	COLOR: #666867;
+}
+.more{
+	FONT-WEIGHT: bold;
+	COLOR: #cd0000
+}
+/*文章详细页分类信息*/
+.type-info{
+	width:100%;
+	display:table;
+	border: 1px solid #95CBED;
+}
+
+.type-info .tit{
+	width: 659px;
+	height: 23px;
+	background:url(../images/tit22.gif) ;
+	clear: both;
+}
+.type-info-list{
+	padding:2px 6px;
+}
+.type-info-list ul{
+	width:100%;
+	line-height:24px;
+}
+.type-info-list ul li{
+	margin-right:30px;
+	float:left;
+	background:url(../images/li6.gif) no-repeat 0 center;
+	padding-left:6px;
+}
+
+/*详细页底部block调用*/
+.bottombox{
+	margin-top:5px;
+}
+.bottom_blockbox{
+	float:left;
+	width:320px;
+	border: 1px solid #95CBED;
+	min-height:140px;
+}
+.right_colum{
+	margin-left:15px;
+}
+.bottom_blockbox .tit{
+	width: 100%;
+	height: 23px;
+	background:url(../images/tit22.gif) ;
+	clear: both;
+}
+.bottom_blockbox .bottom_blockbox-list{
+	padding:2px 6px;
+	
+}
+.bottom_blockbox .bottom_blockbox-list ul{
+	width:28%;
+	float:left;
+	line-height:24px;
+	
+}
+.bottom_blockbox .bottom_blockbox-list ul li{
+	background:url(../images/li6.gif) no-repeat 0 center;
+	padding-left:6px;
+	width:300px;
+}
+
+
+/*展会信息*/
+span#exhibition-add,span.city{
+	color:#4874B3;
+}
+
+.exhibition-table{
+	border-collapse:collapse;
+	width:100%;	
+}
+.exhibition-table td{
+	border:1px solid #95CBED;
+	padding:3px;
+	line-height:24px;
+}
+.exhibition-tr{
+	background:#DDF3FF;
+}
+
+/*供求信息*/
+
+/*问答页面*/
+.quiz-type{
+	padding:6px;
+}
+.quiz-type ul li{
+	display:inline;
+	padding: 6px;
+	line-height:24px;
+	font-size:14px;
+}
+
+.quiz-list li{
+	line-height:24px;
+	padding-left:14px;
+	border-bottom:1px dotted #95CBED;
+}
+.quiz-list li span{
+	float:right;
+	margin:0 0 0 6px;
+	color:#716F64;
+}
+.quiz-list li em{
+	font-style:normal;
+}
+.quiz-issues li{
+	background:url("../images/topic_open.gif") no-repeat 0 center;
+}
+.quiz-solve li{
+	background:url("../images/topic_closed_resolved.gif") no-repeat 0 center;
+}
+
+/* 右边盒，可通用 start */
+.right-block{
+	border: 1px solid #95CBED;
+	display:table;
+}
+
+.right-block .tit{
+	width: 240px;
+	height: 23px;
+	background:url(../images/tit22.gif) ;
+	clear: both;
+}
+
+.right-block .tit span{
+	float: right;
+	margin: 5px 7px 0 7px;
+	display: inline;
+	color: #003363;
+	padding-left: 9px;
+}
+.right-block .news-text-box{
+	padding:6px;
+}
+/* 右边盒，可通用 end */
+
+.quiz-list #no-background{
+	background-image : none ;
+	color:#000;
+}
+
+.issues{
+	clear:both;
+	width:100%;
+	line-height:20px;
+	margin:10px 0;
+	padding:5px 0;
+	border-bottom:1px dotted #95CBED;
+	display:table;
+}
+
+.issues .l{
+	width:120px;
+	margin:0 10px;
+	float:left;
+	border-right:1px dotted #DEF3FF;
+}
+.issues .r{
+	width:640px;
+	margin:0 10px;
+	float:left;
+}
+.issues .r .title{
+	font-size:14px;
+	text-align:left;
+	padding:3px 0;
+}
+.response{
+	
+}
+
+.responseli{
+	text-align:right;
+}
+.good-quiz{
+	color:#007D52;
+}
+.quiz-answer li{
+	clear:both;
+	line-height:24px;
+}
+.quiz-answer li span{
+	float:left;
+	width:80px;
+	text-align:right;
+}
+.anstitle{
+	font-size:20px;
+	font-weight:bold;
+	color:black;
+}
+.r .author{float:right;margin:15px;color:red;}
+.r .blue{color:blue;}
+/*商展栏目*/
+.product-list-box{
+	width:100%;
+	padding:2px 0;
+	margin:2px 0;
+}
+.product{
+	float:left;
+	display:inline;
+	margin-right:4px;
+}
+.product dt{
+	text-align:center;
+	width:121px;
+	height:121px;
+	line-height:121px;
+	padding: 1px;
+	border: 1px solid #CCC;
+}
+.product dd{
+	text-align:center;
+	width:121px;
+	height:23px;
+	line-height:23px;
+}
+
+.product-detail-top{
+	display:table;
+	padding:3px;
+	clear:both;
+	width:651px;
+}
+.product-detail-top .l{
+	width:200px;
+	height:200px;
+	padding:1px;
+	border:1px solid #ccc;
+	float:left;
+	text-align:center;	
+}
+.product-detail-top .l .img-middle{
+	width:200px;
+	height:200px;
+	display:table-cell; 
+	vertical-align:middle;
+}
+.product-detail-top .l .img-middle img{
+	margin-top:expression(( 200 - this.height ) / 2);
+}
+.product-detail-top .r{
+	width:440px;
+	float:left;
+	line-height:21px;
+	margin-left:5px;
+}
+.left-title{
+	height:20px;
+	line-height:20px;
+	background:#AEDCF5;
+	font-weight:bold;
+	padding:0 10px;
+}
+.left-title span{
+	float: right;
+	margin:0 7px;
+	display: inline;
+	color: #003363;
+}
+.product_table{
+	border-collapse: collapse;
+	margin:6px auto;
+}
+.product_table tr{
+	 text-align:center;
+}
+/*展销 产品类型页*/
+.showroom-list{
+	border-bottom:1px dotted #95CBED;
+	padding:3px 0;
+	margin:0 auto;
+	width:640px;
+	color:#555;
+	line-height:22px;
+}
+.showroom-list li{
+	width:100px;
+	font-weight:bold;
+	color:#000;
+	float:left;
+
+}
+.showroom-list-ti{
+	
+}
+.showroom-list span{
+	color:blue;
+}
+.showroom-list-ti2 a:link,.showroom-list-ti2 a:visited{
+	color:red;
+}
+.showroom-list table{
+	width:640px;
+	margin:0 auto;
+}
+.showroom-list table td{
+	width:14%;
+}
+
+/*企业黄页*/
+.companies-region{
+	border:1px solid #94CBEF;
+	height:48px;
+}
+.companies-region dt{
+	width:100px;
+	height:48px;
+	line-height:48px;
+	float:left;
+	text-align:center;
+	border-right:1px solid #94CBEF;
+	background:#D6EBFF;
+}
+.companies-region dd{
+	width:38px;
+	height:24px;
+	line-height:24px;
+	float:left;
+	padding:0 2px 0 3px;
+	display:inline;
+}
+/*注册登录*/
+.column{
+	border: 1px solid #95CBED;
+	display:table;
+}
+
+.column .tit{
+	width:908px;
+	height:23px;
+	background:url(../images/tit222.gif) ;
+	clear: both;
+}
+
+.column .tit span{
+	float: right;
+	margin: 5px 7px 0 7px;
+	display: inline;
+	color: #003363;
+	padding-left: 9px;
+}
+.column-title{
+	height:21px;
+	line-height:21px;
+	padding:0 10px;
+	background:#DEF3FF;
+}
+.register-list li{
+	line-height:21px;
+	color:#7B7D73;
+	border-bottom:1px solid #def3ff;
+	padding:2px 0;
+}
+.register-list li span{
+	width:15%;
+	text-align:right;
+	float:left;
+}
+.register-button{
+	padding:2px 0 2px 150px;
+}
+.suggested{
+	line-height:24px;
+	text-align:center;
+}
+#userlogin{padding:20px;min-height:150px;}
+
+.sea-pageses{
+	height:100%;
+}
+.sea-pager{
+	width:190px;
+	float:right;
+}
+.regspe{
+	border:1px solid red;
+	height:100%;
+}

@@ -1,0 +1,130 @@
+<div class="c"></div>
+<script language="JavaScript">
+function postcheck(){
+	if(document.install.db_host.value==""){
+		alert('数据库服务器不能为空');
+		document.install.db_host.focus();
+		return false;
+	}
+	if (document.install.db_user.value=="") {
+		alert('数据库用户名不能为空');
+		document.install.db_user.focus();
+		return false;
+	}
+	if (document.install.db_name.value=="") {
+		alert('数据库名不能为空');
+		document.install.db_name.focus();
+		return false;
+	}
+	if (document.install.user_name.value=="") {
+		alert('管理员用户名不能为空');
+		document.install.user_name.focus();
+		return false;
+	}
+	if (document.install.password.value=="") {
+		alert('管理员密码不能为空');
+		document.install.password.focus();
+		return false;
+	}
+	if (document.install.password.value != document.install.password_c.value) {
+		alert('两次输入密码不同');
+		document.install.password_c.focus();
+		return false;
+	}
+	if (document.install.email.value=="") {
+		alert('管理员Email不能为空');
+		document.install.email.focus();
+		return false;
+	}
+	if (!document.install.db_password.value && !confirm('你填的数据库密码为空，是否使用空的数据库密码')) {
+		return false;
+	}
+	return true;
+}
+</script>
+<div id="content">
+<form name="install" action="?step=5" method="post" onsubmit="return postcheck();">
+  <div class="wrapD">
+	<div class="wrapE">
+	  <div class="boxA">
+		<div style="width:57%; float:left">
+		  <h3>填写数据库信息</h3>
+		  <table class="dlA">
+			<tr>
+			  <td>数据库服务器</td>
+			  <td><input type="text" name="db_host" value="localhost" class="inputA" /> MySQL服务器地址</td>
+			</tr>
+			<tr>
+			  <td>数据库端口</td>
+			  <td><input type="text" name="db_port" value="3306" class="inputA" /> MySQL数据库服务器端口</td>
+			</tr>
+			<tr>
+			  <td>数据库用户名</td>
+			  <td><input type="text" name="db_user" value="" class="inputA" /> MySQL数据库用户名</td>
+			</tr>
+			<tr>
+			  <td>数据库密码</td>
+			  <td><input type="password" name="db_password" value="" class="inputA" /> MySQL数据库密码</td>
+			</tr>
+			<tr>
+			  <td>数据库名</td>
+			  <td><input type="text" name="db_name" value="biweb" class="inputA" /> 如果数据库不存在，则建立！</td>
+			</tr>
+			<tr>
+			  <td height="18">数据表名前缀</td>
+			  <td><input type="text" name="db_tablepre" value="biweb_" class="inputA" /> 可防止覆盖其他同名数据表</td>
+			</tr>
+		  </table>
+		</div>
+		<div>
+		  <h3>填写网站管理员信息</h3>
+		  <table class="dlB">
+			<tr>
+			  <td>管理员用户名</td>
+			  <td><input type="text" name="user_name" value="admin" class="inputA" /> 系统登录名</td>
+			</tr>
+			<tr>
+			  <td>管理员姓名</td>
+			  <td><input type="text" name="real_name" value="admin" class="inputA" /> 真实姓名</td>
+			</tr>
+			<tr>
+			  <td>管理员密码</td>
+			  <td><input type="password" name="password" class="inputA" /> 长度>6位</td>
+			</tr>
+			<tr>
+			  <td>确认密码</td>
+			  <td><input type="password" name="password_c" class="inputA" /> 重复输入密码</td>
+			</tr>
+			<tr>
+			  <td height="18">管理员Email</td>
+			  <td><input type="text" name="email" class="inputA" value="" /> 填写有效地址</td>
+			</tr>
+			<tr>
+			  <td>安装类型</td>
+			  <td><label for="0"><input type="radio" value="0" id="0" name="install_type" checked="checked">安全安装<font color="red">[推荐]</font></label> <label for="1"><input type="radio" value="1" id="1" name="install_type">覆盖安装</label></td>
+			</tr>
+			<tr>
+			  <td>会员密码类型</td>
+			  <td><label for="0"><input type="radio" value="0" id="0" name="user_pass_type" checked="checked">明文</label>
+			     <label for="1"><input type="radio" value="1" id="1" name="user_pass_type">加密</label></td>
+			</tr>
+			<tr>
+			  <td>加密干扰码</td>
+			  <td>
+				<label for="0"><input type="text" name="jamstr" class="inputA" value="BIWEB88" />&nbsp;加密干扰码</label>
+			  </td>
+			</tr>
+		  </table>
+		</div>
+		
+	  </div>
+	  <div class="c"></div>
+	</div>
+  </div>
+  <div class="stepbt">
+	<input type="button" onclick="javascript:history.go(-1);" class="biweb large last" value="上一步：检查系统环境">
+		<input class="next biweb large" type="submit" value="进入下一步" name="biweb" id="biweb"></button>
+  </div>
+</form>
+</div>
+</div>

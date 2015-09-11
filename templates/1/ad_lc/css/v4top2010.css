@@ -1,0 +1,199 @@
+.vv2010_lf{
+float:left;
+display:inline;
+}
+.vv2010_rh{
+float:right;
+display:inline;
+}
+.vv2010_top01{
+	float:left;
+	height:30px;
+	width:100%;
+	background:url("../images/top_bg.gif")/*tpa=http://www.mmggxx.cn/images/top_bg.gif*/ repeat-x;
+	margin:auto;
+	overflow:hidden;
+	display:inline;
+}
+.vv2010_top02{
+	width:960px;
+	margin:auto;
+	padding-top:4px;
+}
+.vv2010_top_an01{
+width:90px;
+border:1px solid #CACACA;
+}
+.vv2010_top_an02{
+width:39px;
+height:20px;
+	background:url("../imagesv4/top_bg.gif")/*tpa=http://www.mmggxx.cn/imagesv4/top_bg.gif*/ no-repeat 0 -50px;
+	text-align:center;
+	padding:3px 0px 0px 3px;
+	color:#FFFFFF;
+	border:0px;
+}
+.vv2010_top_an03{
+width:39px;
+height:20px;
+	background:url("../imagesv4/top_bg.gif")/*tpa=http://www.mmggxx.cn/imagesv4/top_bg.gif*/ no-repeat 0 -70px;
+	text-align:center;
+	padding:3px 0px 0px 3px;
+	color:#FFFFFF;
+	border:0px;
+}
+.vv2010_main {
+	width:960px;
+	height:150px;
+	margin:auto;
+	text-align:left;
+}
+
+.menubar {  
+	width:100%;
+	height:auto;
+	margin:auto;
+}
+
+.vv2010_dh02{
+    overflow: hidden;
+    float:left;
+    background-image:url("../images/nav.jpg")/*tpa=http://www.mmggxx.cn/images/nav.jpg*/;
+    width:100%;
+    height:26px;
+    color:#FFFFFF;
+    padding:10px 0px 0px 0px;
+    font-size: 12px;
+    display:inline;
+}
+.vv2010_dh02 a{
+padding:0px 2px 0px 2px;
+display:inline;
+color:#FFFFFF;
+DISPLAY: inline;
+}
+.vv2010_dh01{
+float:left;
+/*background-image:url(../images/v3_top.jpg);*/
+width:960px;
+height:60px;
+display:inline;
+}
+.vv2010_dh01a{
+float:left;
+width:960px;
+overflow:hidden;
+display:inline;
+
+}
+.vv2010_dh01b{
+float:left;
+width:954px;
+height:24px;
+padding:5px 0px 0px 6px;
+overflow:hidden;
+display:inline;
+}
+.vv2010_dh01b a{
+padding:0px 8px 0px 8px;
+display:inline;
+}
+.vv2010_lg{
+float:left;
+width:280px;
+height:120px;
+margin:15px 0px 0px 0px;
+text-align:center;
+line-height: 150px;
+display:inline;
+}
+
+.vv2010_contact{
+    float:right;
+    height:140px;
+    width:200px;
+    margin:2px 0px 0px 2px;
+    display:inline;
+}
+
+.qq{
+   float:left;
+   width:200px;
+   height:25px;
+   text-align:center;
+   display:inline;
+   line-height:25px;
+}
+
+.welcome{
+    float:left;
+    width:200px;
+    height:20px;
+    text-align:center;
+    display:inline;
+    margin:10px 0px 0px 0px;
+    line-height:25px;
+}
+
+.navigation2{
+    float:left;
+    width:200px;
+    height:30px;
+    text-align:center;
+    display:inline;
+    margin:10px 0px 0px 0px;
+    line-height:25px;
+}
+
+.navigation{
+    float:left;
+    width:200px;
+    height:30px;
+    text-align:center;
+    display:inline;
+    margin:0px 0px 0px 0px;
+    line-height:25px;
+}
+
+.contack_info{
+    float:left;
+    width:200px;
+    height:85px;
+    display:inline;
+    text-align: center;
+    margin-top:2px;
+}
+
+.vv2010_banner{
+    float:left;
+    width:450px;
+    height:100px;
+    margin:40px 0px 0px 20px;
+    text-align:center;
+    display:inline;
+    overflow: hidden;
+}
+
+.vv2010_pd01{
+float:left;
+width:72px;
+height:63px;
+overflow:hidden;
+background-image:url("../imagesv4/v3_pd.jpg")/*tpa=http://www.mmggxx.cn/imagesv4/v3_pd.jpg*/;
+margin:1px 0px 0px 3px;
+text-align:center;
+display:inline;
+}
+.vv2010_pd02{
+float:left;
+width:72px;
+height:63px;
+overflow:hidden;
+margin:1px 0px 0px 3px;
+text-align:center;
+display:inline;
+}
+.tk_f {
+color: #FF0000;
+font-size:22px;
+}

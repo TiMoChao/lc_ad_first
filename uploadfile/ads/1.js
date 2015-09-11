@@ -1,0 +1,1 @@
+document.writeln("<embed src=\"/lc_ad/uploadfile/ads/1/6_1431593021.swf\" quality=\"high\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" type=\"application/x-shockwave-flash\" width=\"450\" height=\"100\"></embed>");

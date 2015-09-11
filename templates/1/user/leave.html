@@ -1,0 +1,31 @@
+<p>
+欢迎您：<?{$arrUser}?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="index.php">签到</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="out.php">外出</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="leave.php">请假</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="adminu/change_password.php">修改密码</a>&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="logout.php">退出登陆</a>&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+<form action="" name="leave" method="post">
+<?{if $arrTodayData.0.submit_date != ""}?>
+	<p>您的请假开始日期是:<font color=blue><?{$arrTodayData.0.leave_start_time}?></font>&nbsp;&nbsp;&nbsp;&nbsp;
+	请假的天数为<font color=blue ><?{$arrTodayData.0.leave_days}?></font>个有效工作日</p>
+<?{/if}?>
+请选择请假类型：
+<select name="leave_type">
+	<option value="4">病假</option>
+	<option value="5">事假</option>
+</select>
+<br /><br />
+请假时间：从<input type="text" name="leave_start_time" />开始，请假
+<input type="text" name="leave_days" />天
+<span><font size="-1">(请注意:请假的日期格式为2007-10-10)</font></span><br /><br />
+请填写您请假的原因：<br /><br />
+<textarea name="leave_note" cols="75" rows="10"></textarea><br />
+<input type="submit"  value="提交"/>
+<input type="reset" name="reset" value="重写" />
+</form>

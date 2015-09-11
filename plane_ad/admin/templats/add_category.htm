@@ -1,0 +1,74 @@
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="javascript:history.back();" value="返回分类列表" class="gray mini"></span>
+			当前位置：分类管理
+			
+	 </li>
+	</ul>
+</div>
+<form name="form" id="form" method="post" action="category.php?action=insert">
+<div id="biweb">
+<table class="biweb" align="center" cellspacing="0">
+	<tr>
+		<th colspan="2">新增分类</td> 
+	</tr>	
+	<tr>
+		<td width="21%">分类名称：</td>
+		<td><input type="text" name="type_title" /></td>
+	</tr>
+	<tr>
+		<td width="21%">跳转链接</td>
+		<td><input type="text" name="type_link" value="<?{$arrType.type_link}?>" size="50" />设定该分类跳转其他网页链接地址，可不填</td>
+	</tr>
+	<tr>
+		<td width="21%">所属类别</td>
+		<td><select name="type_roue_id"> 
+			<option value=":0:">根分类</option>	
+			<?{foreach key=key item=arrData from=$arrData}?>
+			<option value="<?{$arrData.type_roue_id}?>"><?{$arrData.type_title}?></option>			
+			<?{/foreach}?>	
+			</select>
+		</td>
+	</tr>
+	<tr>
+		<td width="21%">分类排序：</td>
+		<td><input type="text" name="type_sort" />	输入任何数字，不得超过10位数，数字大排前面</td>
+	</tr>
+	<tr>
+		<td width="21%">是否公布：</td>
+		<td><select name="type_pass">
+			<option value="1">公布</option>
+			<option value="0">隐藏</option>			
+			</select></td>
+	</tr>
+	<tr>
+		<td width="21%">用户栏目阅读所需星级：</td>
+		<td><select name="type_read_grade">
+			<option value="5" <?{if $arrMPopedom.type_read_grade == 5}?>selected=selected<?{/if}?>>★★★★★</option>
+			<option value="4" <?{if $arrMPopedom.type_read_grade == 4}?>selected=selected<?{/if}?>>★★★★</option>
+			<option value="3" <?{if $arrMPopedom.type_read_grade == 3}?>selected=selected<?{/if}?>>★★★</option>
+			<option value="2" <?{if $arrMPopedom.type_read_grade == 2}?>selected=selected<?{/if}?>>★★</option>
+			<option value="1" <?{if $arrMPopedom.type_read_grade == 1}?>selected=selected<?{/if}?>>★</option>
+			<option value="0" <?{if $arrMPopedom.type_read_grade == 0}?>selected=selected<?{/if}?>>无</option>
+			</select></td>
+	</tr>
+	<tr>
+		<td width="21%">用户栏目发布所需星级：</td>
+		<td><select name="type_write_grade">
+			<option value="5" <?{if $arrMPopedom.type_write_grade == 5}?>selected=selected<?{/if}?>>★★★★★</option>
+			<option value="4" <?{if $arrMPopedom.type_write_grade == 4}?>selected=selected<?{/if}?>>★★★★</option>
+			<option value="3" <?{if $arrMPopedom.type_write_grade == 3}?>selected=selected<?{/if}?>>★★★</option>
+			<option value="2" <?{if $arrMPopedom.type_write_grade == 2}?>selected=selected<?{/if}?>>★★</option>
+			<option value="1" <?{if $arrMPopedom.type_write_grade == 1}?>selected=selected<?{/if}?>>★</option>
+			<option value="0" <?{if $arrMPopedom.type_write_grade == 0}?>selected=selected<?{/if}?>>无</option>
+			</select></td>
+	</tr>
+	<tr>
+		<td width="21%">&nbsp;</td>
+		<td><input type="submit" value="提 交" /></td>
+	</tr>
+	
+</table>
+</div>
+</form>

@@ -1,0 +1,100 @@
+<script language="javascript" src="../../plug-in/PopCalender/popcalendar.js"></script> 
+<script Language="JavaScript">dateFormat='yyyy-mm-dd'</script>
+<script language="javascript" src="../../plug-in/ImgPreview/imgP.js"></script>
+<div class="ccc2">
+	<ul>
+		<li>
+		<form action="?" method="get">
+			<span class="right"><input type="button" onClick="javascript:history.back();" value="返回<?{$arrGWeb.module_name}?>列表" class="gray mini"></span>
+
+			<input type="hidden" name="action" value='search'>
+			关键字：<input class="text" type="input" name='title' value='<?{$smarty.get.title}?>'>
+			
+			是否审核：<select name='pass' size=1>
+			<option value='' <?{if $smarty.get.pass === ''}?>selected="selected" class="selected"<?{/if}?>>全部</option>
+			<option value='1' <?{if $smarty.get.pass == '1'}?>selected="selected" class="selected"<?{/if}?>>已审核</option>
+			<option value='0' <?{if $smarty.get.pass == '0'}?>selected="selected" class="selected"<?{/if}?>>未审核</option>
+			</select> 
+			
+			<input type="submit" value='查 询' class="gray mini">
+			/id号可精确查询
+	 </form>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form name='form1' id='form1' action='' method='post' enctype='multipart/form-data'>
+	
+	<tr>
+		<td width='15%'>显示位置：</td>
+		<td><select size='1' name='position'>
+			<option value='0' >请选择位置</option>
+			<?{foreach from=$arrPosition item=value key = key}?>	
+			<option value=<?{$key}?> <?{if $arrData.position == $key}?>selected='selected'<?{/if}?>><?{$value}?></OPTION>
+			<?{/foreach}?>
+		</select></td>
+	</tr>
+	<tr>
+		<td width='15%'>广告名称：</td>
+		<td><input type="text" name="webname" size=50 value="<?{$arrData.webname}?>" /></td>
+	</tr>
+	<tr>
+		<td width='15%'>广告链接：</td>
+		<td><input id='webhost' type="text" maxLength='100' size='50' value="<?{$arrData.webhost|default:'http://'}?>" name=webhost></td>
+	</tr>
+	<tr>
+		<td width='15%'>链接说明：</td>
+		<td><textarea name='summary' rows='6' cols='50'><?{$arrData.summary}?></textarea>可不填</td>
+	</tr>	
+	<tr>
+		<td width='15%'>上传广告：</td>
+		<td colspan='2'>
+		<input maxLength='50' id="UploadFile" size='55' type='file' value="上 传" name="UploadFile" >
+			<div id="tip0" class='red'>将广告上传到服务器显示</div>
+			<div id="preview0">
+				<?{if $arrData.UploadFile != ""}?>
+					<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$arrGWeb.WEB_ROOT_pre}?><?{$FileCallPath}?>/<?{$arrData.UploadFile}?>" menu="false" quality="high" />
+					<?{else}?><img src="<?{$arrGWeb.WEB_ROOT_pre}?><?{$FileCallPath}?>/<?{$arrData.UploadFile}?>"  onload='resizepic(this,600)' boder="1"><?{/if}?>
+				<?{/if}?>
+			</div>	
+		</td>
+	</tr>	
+	<tr>
+		<td width='15%'>发布时间：</td>
+		<td>
+			<input type="text" name="submit_date" value="<?{$arrData.submit_date}?>">
+			<input type="button" value="" onclick='popUpCalendar(this, form1.submit_date, dateFormat,-1,-1,true)' style="background-image:url(../../plug-in/PopCalender/img/Button.gif);width:25px;height:17px;border:0px;padding:0px;">
+		</td>
+	</tr>
+	<tr>
+		<td width='15%'>截止时间：</td>
+		<td>
+			<input type="text" name="deadline_date" value="<?{$arrData.deadline_date}?>">
+			<input type="button" value="" onclick='popUpCalendar(this, form1.deadline_date, dateFormat,-1,-1,true)' style="background-image:url(../../plug-in/PopCalender/img/Button.gif);width:25px;height:17px;border:0px;padding:0px;">
+		</td>
+	</tr>	
+	<tr>
+		<td width='15%'>广告宽度：</td>
+		<td><input type="text" name="width" value="<?{$arrData.width|default:'235'}?>" />FLASH广告宽度必填,图片广告可不填</td>
+	</tr>
+	<tr>
+		<td width='15%'>广告高度：</td>
+		<td><input type="text" name="height" value="<?{$arrData.height|default:'60'}?>" />FLASH广告宽度必填,图片广告可不填</td>
+	</tr>	
+	<tr>
+		<td width='15%'>广告前HTML代码：</td>
+		<td><input type="text" name="f_html" size=50 value="<?{$arrData.f_html}?>" />JS调用，页面排版需要附加HTML代码，如果没有，可不填</td>
+	</tr>
+	<tr>
+		<td width='15%'>广告后HTML代码：</td>
+		<td><input type="text" name="b_html" size=50 value="<?{$arrData.b_html}?>" />JS调用，页面排版需要附加HTML代码，如果没有，可不填</td>
+	</tr>
+	<tr>
+		<td align='middle' colSpan='2'><input type='submit' id='okgo' name='okgo' value='确　定'> <input type='reset' value='重 置'></TD></TR>
+    	<input type='hidden' name='savefilename' value="<?{$arrData.UploadFile}?>">
+    	<input type='hidden' name='id' value="<?{$arrData.id}?>">
+	</tr>
+</form>
+</table>
+</div>

@@ -1,0 +1,95 @@
+<script language="javascript" src="../../plug-in/PopCalender/popcalendar.js"></script> 
+<script Language="JavaScript">dateFormat='yyyy-mm-dd'</script>
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="javascript:history.back();" value="返回资料列表" class="gray mini"></span>
+			当前位置：<?{$arrGWeb.module_name}?>管理
+	 </li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return checkform()" action="?page=<?{$get.page}?>" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table class="biweb" align="center" cellspacing="0">
+	<tr class="firstr">
+		<td colspan="3">编辑<?{$arrGWeb.module_name}?>：</td> 
+	</tr>	
+	<tr>
+    <td width="15%">所属分类：</td>
+    <td><select size="1" name="type_id">
+		<option value="0">请选择分类</option>
+		<?{foreach from=$arrType key=key item=type}?>
+		<?{if is_array($type) && array_key_exists('type_title',$type) }?>
+		<option value="<?{$type.type_id}?>" <?{if $type.type_id == $arrData.type_id}?>selected=selected class="selected"<?{/if}?>><?{$type.type_title}?></option>
+		<?{else}?>
+		<option value="<?{$key}?>" <?{if $key == $arrData.type_id}?>selected=selected class="selected"<?{/if}?>><?{$type}?></option>    	
+		<?{/if}?>
+		<?{/foreach}?>
+    	</select></td>
+    <td><span class=gray>文章分类</span></td></tr>
+  <tr>
+  	<td>网站名称：</td>
+    <td><input type="text" name="webname" size=50 value="<?{$arrData.webname}?>" /></td>
+    <td><span class=gray>标题，最大70个中文</span></td></tr>
+  <tr>
+    <td>网站域名：</td>
+    <td><input id=webhost type="text" maxlength=100 size=50 value="<?{$arrData.webhost|default:'http://'}?>" name=webhost></td>
+    <td><span class=gray>网站链接</span></td></tr>
+   <tr>
+    <td>链接说明：</td>
+    <td><textarea name=summary rows=6 cols=50><?{$arrData.summary}?></textarea></td>
+    <td><span class=gray>可不填</span></td></tr>
+  <tr>
+    <td>远程图片：</td>
+    <td><input type="text" size=50 name="weblogo" value="<?{$arrData.weblogo}?>" />
+    <td><span class=gray>调用远程图片显示，填写此项可不上传logo</span></td>
+    </td>
+  </tr> 
+  <tr>
+    <td>上传logo：</td>
+    <td colspan=2><input maxlength=50 id="Filedata" size=55 type=file value="上 传" name="Filedata">
+    <div id="tip0" class=red><span class=gray>将logo上传到服务器显示</span></div>
+    <div id="preview0">
+	<?{if $arrData.UploadFile != ""}?>
+		<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$FileCallPath}?><?{$arrData.UploadFile}?>" menu="false" quality="high" />
+		<?{else}?><img src="<?{$FileCallPath}?><?{$arrData.UploadFile}?>" boder="1"><?{/if}?>
+	<?{else}?>
+		<?{if $arrData.weblogo != ""}?>
+			<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$arrData.weblogo}?>" menu="false" quality="high" />
+			<?{else}?><img src="<?{$arrData.weblogo}?>" boder="1"><?{/if}?>
+		<?{/if}?>
+	<?{/if}?></div>	
+    </td>
+
+  </tr>  
+  <tr>
+  	<td>首页显示：</td>
+    <td>
+		<label><input id=flag type=checkbox value=1 name=flag <?{if $arrData.flag == 1}?>checked<?{/if}?>>首页显示</label>
+	</td>
+    <td><span class=gray>是否首页显示</span></td></tr>
+  <tr>
+    <td>发布时间：</td>
+    <td><input type="text" name="submit_date" value="<?{$arrData.submit_date}?>">
+<input TYPE="button" value="" onclick='popUpCalendar(this, form1.submit_date, dateFormat,-1,-1,true)' style="background-image:url(../../plug-in/PopCalender/img/Button.gif);width:25px;height:17px;border:0px;padding:0px;">
+</td>
+    <td><span class=gray>修改发布时间，发布时间越新链接排越前</span></td>
+  </tr>
+  <tr>
+  	<td>图片宽度：</td>
+    <td><input type="text" name="width" value="<?{$arrData.width}?>" /></td>
+    <td><span class=gray>宽度，不填将按照图片原始宽度，Flash必填</span></td></tr>
+  <tr>
+  	<td>图片高度：</td>
+    <td><input type="text" name="height" value="<?{$arrData.height}?>" /></td>
+    <td><span class=gray>高度，不填将按照图片原始高度，Flash必填</span></td>
+	</tr>
+	<tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="提 交" class="mini" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="history.back()" value="返 回" class="mini" /></td>
+	  <input type='hidden' name='savefilename' value="<?{$arrData.UploadFile}?>"/>
+    	<input type='hidden' name="id" value="<?{$arrData.id}?>"/>
+    </tr>
+</table>
+</div>
+</form>

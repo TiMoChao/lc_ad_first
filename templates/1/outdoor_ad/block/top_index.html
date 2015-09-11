@@ -1,0 +1,12 @@
+
+
+					<?{foreach from=$arrTopoutdoor_ad1.0 item=arrData}?>
+					<div class="v4_zy2a">
+	<div class="listText">
+		
+	<a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/outdoor_ad/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><img src="<?{$arrGWeb.WEB_ROOT_pre}?>/templates/1/ad_lc/images/dian.gif" tppabs="http://www.mmggxx.cn/images/dian.gif" border="0">&nbsp;<?{$arrData.title|csubstr:0:20}?>...&nbsp;&nbsp;</a>
+	</div>
+	<div class="listDate"><?{$arrData.submit_date|date_format:"%Y-%m-%d"}?></div>
+</div>
+<?{/foreach}?>
+						

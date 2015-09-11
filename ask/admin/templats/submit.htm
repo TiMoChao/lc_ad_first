@@ -1,0 +1,65 @@
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="javascript:history.back();" value="返回问题列表" class="gray mini"></span>
+			当前位置：<?{$arrGWeb.module_name}?>管理
+	 </li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return checkform()" action="?page=<?{$smarty.get.page}?>" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table class="biweb" align="center" cellspacing="0">
+	<tr class="firstr">
+		<td colspan="3">编辑<?{$arrGWeb.module_name}?>：</td> 
+	</tr>	
+	<tr>
+    <td width="15%">所属分类：</td>
+    <td><select size="1" name="type_id">
+		<option value="0">请选择分类</option>
+		<?{foreach from=$arrMType key=key item=type}?>
+		<?{if is_array($type) && array_key_exists('type_title',$type) }?>
+		<option value="<?{$type.type_id}?>|<?{$type.type_roue_id}?>" <?{if !empty($type.type_link)}?>disabled='disabled'<?{/if}?> <?{if $type.type_id == $arrData.type_id}?>selected=selected<?{/if}?>><?{$type.type_title}?></option>
+		<?{else}?>
+		<option value="<?{$key}?>" <?{if $key == $arrData.type_id}?>selected=selected<?{/if}?>><?{$type}?></option>    	
+		<?{/if}?>
+		<?{/foreach}?>
+    	</select></td>
+    <td><font color="red">*</font><span class=gray>问题分类</span></td></tr>
+  <tr>
+  	<td>问题标题：</td>
+    <td><select size=1 name=bedeck>
+	<option value="0">无修饰</option>
+	<option value="1" <?{if $arrData.bedeck == 1}?>selected<?{/if}?>>1[加粗]</option>
+	<option value="2" <?{if $arrData.bedeck == 2}?>selected<?{/if}?>>2[标红]</option>
+	<option value="3" <?{if $arrData.bedeck == 3}?>selected<?{/if}?>>3[标绿]</option>
+	<option value="4" <?{if $arrData.bedeck == 4}?>selected<?{/if}?>>4[标蓝]</option>
+	<option value="5" <?{if $arrData.bedeck == 5}?>selected<?{/if}?>>5[标橙]</option>
+	<option value="6" <?{if $arrData.bedeck == 6}?>selected<?{/if}?>>6[红粗]</option>
+	<option value="7" <?{if $arrData.bedeck == 7}?>selected<?{/if}?>>7[绿粗]</option>
+	<option value="8" <?{if $arrData.bedeck == 8}?>selected<?{/if}?>>8[蓝粗]</option>
+	<option value="9" <?{if $arrData.bedeck == 9}?>selected<?{/if}?>>9[橙粗]</option>
+	</select>
+	<input maxLength=210 size=55 id=title name=title value="<?{$arrData.title}?>" onblur="dodivde();"></td>
+    <td><font color="red">*</font><span class=gray>标题，最大70个中文</span></td></tr>   
+  <tr id=ArticleContent <?{if $arrData.linkurl!=''}?>style='display:none'<?{/if}?>>
+    <td>问题描述：</td>
+    <td colspan="2"><?{if $smarty.session.browser.0 == 'ie'}?>
+	<input type=hidden name=intro value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> <iframe id=eWebEditor1 
+      src="../../plug-in/eWebEditor/ewebeditor.htm?id=intro&style=light" frameBorder=0 width=600 scrolling=no 
+      height=350></iframe>
+	<?{else}?>
+	<input id=content style="DISPLAY: none" type=hidden name="intro" value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> 
+	<input id=content___Config style="DISPLAY: none" type=hidden> 
+	<iframe id=content___Frame src="../../plug-in/fckeditor/editor/fckeditor.html?InstanceName=intro&Toolbar=ArthurXF" frameBorder=0 width=600 scrolling=no height=350> 
+	</iframe>
+	<?{/if}?><font color="red">*</font><span class=gray>必填项</span></td>  
+  </tr>     
+	<tr>
+      <td>&nbsp;</td>
+      <td align=middle colspan=3><input type=submit id="okgo" name="okgo" value=确　定> <input type=reset value="重 置"></td>
+  </tr>		
+	<input type=hidden name=user_id value="<?{$arrData.user_id}?>">
+    <input type=hidden name=id value="<?{$arrData.id}?>">
+</table>
+</div>
+</form>

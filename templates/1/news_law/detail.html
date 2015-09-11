@@ -1,0 +1,18 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="news">
+		<div class="title">
+			<?{$arrData.title}?></div>
+		<div class="news-detail-info">
+				<UL>
+					<li>发布时间：<?{$arrData.submit_date}?> 浏览率：<script language='javascript' src='../../plug-in/click/getclick.php?module_id=<?{$arrGWeb.module_id}?>&id=<?{$arrData.id}?>'></script><?{if $arrData.author != ''}?> 作者：<?{$arrData.author}?><?{/if}?><?{if $arrData.source != ''}?> 来源：<?{$arrData.source}?><?{/if}?>【字体：<a href="javascript:fontZoomA();">小</a> <a href="javascript:fontZoomB();">大</a> <a href="javascript:window.print();">打印</a> <a href="<?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "2"}?>">DOC</a>】<br />收藏到：<script src="../../plug-in/favorite/sc.js"></script></li>
+				</UL>
+			</div>
+		<!-- 正文内容 -->
+		<div class="content">
+            <?{$arrData.intro}?>
+		</div>
+	</div>
+	
+

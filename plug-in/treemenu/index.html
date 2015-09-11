@@ -1,0 +1,401 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-cn">
+<head>
+<title>CNL Tree Menu Ver1.02 - 无限级树形菜单 Written by CNLei, 枫岩 </title>
+<meta http-equiv="content-type" content="text/html;charset=gb2312" />
+<meta name="generator" content="editplus" />
+<meta name="author" content="CNLei,枫岩,www.cnlei.net" />
+<meta name="keywords" content="CSS Menu,树形菜单,CNLei" />
+<meta name="description" content="" />
+<!--
+**************************************
+HTML Code for CNLTreeMenu
+Version: Ver 1.02
+Author : CNLei, 枫岩
+E-Mail : CNLei.Y.L@gmail.com
+MySite : http://www.cnlei.net
+Passed : XHtml 1.0, CSS 2.0, IE5.0+, FF1.0+, Opera8.5+
+Update : 2006-2-12
+**************************************
+-->
+<link type="text/css" rel="stylesheet" href="css4cnltreemenu.css" />
+<script type="text/javascript" src="js4cnltreemenu.js"></script>
+</head>
+<body>
+<p>实例演示：</p>
+<dl>
+  <dt>CNL Tree Menu <small>Ver1.02</small></dt>
+  <dd><strong>Author</strong>：CNLei,枫岩</dd>
+  <dd><strong>MySite</strong>：<a href="http://www.cnlei.net" style="color:#00f;">www.cnlei.net</a>, <a href="http://cnlei.iecn.net" style="color:#00f;">cnlei.iecn.net</a></dd>
+  <dd><strong>E-Mail</strong>：cnlei.y.l<span style="color:#00f">#</span>gail.com (请将<span style="color:#00f">#</span>换成<span style="color:#00f">@</span>)</dd>
+  <dd><strong>Intro</strong>：
+  <ol>
+    <li>"CNL Tree Menu"为无限级树形，兼容以下版本的浏览器：IE5.0+, FF1.06+, Opera8.5+ ……</li>
+    <li>HTML,CSS,JavaScript代码相互分离(即数据，风格，脚本三者分离)，可应用于多种场合，易于维护修改；更换树形图标，只需要修改CSS文件.</li>
+    <li>通过W3C校验(XHtml1-Strict,CSS1.0). </li>
+    <li>最后更新：2006-2-13 </li>
+    <li>下载地址：<a href="http://cnlei.iecn.net/mycode/CNLTreeMenu/CNLTreeMenuVer1.0.2.rar">点击下载</a> </li>
+  </ol>
+  </dd>
+</dl>
+<!--CNLTreeMenu Start:-->
+<div class="CNLTreeMenu" id="CNLTreeMenu1">
+<h4>CNL Tree Menu1</h4>
+<p><a id="AllOpen_1" href="#" onclick="MyCNLTreeMenu1.SetNodes(0);Hd(this);Sw('AllClose_1');">全部展开</a><a id="AllClose_1" href="#" onclick="MyCNLTreeMenu1.SetNodes(1);Hd(this);Sw('AllOpen_1');" style="display:none;">全部折叠</a></p>
+<ul>
+  <li class="Opened"><a href="http://www.iecn.net">IECN.Net</a>
+  <ul>
+    <li><a href="#1">技术区</a>
+	  <ul>
+       <li><a href="#">网页技术</a>
+	    <ul>
+	     <li class="Child"><a href="#">JavaScript</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">HTML/XHTML/CSS</a></li>
+	     <li class="Child"><a href="#">Ajax</a></li>
+	     <li class="Child"><a href="#">网页制作工具</a></li>
+	     <li class="Child"><a href="#">设计/图形</a></li>
+	     <li class="Child"><a href="#">Flash/多媒体</a></li>
+	     <li class="Child"><a href="#">VML/Web3D</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">Web编程</a>
+	    <ul>
+	     <li class="Child"><a href="#">Java</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">.Net</a></li>
+	     <li class="Child"><a href="#">ASP/VBScript</a></li>
+	     <li class="Child"><a href="#">PHP</a></li>
+	     <li class="Child"><a href="#">Perl/Python</a></li>
+	     <li class="Child"><a href="#">Web综合/开源</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">数据库</a>
+	    <ul>
+	     <li class="Child"><a href="#">Access/SQLServer</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">MySQL/PostgreSQL</a></li>
+	     <li class="Child"><a href="#">Oracle/DB2/Sybase</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">服务器</a>
+	    <ul>
+	     <li class="Child"><a href="#">Windows/IIS</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">Unix/Linux/Apache</a></li>
+	     <li class="Child"><a href="#">应用服务器</a></li>
+	    </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+  </ul></li><!--Sub Node 1 -->
+</ul>
+</div><!-- CNLTreeMenu -->
+<!--CNLTreeMenu1 End!-->
+
+<!--CNLTreeMenu2 Start:-->
+<div class="CNLTreeMenu" id="CNLTreeMenu2">
+<h4>CNL Tree Menu2</h4>
+<p><a id="AllOpen_2" href="#" onclick="MyCNLTreeMenu2.SetNodes(0);Hd(this);Sw('AllClose_2');">全部展开</a><a id="AllClose_2" href="#" onclick="MyCNLTreeMenu2.SetNodes(1);Hd(this);Sw('AllOpen_2');" style="display:none;">全部折叠</a></p>
+<ul>
+  <li class="Opened"><a href="http://www.iecn.net">IECN.Net</a>
+  <ul>
+    <li><a href="#1">技术区</a>
+	  <ul>
+       <li><a href="#">网页技术</a>
+	    <ul>
+	     <li class="Child"><a href="#">JavaScript</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">HTML/XHTML/CSS</a></li>
+	     <li class="Child"><a href="#">Ajax</a></li>
+	     <li class="Child"><a href="#">网页制作工具</a></li>
+	     <li class="Child"><a href="#">设计/图形</a></li>
+	     <li class="Child"><a href="#">Flash/多媒体</a></li>
+	     <li class="Child"><a href="#">VML/Web3D</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">Web编程</a>
+	    <ul>
+	     <li class="Child"><a href="#">Java</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">.Net</a></li>
+	     <li class="Child"><a href="#">ASP/VBScript</a></li>
+	     <li class="Child"><a href="#">PHP</a></li>
+	     <li class="Child"><a href="#">Perl/Python</a></li>
+	     <li class="Child"><a href="#">Web综合/开源</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">数据库</a>
+	    <ul>
+	     <li class="Child"><a href="#">Access/SQLServer</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">MySQL/PostgreSQL</a></li>
+	     <li class="Child"><a href="#">Oracle/DB2/Sybase</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">服务器</a>
+	    <ul>
+	     <li class="Child"><a href="#">Windows/IIS</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">Unix/Linux/Apache</a></li>
+	     <li class="Child"><a href="#">应用服务器</a></li>
+	    </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+  </ul></li><!--Sub Node 1 -->
+</ul>
+</div><!-- CNLTreeMenu -->
+<!--CNLTreeMenu2 End-->
+
+
+<!--CNLTreeMenu3 Start:-->
+<div class="CNLTreeMenu" id="CNLTreeMenu3">
+<h4>CNL Tree Menu3</h4>
+<p><a id="AllOpen_3" href="#" onclick="MyCNLTreeMenu3.SetNodes(0);Hd(this);Sw('AllClose_3');">全部展开</a><a id="AllClose_3" href="#" onclick="MyCNLTreeMenu3.SetNodes(1);Hd(this);Sw('AllOpen_3');" style="display:none;">全部折叠</a></p>
+<ul>
+  <li class="Opened"><a href="http://www.iecn.net">IECN.Net</a>
+  <ul>
+    <li><a href="#1">技术区</a>
+	  <ul>
+       <li><a href="#">网页技术</a>
+	    <ul>
+	     <li class="Child"><a href="#">JavaScript</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">HTML/XHTML/CSS</a></li>
+	     <li class="Child"><a href="#">Ajax</a></li>
+	     <li class="Child"><a href="#">网页制作工具</a></li>
+	     <li class="Child"><a href="#">设计/图形</a></li>
+	     <li class="Child"><a href="#">Flash/多媒体</a></li>
+	     <li class="Child"><a href="#">VML/Web3D</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">Web编程</a>
+	    <ul>
+	     <li class="Child"><a href="#">Java</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">.Net</a></li>
+	     <li class="Child"><a href="#">ASP/VBScript</a></li>
+	     <li class="Child"><a href="#">PHP</a></li>
+	     <li class="Child"><a href="#">Perl/Python</a></li>
+	     <li class="Child"><a href="#">Web综合/开源</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">数据库</a>
+	    <ul>
+	     <li class="Child"><a href="#">Access/SQLServer</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">MySQL/PostgreSQL</a></li>
+	     <li class="Child"><a href="#">Oracle/DB2/Sybase</a></li>
+	    </ul></li><!--Sub Node 3-->
+       <li><a href="#">服务器</a>
+	    <ul>
+	     <li class="Child"><a href="#">Windows/IIS</a></li><!--Child Node-->
+	     <li class="Child"><a href="#">Unix/Linux/Apache</a></li>
+	     <li class="Child"><a href="#">应用服务器</a></li>
+	    </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+    <li><a href="#1">二级目录</a>
+	  <ul>
+       <li><a href="#">三级目录</a>
+	    <ul>
+         <li><a href="#">四级目录</a>
+		  <ul>
+           <li><a href="#">五级目录</a>
+		    <ul>
+             <li><a href="#">......</a>
+			  <ul>
+               <li><a href="#">第n级目录</a>
+			     <ul>
+	               <li class="Child"><a href="#">叶结点1</a></li><!--Child Node-->
+	               <li class="Child"><a href="#">叶结点2</a></li>
+	               <li class="Child"><a href="#">叶结点3</a></li>
+	               </ul></li><!--Sub Node n -->
+              </ul></li><!--Sub Node 6 -->
+            </ul></li><!--Sub Node 5 -->
+          </ul></li><!--Sub Node 4-->
+        </ul></li><!--Sub Node 3-->
+     </ul></li><!--Sub Node 2-->
+  </ul></li><!--Sub Node 1 -->
+</ul>
+</div><!-- CNLTreeMenu -->
+<!--CNLTreeMenu3 End-->
+<script type="text/javascript">
+<!--
+var MyCNLTreeMenu1=new CNLTreeMenu("CNLTreeMenu1","li");
+MyCNLTreeMenu1.InitCss("Opened","Closed","Child","s.gif");
+
+var MyCNLTreeMenu2=new CNLTreeMenu("CNLTreeMenu2","li");
+MyCNLTreeMenu2.InitCss("Opened","Closed","Child","s.gif");
+
+var MyCNLTreeMenu3=new CNLTreeMenu("CNLTreeMenu3","li");
+MyCNLTreeMenu3.InitCss("Opened","Closed","Child","s.gif");
+-->
+</script>
+<div class="ViewCode">
+<h6>CSS Code：</h6>
+<pre>
+.CNLTreeMenu img.s {cursor:pointer;vertical-align:middle;}
+.CNLTreeMenu ul {padding:0;}
+.CNLTreeMenu li {list-style:none;padding:0;}
+.Closed ul {display:none;}
+.Child img.s {background:none;cursor:default;}
+#CNLTreeMenu1 ul {margin:0 0 0 17px;}
+#CNLTreeMenu1 img.s {width:20px;height:15px;}
+#CNLTreeMenu1 .Opened img.s {background:url(skin1/opened.gif) no-repeat 0 0;}
+#CNLTreeMenu1 .Closed img.s {background:url(skin1/closed.gif) no-repeat 0 0;}
+#CNLTreeMenu1 .Child img.s {background:url(skin1/child.gif) no-repeat 3px 5px;}
+#CNLTreeMenu2 ul {margin:0 0 0 17px;}
+#CNLTreeMenu2 img.s {width:17px;height:15px;}
+#CNLTreeMenu2 .Opened img.s {background:url(skin2/opened.gif) no-repeat 4px 6px;}
+#CNLTreeMenu2 .Closed img.s {background:url(skin2/closed.gif) no-repeat 3px 6px;}
+#CNLTreeMenu2 .Child img.s {background:url(skin2/child.gif) no-repeat 3px 5px;}
+#CNLTreeMenu3 ul {margin:0 0 0 17px;}
+#CNLTreeMenu3 img.s {width:34px;height:18px;}
+#CNLTreeMenu3 .Opened img.s {background:url(skin3/opened.gif) no-repeat 0 1px;}
+#CNLTreeMenu3 .Closed img.s {background:url(skin3/closed.gif) no-repeat 0 1px;}
+#CNLTreeMenu3 .Child img.s {background:url(skin3/child.gif) no-repeat 13px 2px;}
+</pre>
+</div>
+<div class="ViewCode">
+<h6>JavaScript Code：</h6>
+<pre>
+/*****************************
+JavaScript Code for CNLTreeMenu
+Version: Ver 1.02
+Author : CNLei, 枫岩
+E-Mail : <a href="mailto:CNLei.Y.L@gmail.com">CNLei.Y.L@gmail.com</a>
+MySite : <a href="http://www.cnlei.net" target="_blank">http://www.cnlei.net</a>
+Passed : XHtml 1.0, CSS 2.0, IE5.0+, FF1.0+, Opera8.5+
+Update : 2006-2-12
+*****************************/
+function Ob(o){
+ var o=document.getElementById(o)?document.getElementById(o):o;
+ return o;
+}
+function Hd(o) {
+ Ob(o).style.display=&quot;none&quot;;
+}
+function Sw(o) {
+ Ob(o).style.display=&quot;&quot;;
+}
+function ExCls(o,a,b,n){
+ var o=Ob(o);
+ for(i=0;i&lt;n;i++) {o=o.parentNode;}
+ o.className=o.className==a?b:a;
+}
+function CNLTreeMenu(id,TagName0) {
+  this.id=id;
+  this.TagName0=TagName0==&quot;&quot;?&quot;li&quot;:TagName0;
+  this.AllNodes = Ob(this.id).getElementsByTagName(TagName0);
+  this.InitCss = function (ClassName0,ClassName1,ClassName2,ImgUrl) {
+  this.ClassName0=ClassName0;
+  this.ClassName1=ClassName1;
+  this.ClassName2=ClassName2;
+  this.ImgUrl=ImgUrl || &quot;css/s.gif&quot;;
+  this.ImgBlankA =&quot;&lt;img src=\&quot;css/s.gif\&quot; class=\&quot;s\&quot; onclick=\&quot;ExCls(this,&#39;&quot;+ClassName0+&quot;&#39;,&#39;&quot;+ClassName1+&quot;&#39;,1);\&quot; alt=\&quot;展开/折叠\&quot; /&gt;&quot;;
+  this.ImgBlankB =&quot;&lt;img src=\&quot;css/s.gif\&quot; class=\&quot;s\&quot; /&gt;&quot;;
+  for (i=0;i&lt;this.AllNodes.length;i++ ) {
+   this.AllNodes[i].className==&quot;&quot;?this.AllNodes[i].className=ClassName1:&quot;&quot;;
+   this.AllNodes[i].innerHTML=(this.AllNodes[i].className==ClassName2?this.ImgBlankB:this.ImgBlankA)+this.AllNodes[i].innerHTML;
+   }
+ }
+ this.SetNodes = function (n) {
+  var sClsName=n==0?this.ClassName0:this.ClassName1;
+  for (i=0;i&lt;this.AllNodes.length;i++ ) {
+   this.AllNodes[i].className==this.ClassName2?&quot;&quot;:this.AllNodes[i].className=sClsName;
+  }
+ }
+}
+</pre>
+</div>
+<div class="ViewCode">
+<h6>HTML Code：</h6>
+<pre>
+点击右键就可查看^_^
+</pre>
+</div>
+</body>
+</html>

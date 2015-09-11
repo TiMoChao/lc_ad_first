@@ -1,0 +1,11 @@
+		<div class="news-box">
+			<div class="tit"><h2><a href="">视频分类</a></h2><span><a href="<?{$arrGWeb.WEB_ROOT_pre}?>/video/adminu/addinfo.php">>>我要发布</a></span></div>
+			<div class="quiz-type">
+				<ul>
+				<?{foreach from=$arrMType item=type key=k}?>
+					<li><span><a href=""><a href="<?{url url = "/`$arrGWeb.module_id`/list.php?type_id=`$k`"}?>" title="<?{$arrData.summary}?>">[<?{$type}?>]</a></li>
+				<?{/foreach}?>
+				</ul>
+			</div>
+		</div>
+		<div class="block7"></div>

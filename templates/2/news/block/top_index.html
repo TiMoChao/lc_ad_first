@@ -1,0 +1,64 @@
+		<div id="hotnews">
+			<div id="hot_tit">
+				<ul>
+					<li id="hot_tt1" class="tag_label">国内聚焦</li>
+					<li id="hot_tt2" class="tag_label">国际风云</li>
+					<li id="hot_tt3" class="tag_label">本站公告</li>
+				</ul>
+			</div><!--hot_tit end-->
+			
+			<div id="ea1">
+			<div class="hot1">
+				<h1><a target="_blank" href="<?{url url = "/news/detail.php?id=`$arrTopnews1.0.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrTopnews1.0.summary}?>"><?{$arrTopnews1.0.title|csubstr:0:15}?></a></h1>
+				<ul>
+				<?{foreach from=$arrTopnews1.1 item=arrData}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>">[推荐]<?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div><!--hot1 end-->
+			<div class="hot2">
+				<ul>
+				<?{foreach from=$arrTopnews1.2 item=arrData}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div><!--hot2 end-->
+			</div><!--ea1[国内聚焦] end-->
+			<div id="ea2">
+			<div class="hot1">
+				<h1><a target="_blank" href="<?{url url = "/news/detail.php?id=`$arrTopnews2.0.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrTopnews2.0.summary}?>"><?{$arrTopnews2.0.title|csubstr:0:15}?></a></h1>
+				<ul>
+				<?{foreach from=$arrTopnews2.1 item=arrData}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>">[推荐]<?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div><!--hot1 end-->
+			<div class="hot2">
+				<ul>
+				<?{foreach from=$arrTopnews2.2 item=arrData}?>
+					<li style='text-align:left;'><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div><!--hot2 end-->
+			</div><!--ea2[国际风云] end-->
+			<div id="ea3">
+			<div class="hot1">
+				<h1><a target="_blank" href="<?{url url = "/news/detail.php?id=`$arrTopnews3.0.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrTopnews3.0.summary}?>"><?{$arrTopnews3.0.title|csubstr:0:15}?></a></h1>
+				<ul>
+				<?{foreach from=$arrTopnews3.1 item=arrData}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>">[推荐]<?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>			
+			</div><!--hot1 end-->
+			<div class="hot2">
+				<ul>
+				<?{foreach from=$arrTopnews3.2 item=arrData}?>
+					<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:9}?></a></li>
+				<?{/foreach}?>
+				</ul>
+			</div><!--hot2 end-->
+			</div><!--ea3[本站公告] end-->
+			
+			<script type="text/javascript">init_focus();</script>
+		</div><!--hotnews end-->
+		<div class="block9"></div>

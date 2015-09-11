@@ -1,0 +1,38 @@
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div class="ccc2">
+	<ul>
+		<li>网页标题：有效长度在20个字符内，可以将要优化的关键字放在这里，一定要和网页内容相关；<br>
+	网页关键字：关键字不要过多，避免形成关键字堆砌，被搜索引擎惩罚，关键字对于搜索引擎索引网站有帮助，多个关键词可以用逗号、空格进行分隔，请务必录入与您网站相关的关键词；<br>
+	网页描述：用短语描述网页的内容，有助于提高网站的排名，字数不要超过200个字符，一定要和网页内容相关。<br>
+	<font color="#ff6600">此栏目内容修改之后，所有静态页面均已自动更新，无需手动更新了，敬请注意！</font>
+		</li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="3">网页SEO优化</td>
+    </tr>
+<?{foreach key=key item=arrData from=$arrGMeta name=channel}?>
+    <tr>
+      <td colspan="2"><?{$arrData.name}?>：</td>
+      <td><input name="<?{$key}?>_Title" type="text" value="<?{$arrData.meta.Title}?>" size="55" /> </td>
+    </tr>
+	<tr>
+		<td colspan="2">网页描述</td>
+      <td><textarea name="<?{$key}?>_Description" cols="55" rows="3"><?{$arrData.meta.Description}?></textarea></td>
+    </tr>
+	<tr>
+	<td colspan="2">网页关键字</td>
+      <td><textarea name="<?{$key}?>_Keywords" cols="55" rows="3"><?{$arrData.meta.Keywords}?></textarea></td>
+    </tr>
+	<tr>
+	<td colspan="3"><br/></td>
+	</tr>
+<?{/foreach}?>
+	<tr>
+		<td align="middle" colSpan="3"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type="reset" value="重 置"></td>
+	</tr>
+</table>
+</div>
+</form>

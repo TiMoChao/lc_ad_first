@@ -1,0 +1,65 @@
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="2">网站信息设置</td>
+    </tr>
+    <tr>
+      <td width="15%">网站名称：</td>
+      <td><input name="name" value="<?{$arrGWeb.name}?>" maxlength="100" size="55"> 名称最大50个中文</td>
+    </tr>
+    <tr>
+      <td>网站域名：</td>
+      <td><input name="host" value="<?{$arrGWeb.host}?>" maxlength="100" size="55"> 不用写http://</td>
+    </tr>
+		<tr>
+      <td>公司名称：</td>
+      <td><input name="company" value="<?{$arrGWeb.company}?>" maxlength="100" size="55"> 仅填名称</td>
+    </tr>
+		<tr>
+      <td>公司电话：</td>
+      <td><input name="tel" value="<?{$arrGWeb.tel}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+		<tr>
+      <td>公司传真：</td>
+      <td><input name="fax" value="<?{$arrGWeb.fax}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+		<tr>
+      <td>QQ号码1：</td>
+      <td><input name="QQ" value="<?{$arrGWeb.QQ}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+		<tr>
+      <td>公司邮箱：</td>
+      <td><input name="MSN" value="<?{$arrGWeb.MSN}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+		<tr>
+      <td>淘宝旺旺：</td>
+      <td><input name="wangwang" value="<?{$arrGWeb.wangwang}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+	<tr>
+      <td>版权所有：</td>
+      <td><input name="worktime" value="<?{$arrGWeb.worktime}?>" maxlength="100" size="55"> 可填写多个</td>
+    </tr>
+		<tr>
+      <td>公司地址：</td>
+      <td><input name="address" value="<?{$arrGWeb.address}?>" maxlength="100" size="55"> 用于网页底部显示</td>
+    </tr>
+		<tr>
+      <td>技术支持单位：</td>
+      <td><input name="postcode" value="<?{$arrGWeb.postcode}?>" maxlength="100" size="55"> 用于网页底部显示</td>
+    </tr>
+		<tr>
+      <td>ICP证书号：</td>
+      <td><input name="cert" value="<?{$arrGWeb.cert}?>" maxlength="100" size="55"> ICP证书号或ICP备案证书号</td>
+    </tr>
+		<tr>
+      <td>侧栏联系方式：</td>
+      <td><textarea name="contact" rows="6" cols="50"><?{$arrGWeb.contact|stripslashes}?></textarea> 各栏目页面侧边调用</td>
+    </tr>
+		<tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="提 交" class="mini" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="history.back()" value="返 回" class="mini" /></td>
+    </tr>
+</table>
+</div>
+</form>

@@ -1,0 +1,99 @@
+
+<!-- 顶头 -->
+<div id="top">
+	<div class="t1"><a href="<?{url url='/'}?>"><?{$arrGWeb.name}?></a></div>
+	<div class="t2"></div>
+	<div class="t3">
+		<ul>
+			<li><a href="javascript:void(0)" onclick="SetHome(this,window.location);" title="设为首页">设为首页</a></li>
+			<li><a href="#" onclick="AddFavorite(window.location,document.title);" title="加入收藏">加入收藏</a></li>
+			<li><a href="<?{url url='/useradmin/'}?>">会员中心</a></li>
+			<li><a href="<?{$arrGWeb.WEB_ROOT_pre}?>/archives/detail.php?id=help">帮助中心</a></li>
+		</ul>
+	</div>
+	<div class="fjclear"></div>
+</div><!--top end-->
+
+<!-- 工具导航 -->
+<div id="toolnav">
+	<div class="l"><a href="<?{url url='/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/logo.gif" alt="BIWEB商务智能建站系统" /></a></div>
+	<div class="r">
+		<ul>
+			<li><a href="<?{url url='/trade/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t3.gif" alt="供求信息" class="pic_t" /></a><span><a href="<?{url url='/trade/'}?>">供求信息</a></span></li>
+			<li><a href="<?{url url='/product/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t5.gif" alt="网上商展" class="pic_t" /></a><span><a href="<?{url url='/product/'}?>">网上商展</a></span></li>
+			<li><a href="<?{url url='/exhibition/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t7.gif" alt="会展信息" class="pic_t" /></a><span><a href="<?{url url='/exhibition/'}?>">会展信息</a></span></li>
+			<li><a href="<?{url url='/job/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t8.gif" alt="人才招聘" class="pic_t" /></a><span><a href="<?{url url='/job/'}?>">人才招聘</a></span></li>
+			<li><a href="<?{url url='/news/'}?> "><img src="<?{$arrGWeb.templats_root}?>/images/t4.gif" alt="行业资讯" class="pic_t" /></a><span><a href="<?{url url='/news/'}?>">行业资讯</a></span></li>
+			<li><a href="<?{url url='/video/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t2.gif" alt="行业视频" class="pic_t" /></a><span><a href="<?{url url='/video/'}?>">行业视频</a></span></li>
+			<li><a href="<?{url url='/ask/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t1.gif" alt="有问必答" class="pic_t" /></a><span><a href="<?{url url='/ask/'}?>">有问必答</a></span></li>
+			<li><a href="<?{url url='/company/'}?>"><img src="<?{$arrGWeb.templats_root}?>/images/t6.gif" alt="企业黄页" class="pic_t" /></a><span><a href="<?{url url='/company/'}?>">企业黄页</a></span></li>
+			
+			
+			<li><div id="tooltophot"><img src="<?{$arrGWeb.templats_root}?>/images/tophot.gif" alt="热" /></div></li>
+			<li><div id="tooltopnew"><img src="<?{$arrGWeb.templats_root}?>/images/topnew.gif" alt="新" /></div></li>
+			<li><div id="tooltophot2"><img src="<?{$arrGWeb.templats_root}?>/images/tophot.gif" alt="热" /></div></li>
+		</ul>
+	</div>
+	<div class="fjclear"></div>
+</div><!--toolnav end-->
+
+
+<div id="mainnav">
+	<div class="m1">
+		<div class="l"><img src="<?{$arrGWeb.templats_root}?>/images/m1.gif" alt="答疑视频" /></div>
+		<div class="r">
+			<ul>
+				<li style="background:none;"><a href="<?{url url = '/ask/list.php?type_id=1&status=0'}?>">选型答疑</a></li>
+				<li><a href="<?{url url = '/ask/list.php?type_id=2&status=0'}?>">使用问答</a></li>
+				<li><a href="<?{url url = '/ask/list.php?type_id=3&status=0'}?>">售后维修</a></li>
+				<li><a href="<?{url url = '/ask/list.php?type_id=4&status=0'}?>">综合</a></li>
+				<li style="background: none;"><a href="<?{url url = '/video/list.php?type_id=1'}?>">企业宣传</a></li>
+				<li><a href="<?{url url = '/video/list.php?type_id=2'}?>">产品展示</a></li>
+				<li><a href="<?{url url = '/video/list.php?type_id=3'}?>">会展现场</a></li>
+				<li><a href="<?{url url = '/video/list.php?type_id=4'}?>">其他</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="m2">
+		<div class="l"><img src="<?{$arrGWeb.templats_root}?>/images/m2.gif" alt="供求新闻" /></div>
+		<div class="r">
+			<ul>
+				<li style="background:none;"><a href="<?{url url = '/trade/list.php?type_id=1'}?>">供应信息</a></li>
+				<li><a href="<?{url url = '/trade/list.php?type_id=2'}?>">求购信息</a></li>
+				<li><a href="<?{url url = '/trade/list.php?type_id=3'}?>">招标</a><a href="<?{url url = '/trade/list.php?type_id=4'}?>">中标</a></li>
+				<li><a href="<?{url url = '/trade/list.php?type_id=5'}?>">合作</a><a href="<?{url url = '/trade/list.php?type_id=6'}?>">代理</a></li>
+				<li><a href="<?{url url = '/trade/list.php?type_id=7'}?>">二手求购</a></li>
+				<li><a href="<?{url url = '/trade/list.php?type_id=8'}?>">二手供应</a></li><br>
+				<li style="background: none;"><a href="<?{url url = '/news/list.php?type_id=1'}?>">本站公告</a></li>
+				<li><a href="<?{url url = '/news/list.php?type_id=2'}?>">国内聚焦</a></li>
+				<li><a href="<?{url url = '/news/list.php?type_id=3'}?>">国际风云</a></li>
+				<li><a href="<?{url url = '/news/list.php?type_id=4'}?>/">人物专访</a></li>
+				<li><a href="<?{url url = '/trade/'}?>">厂商动态</a></li>
+				<li><a href="<?{url url='/exhibition/'}?>">会展信息</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="m3">
+		<div class="l"><img src="<?{$arrGWeb.templats_root}?>/images/m3.gif" alt="商展企业" /></div>
+		<div class="r">
+			<ul>
+				<li style="background:none;"><a href="<?{url url='/product/'}?>">商展</a></li>
+				<li><a href="<?{url url = '/company/list.php?type_id=1'}?>">生产制造</a></li>
+				<li><a href="<?{url url = '/company/list.php?type_id=2'}?>">经销代理</a></li>
+				<li><a href="<?{url url = '/job/list.php?type_id=1'}?>">社会招聘</a></li>
+				<li style="background: none;"><a href="<?{url url = '/company/list.php?type_id=3'}?>">商城</a></li>
+				<li><a href="<?{url url = '/exhibition/list.php?type_id=3'}?> ">高交会展</a></li>
+				<li><a href="<?{url url = '/exhibition/list.php?type_id=4'}?>">学术会议</a></li>
+				<li><a href="<?{url url = '/job/list.php?type_id=2'}?>">校园招聘</a></li>
+			</ul>
+		</div>
+	</div> 
+	<div class="fjclear"></div>
+</div><!--mainnav end-->
+<div class="block9"></div>
+
+<!-- 头部广告 -->
+<div id="ad_head">
+	<div class="l"><script language="JavaScript" src="<?{$arrGWeb.WEB_ROOT_pre}?>/uploadfile/ads/1.js"></ul></script></div>
+</div><!--ad_head end-->
+<div class="block7"></div>

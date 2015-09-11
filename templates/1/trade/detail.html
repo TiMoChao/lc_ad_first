@@ -1,0 +1,64 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="area">
+	<!-- 会展信息 开始 -->
+	<div class="main-left">
+		<div class="news-box">
+			<h4 class="title"><?{$arrData.title}?></h4>
+			<div class="news-detail-info">
+				<UL>
+					<li>发布时间：<?{$arrData.submit_date}?> 浏览率：<script language='javascript' src='../../plug-in/click/getclick.php?module_id=<?{$arrGWeb.module_id}?>&id=<?{$arrData.id}?>'></script><?{if $arrData.author != ''}?> 作者：<?{$arrData.author}?><?{/if}?><?{if $arrData.source != ''}?> 来源：<?{$arrData.source}?><?{/if}?>【字体：<a href="javascript:fontZoomA();">小</a> <a href="javascript:fontZoomB();">大</a> <a href="javascript:window.print();">打印</a> <a href="<?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "2"}?>">DOC</a>】<br />收藏到：<script src="../../plug-in/favorite/sc.js"></script></li>
+				</UL>
+			</div>
+			<div class="news-text-box" id="fontzoom">
+			<p>			
+			<script type='text/javascript' src='../../plug-in/flvplayer/swfobject.js'></script>
+			<?{foreach from=$arrData.video key=key item=video name=video}?>
+				<?{if $video.video != ""}?>
+				<center>
+					<div id='vpreview<?{$smarty.foreach.video.index}?>'>The player will show in this paragraph</div>				
+					<script type='text/javascript'>
+					var s1 = new SWFObject('../../plug-in/flvplayer/flvplayer.swf','player','400','300','9');
+					s1.addParam('allowfullscreen','true');
+					s1.addParam('allowscriptaccess','true');
+					s1.addParam('flashvars','file=<?{$FileCallPath}?><?{$video.video}?>&image=<?{$FileCallPath}?>b/<?{$video.videopic}?>');
+					s1.write('vpreview<?{$smarty.foreach.video.index}?>');
+					</script>
+					<br>
+					<?{if $video.video_title}?>标题：<?{$video.video_title}?><br><?{/if}?>
+					<?{if $video.video_narrate}?>简介：<?{$video.video_narrate}?><br><?{/if}?>
+					<?{if $video.video_time}?>时长：<?{$video.video_time}?><br><?{/if}?>
+					<br>
+				</center>
+				<?{/if}?>
+			<?{/foreach}?>
+			</p>
+			<p>
+			<?{foreach from=$arrData.photo key=key item=photo}?>
+				<?{if $photo.photo != ""}?><center><img src="<?{$FileCallPath}?>b/<?{$photo.photo}?>" align="center" border="0" alt="<?{$photo.photo_narrate}?>"  onload='resizepic(this,600)' /><br><?{if $photo.photo_narrate}?><?{$photo.photo_narrate}?><?{/if}?></center><br><?{/if}?>
+			<?{/foreach}?>		
+			<?{$arrData.intro}?>
+			</p>
+			</div>
+				<div class="newstag">本文的关键词是：<span class='red'><?{$arrData.tag}?></span></div>
+		</div><!-- news-box end-->
+
+		<div class="block7"></div>
+		<div class="type-info">
+			<div class="tit"><h2>分类信息</h2></div>
+			<div class="type-info-list">
+					<ul><script language="JavaScript" src="../../uploadfile/textads/3.js"></ul></script>	
+			</div>
+		</div><!--diseases1 end-->
+		<div class='bottombox'>
+
+		<?{include file="trade/block/relative.html"}?>
+		<?{include file="trade/block/newest.html"}?>
+	
+		<div class='fjclear'></div>
+		</div>
+	</div><!--area[2]>col2 end-->
+		<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+</div>
+<div class="block10"></div>

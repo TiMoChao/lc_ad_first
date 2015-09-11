@@ -1,0 +1,23 @@
+<!--<div id="link">
+	<div class="tit"><span><a href="<?{url url='/links/'}?>">友情链接</a></span></div>
+	<div class="piclink">
+		<ul>
+			<?{foreach from=$arrLinkText item=arrTxt}?>
+				 <li>
+					<a href="<?{$arrTxt.webhost}?>" title="<?{$arrTxt.summary}?>" target="_blank"><?{$arrTxt.webname}?></a>&nbsp;&nbsp;
+				</li>
+			 <?{/foreach}?>
+			<div class="piclinkclr2"></div>
+		 </ul>
+	</div>
+</div>-->
+
+
+<div class="v3_lj">
+		<div class="v3_lj01"><h2>&nbsp;&nbsp;友情链接</h2></div>
+		<div class="v3_lj02">
+		<?{foreach from=$arrLinkText item=arrTxt}?>			
+					<a href="<?{$arrTxt.webhost}?>" title="<?{$arrTxt.summary}?>" target="_blank"><?{$arrTxt.webname}?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;				
+			 <?{/foreach}?>
+		</div>
+	</div>

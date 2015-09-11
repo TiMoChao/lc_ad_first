@@ -1,0 +1,13 @@
+
+				<?{foreach from=$arrTopnews_law1.1 item=arrData}?>
+<div class="newsItem">
+	<div class="newsTitle">
+		
+	<a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/news_law/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?>&nbsp;&nbsp;</a>
+	</div>
+	<div class="newsDate"><?{$arrData.submit_date|date_format:"%Y-%m-%d"}?></div>
+</div>
+<?{/foreach}?>
+						
+						
+						

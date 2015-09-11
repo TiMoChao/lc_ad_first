@@ -1,0 +1,29 @@
+<div class="block7"></div>
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="block7"></div>
+		<div class="doubleList">
+		<?{foreach from=$arrTopCommunity_ad item=arrMainType}?>
+			<div class="newslist">
+				<div class="newslist_title">
+					<div class="lf_v4a"><h2><span class="style1"><?{$arrMainType.type_title}?></span></h2></div>
+					<div class="rh_v4a"><a target="_blank" href="<?{url url = "/`$arrGWeb.module_id`/list.php?type_id=`$arrMainType.type_id`"}?>">更多 >></a></div>
+				</div>
+				<div id="newsBox" class="newsBox">
+					<?{foreach from=$arrMainType.datas item=arrData}?>
+				<div class="newsItem">
+  <div class="newsTitle"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?></a></div>
+<div class="newsDate"><?{$arrData.submit_date|date_format:"%Y-%m-%d"}?></div>
+</div>
+<?{/foreach}?>
+				</div>
+			</div>		
+			<?{/foreach}?>			
+			</div>
+			
+			
+			
+			
+			
+			
+		

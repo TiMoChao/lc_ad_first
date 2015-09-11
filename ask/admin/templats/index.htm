@@ -1,0 +1,85 @@
+<div class="ccc2">
+	<ul>
+		<li>
+		<form action="?" method="get">
+			<span class="right"><input type="button" onClick="location.href='addinfo.php?page=<?{$smarty.get.page}?>'" value="新增<?{$arrGWeb.module_name}?>" class="gray mini"></span>
+			<input type=hidden name="action" value='search'>
+			标题：<input type=text size=15 name='title' value='<?{$smarty.get.title}?>'> 
+		<?{$arrGWeb.module_name}?>类别：
+		<select size=1 name='type_id'>
+		<option value="0">所有类别</option>
+		<?{foreach from=$arrType key=key item=type}?>
+		<?{if is_array($type) && array_key_exists('type_title',$type) }?>
+		<option value="<?{$type.type_id}?>" <?{if !empty($type.type_link)}?>disabled='disabled'<?{/if}?> <?{if $type.type_id == $smarty.get.type_id}?>selected=selected<?{/if}?>><?{$type.type_title}?></option>
+		<?{else}?>
+		<option value="<?{$key}?>" <?{if $key == $arrData.type_id}?>selected=selected<?{/if}?>><?{$type}?></option>    	
+		<?{/if}?>
+		<?{/foreach}?>
+    	</select>
+		是否审核：<select name='pass' size=1>
+		<option value=''>全部</option>
+		<option value="1" <?{if $smarty.get.pass == '1'}?>selected=selected<?{/if}?>>已审核</option>
+		<option value="0" <?{if $smarty.get.pass == '0'}?>selected=selected<?{/if}?>>未审核</option>
+		</select> 
+		<input type=submit value='查 询' class='gray mini'>
+		 /id号可精确查询
+	 </form>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form action='?type_id=<?{$type_id}?>&action=' method="post" name="delform">
+	<tr class="firstr">
+		<th width='6%'>ID</th>
+		<th><?{$arrGWeb.module_name}?>名称</th>
+		<th width='20%'>类别</th>
+		<th width='6%'>点击</th>
+		<th width='6%'>审核</th>
+		<th width='16%'>发布时间</th>
+		<th width='4%' align=center><input type='checkbox' name='chkselectAll' onclick="doCheckAll(this)"></th>
+	</tr>
+	<?{foreach key=key  item=arrData from=$arrData}?>
+	<tr align=center>
+		<td align=center>&nbsp;<a href='modifyinfo.php?type_id=<?{$arrData.type_id}?>&id=<?{$arrData.id}?>&page=<?{$smarty.get.page}?>'><?{$arrData.id}?></a></td>
+		<td align=left>&nbsp;
+		<a href='modifyinfo.php?type_id=<?{$arrData.type_id}?>&id=<?{$arrData.id}?>&page=<?{$smarty.get.page}?>'><?{$arrData.title|bedeck:$arrData.bedeck}?></a>
+		</td>
+		<td>&nbsp;
+		<?{$arrData.type_title}?>
+		</td>
+		<td>&nbsp;<?{$arrData.clicktimes}?></td>		
+		<td>&nbsp;
+			<?{if $arrData.pass == 1}?>√<?{/if}?>
+			<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+			</td>
+		<td align=center>&nbsp;<?{$arrData.submit_date}?></td>
+		<td align=center>&nbsp;<input type=checkbox name=select[] value="<?{$arrData.id}?>"></td>
+	</tr>	
+	<?{/foreach}?>
+	</tr>
+	<tr>
+		<td colspan='9'>
+		<span  class="actionform">
+		<form name='actionform' method="post">
+		操作：<select name="selection">
+		<option value='moveup'>提前</option>
+		<option value='del'>删除</option>
+		<option value='delpic'>删除图片</option>
+		<option value='check'>通过审核</option>
+		<option value='uncheck'>取消通过</option>
+		<option value='settop'>固顶</option>
+		<option value='unsettop'>解固</option>
+		<option value='setrecommend'>设为推荐</option>
+		<option value='unsetrecommend'>解除推荐</option>
+		</select> 
+		<input type="button" class="gray mini" value='执行' onclick=javascript:index=document.getElementsByName('selection')[0].selectedIndex;checkAction(document.getElementsByName('selection')[0].options[index].value);>
+		</form>
+		</span>
+		<?{$strPage}?>
+		</td>
+	</tr>
+</form>
+</table>
+</div>
+

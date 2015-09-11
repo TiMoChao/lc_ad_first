@@ -1,0 +1,61 @@
+<div class="ccc2">
+	<ul>
+		<li>
+		<span class="right"><input type="button" onClick="location.href='addinfo.php'" value="新增广告关键词" class="gray mini"/></span>
+		关键字广告功能可根据您设定的关键字和链接，在其他栏目发布信息时，系统会自动将内容中的关键字加上链接；
+	<font color="#ff6600">（影响效率，不建议大量使用）</font>
+		</li>
+	</ul>
+</div>
+<div id="biweb">
+<form name="delform" id="form1" action='?action=' method="post">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+	<tr class="firstr">
+		<th width='10%'>ID</th>
+		<th align='left' width='25%'>关键字</th>
+		<th align='left' width='25%'>链接</th>
+		<th width='10%'>审核</th>
+		<th width='10%'><input type='checkbox' name='chkSelectAll' onclick="doCheckAll(this)"></th>
+	</tr>
+<?{foreach key=key item=arrData from=$arrData name=keyad}?>
+    <tr align='center'>
+		<td><?{$smarty.foreach.keyad.iteration}?></td>
+		<td align='left'>
+		<a href='modifyinfo.php?id=<?{$key}?>&page=<?{$smarty.get.page}?>'><?{$key}?></a>
+		</td>
+		<td align='left'>
+		<a href="<?{$arrData.url}?>" target="_blank"><?{$arrData.url}?></a>
+		</td>
+		<td>
+			<?{if $arrData.pass == 1}?>√<?{/if}?>
+			<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+		</td>
+		<td><input type='checkbox' name='select[]' value="<?{$key}?>"/></td>
+	</tr>
+<?{/foreach}?>
+</table>
+</form>
+<table border='0' cellpadding='1' cellspacing='3' width='100%' align='center'>
+	<tr>
+		<td>
+		<table border='0' cellpadding='0' cellspacing='0'>
+			<tr valign='middle'>
+				<td>
+					<?{$strPage}?>
+				</td>
+			</tr>
+		</table>
+		</td>
+		<form name='actionform' method='post'>
+		<td align=right> 
+		操作：<select size='1' name='selection'>
+		<option value='del'>删除</option>
+		<option value='check'>通过审核</option>
+		<option value='uncheck'>取消通过</option>
+		</select> 
+		<input type=button value='执行' onclick="checkAction(document.actionform.selection.options[document.actionform.selection.selectedIndex].value)"/>
+		</td>
+		</form>
+	</tr>
+</table>
+</div>

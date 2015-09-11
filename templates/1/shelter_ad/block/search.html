@@ -1,0 +1,9 @@
+<DIV id="menu">
+	<DIV class="menu_l">
+		您的位置：<A href="<?{url url = "/"}?>">首页</A> &gt; <A href="<?{url url = "/`$arrGWeb.module_id`/"}?>"><?{$arrGWeb.module_name}?></A><?{if $strTypeTitle != ''}?> &gt; <?{$strTypeTitle}?><?{/if}?><?{if $arrData.title != ''}?> &gt; <?{$arrData.title}?><?{/if}?>
+	</DIV>
+	<DIV class="menu_r">
+		<FORM id="FormSearch" name="FormSearch" action="<?{$arrGWeb.WEB_ROOT_pre}?>/shelter_ad/search.php" method="get"><INPUT class="butt_a" id="keywords" name="keywords" value="<?{$smarty.get.keywords}?>"> <INPUT class="butt_b" type="submit" value="搜索" name="Submit"> 
+	</FORM></DIV>
+	<DIV class="fjclear"></DIV>
+</DIV><!--box1 end-->

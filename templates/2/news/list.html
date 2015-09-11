@@ -1,0 +1,34 @@
+<div class="block7"></div>
+<!--搜索模块-->
+<?{include file = "`$arrGWeb.module_id`/block/search.html"}?>
+<div class="block7"></div>
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="main-left">
+		<div class="news-box">
+			<div class="tit"><h2><?{if !empty($strKeywords)}?><?{$strKeywords}?>搜索结果<?{else}?><?{$strTypeTitle}?><?{/if}?></h2></div>
+			<div class="fjclear"></div>
+			<div class="news-text-box">
+				<ul class="new-list">
+				<!--列表循环开始-->
+				<?{foreach from=$arrInfoList item=arrData}?>
+					<li><span><?{$arrData.submit_date|date_format:"%Y/%m/%d"}?></span><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title}?></a></li>
+				<?{/foreach}?>
+				<!--列表循环结束-->
+				</ul>
+			<div class="clearboth">
+				<ul class="sea-page">
+				<!--分页模块-->
+					<li class="right"><?{$strPage}?></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 块 结束 -->
+ <!--右侧公用栏目调用-->
+<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+
+</div>
+<div class="block10"></div>

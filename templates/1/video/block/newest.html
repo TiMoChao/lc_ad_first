@@ -1,0 +1,11 @@
+<div class="bottom_blockbox right_colum">
+			<div class="tit"><h2>热点新闻</h2></div>
+			<div class="bottom_blockbox-list">
+				<ul class=newest>
+				<?{foreach from=$arrNewest item=arrData_newest key=key}?>
+					<li><a href="<?{url url="/`$arrGWeb.module_id`/detail.php?id=`$arrData_newest.id`"}?>"><?{$arrData_newest.title|csubstr:0:25}?></a></li>
+				<?{/foreach}?>
+				</ul>
+				<script language="JavaScript" src="/uploadfile/adjs/adbottom12text.js"></script>
+			</div>
+		</div>

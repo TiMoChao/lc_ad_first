@@ -1,0 +1,31 @@
+.v3_lj{
+float:left;
+width:958px;
+border:1px solid #cdcdcd;
+margin-top:10px;
+margin-left:0px;
+display:inline;
+}
+.v3_lj h2{
+margin:0px;
+padding:0px;
+color: #0472BC;
+font-size:14px;
+font-weight:bold;
+display:inline;
+}
+.v3_lj01{
+float:left;
+background:url("../images/top_bg.gif")/*tpa=http://www.mmggxx.cn/images/top_bg.gif*/;
+width:948px;
+height:25px;
+padding:5px 0px 0px 10px;
+overflow:hidden;
+display:inline;
+}
+.v3_lj02{
+float:left;
+width:938px;
+padding:6px 10px 3px 10px;
+display:inline;
+}

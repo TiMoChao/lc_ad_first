@@ -1,0 +1,18 @@
+<?{foreach from=$arrTopLinks.datas name=arrData item=arrData}?>
+<div id="words_adv">
+
+<a href="<?{$arrData.webhost }?>" title="<?{$arrData.summary}?>" target="_blank">
+<?{if $arrData.UploadFile != ""}?>
+		<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$arrTopLinks.FileCallPath}?>/<?{$arrData.UploadFile}?>" menu="false" quality="high" height="<?{$arrData.height}?>" width="<?{$arrData.width}?>"  boder="1">
+		<?{else}?><img src="<?{$arrTopLinks.FileCallPath}?>/<?{$arrData.UploadFile}?>"
+	<?{ if $arrData.height!=0}?> height="<?{$arrData.height}?>" <?{/if}?>
+		  <?{ if $arrData.width!=0}?> width="<?{$arrData.width}?>"  <?{/if}?>
+         boder="1">
+		   <?{/if}?>
+         <?{else}?><?{ $arrData.webname }?><?{/if}?>
+</div>
+<?{if ($smarty.foreach.arrData.index+1)%7==0}?>
+    <div style="clear:both"></div>
+   <?{/if}?>
+<?{/foreach}?>
+

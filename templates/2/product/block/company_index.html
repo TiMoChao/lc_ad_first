@@ -1,0 +1,26 @@
+		<div class="block7"></div>
+		<div id="special">
+			<div class="tit">
+			  <h2><a href="/product/">商展企业</a></h2>
+			</div>
+
+			<div class="sp2">
+				<ul>
+				<?{foreach name=from from=$arrTopproductcomp item=arrData}?>
+				<?{if $smarty.foreach.from.first}?>
+					<div class="sp1">
+						<div class="l"><?{if !empty($arrData.photo)}?>
+						<img src="<?{if $arrData.thumbnail != ''}?><?{$FileCallPathP}?>b/<?{$arrData.thumbnail}?><?{else}?><?{$arrGWeb.templats_root}?>/images/nopic.gif<?{/if}?>" onload='resizepic(this,100)' alt="商展图片" class="pic80_56"/>
+						<?{/if}?></div>
+						<div class="r">
+							<h3><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/product/list.php?com=`$arrData.company_md5`"}?><?{/if}?>"><?{$arrData.company|csubstr:0:40}?></a></h3>
+							<p class="co"><?{$arrData.brand}?><?{$arrData.title}?><?{$arrData.model}?></p>
+						</div>
+					</div><!--sp1 end-->
+				<?{else}?>
+					<li><div id="productleft"><a href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/product/list.php?com=`$arrData.company_md5`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>" target="_blank"><?{$arrData.company|csubstr:0:40}?></a></div><div id="right"><?{$arrData.submit_date|date_format:"%Y.%m.%d"}?></div></li>
+				<?{/if}?>
+				<?{/foreach}?>
+				</ul>
+			</div><!--sp2 end-->
+		</div><!--special end-->

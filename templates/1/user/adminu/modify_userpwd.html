@@ -1,0 +1,52 @@
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="mainright">
+<?{include file = "useradmin/_cloumnright.html"}?>
+	</div>
+	<!-- 介绍 开始 -->
+	<div class="mainleft">
+		<div class="help-right">
+		<div id="companies-list-box">
+			<div class="tit"><h2><?{$arrGWeb.module_name}?></h2></div>
+			<script language="javascript" src="../../plug-in/area/myjsframe.js"></script>
+			<script language="javascript" src="../../plug-in/area/area.js"></script>
+			<script language="javascript" src="../../plug-in/ImgPreview/imgP.js"></script>			
+			<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+			<table class="showes-list">
+				<tr class="showes-listes">
+					<th width="15%">设置名称</th>
+					<th width="55%">基本参数设置</th>
+					<th width="30%">设置说明</th>
+				</tr>
+				<tr>
+					<td width="10%">原密码：</td>	
+					<td width="40%"><input type="password" name="old_password" size=30 /></td>		
+					<td class="gray">请填写你原来的密码</td>
+				</tr>
+				<tr>
+					<td width="10%">新密码：</td>	
+					<td width="40%">
+					<input type="password" name="password"  size=30 />				
+						</td>
+					<td class="gray">请填写你的新密码</td>
+				</tr>	
+				<tr>
+					<td width="10%">确认密码：</td>	
+					<td width="40%">
+						<input type="password" name="confirm_password" size=30 />
+					</td>		
+					<td class="gray">确保两次密码保持一致</td>
+				</tr>				
+				<tr>
+					<td colspan="3" align="center"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type=reset value="重 置"></td>
+				</tr>
+				<input type="hidden" name="user_id" value="<?{$arrData.user_id}?>" />
+    			<input type="hidden" name="id" value="<?{$arrData.id}?>">				
+				</table>
+			</form>
+		</div>
+	</div>
+	</div>
+	<!-- 介绍 结束 -->
+</div>
+<div class="block10"></div>

@@ -1,0 +1,16 @@
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=<?{$arrGWeb.charset}?>" />
+<!-- Favicon -->
+<link rel="icon" href="<?{$arrGWeb.WEB_ROOT_pre}?>/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="<?{$arrGWeb.WEB_ROOT_pre}?>/favicon.ico" type="image/x-icon" />
+<!-- CSS -->
+<meta content="noindex, nofollow" name="robots">
+<link rel="stylesheet" href="css/install.css" type="text/css" media="screen,projection">
+<script language="JavaScript" type="text/javascript">
+	function selectlang(lang){
+		var selectlang = document.getElementById(lang);
+		var curstep = 1;
+		var langvalue = selectlang.options[selectlang.selectedIndex].value;
+		window.location = "index.php?step="+curstep+"&lang="+langvalue;
+	}
+</script>
+<title><?{$Title}?></title>

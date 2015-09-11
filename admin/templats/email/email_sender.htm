@@ -1,0 +1,85 @@
+<div class="ccc2">
+	<ul>
+		<li><img src="../images/warn.gif" align="absmiddle"> BIWEB系统中的邮件营销的一个功能，您必须设定SMTP邮局之后才能使用本功能。<br />
+		<font color="#ff6600">
+	由于不同的服务商提供的免费邮箱一次可以发从10到20封，VIP邮箱30到100封之间，故本功能可以按照指定的数量进行分步提取！</font>
+		</li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return check()" action="" method="post">
+<input type=hidden name=page value="<?{$smarty.post.page}?>">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="2"><?{$strNav|default:"`$arrGWeb.module_name`管理"}?></td>
+    </tr>
+    <tr>
+      <td width="15%">每次投递份数：</td>
+      <td>
+			<select size="1" name="type_id">
+				<option value="1" <?{if $smarty.post.type_id == 1}?>selected<?{/if}?>>1个</option>
+				<option value="5" <?{if $smarty.post.type_id == 5}?>selected<?{/if}?>>5个</option>
+				<option value="10" <?{if $smarty.post.type_id == 10}?>selected<?{/if}?>>10个</option>
+				<option value="15" <?{if $smarty.post.type_id == 15}?>selected<?{/if}?>>15个</option>
+				<option value="20" <?{if $smarty.post.type_id == 20}?>selected<?{/if}?>>20个</option>
+			</select>
+			间隔符：<input id="spacemark" name="spacemark" size="5" value="<?{$smarty.post.spacemark|default:';'}?>">
+			</td>
+    </tr>
+		<tr>
+      <td>邮件列表：</td>
+      <td>
+			<textarea id="email" name="strEmail" rows="10" cols="65"><?{$smarty.post.strEmail}?></textarea>
+			</td>
+    </tr>
+		<tr>
+      <td>发送人名：</td>
+      <td>
+			<input name="senduname" size="70" value="<?{$smarty.post.senduname}?>">
+			</td>
+    </tr>
+		<tr>
+      <td>发送邮件：</td>
+      <td>
+			<input name="sendmail" size="70" value="<?{$smarty.post.sendmail}?>">
+			</td>
+    </tr>
+		<tr>
+      <td>回复人名：</td>
+      <td>
+			<input name="replyuname" size="70" value="<?{$smarty.post.replyuname}?>"> 不填，将使用SMTP邮局设定
+			</td>
+    </tr>
+		<tr>
+      <td>回复邮件：</td>
+      <td>
+			<input name="replymail" size="70" value="<?{$smarty.post.replymail}?>"> 不填，将使用SMTP邮局设定
+			</td>
+    </tr>
+		<tr>
+      <td>邮件标题：</td>
+      <td>
+			<input name="title" size="70" value="<?{$smarty.post.title}?>">
+			</td>
+    </tr>
+		<tr>
+      <td>邮件内容：</td>
+      <td>
+			<textarea id="intro" name=intro rows=10 cols=65><?{$smarty.post.intro}?></textarea>
+			</td>
+    </tr>
+		<tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" id="Submit" value="提 交" class="mini" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="history.back()" value="返 回" class="mini" /></td>
+    </tr>
+</table>
+</div>
+</form>
+<script language="javascript">
+	function check(){
+	 this.form1.Submit.disabled=true;
+	 return true;
+	}
+</script>
+
+

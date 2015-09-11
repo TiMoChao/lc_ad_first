@@ -1,0 +1,28 @@
+<p>
+现在时间：<br />
+<?{$smarty.now|date_format:"%A, %B %e, %Y"}?><br />
+<?{$smarty.now|date_format:"%H:%M:%S"}?>
+</p>
+
+<form name="Worktime" action="" method="post">
+<p>
+请选择签到类型：
+<input type="radio" name="sign_type" value="strat" />上班
+<input type="radio" name="sign_type" value="over" />下班
+</p>
+<p>
+备注（添加你迟到或者早退的原因，按时到岗无须填写^_^）：<br />
+
+<textarea name="note" cols="20" rows="5"></textarea>
+</p>
+<p>
+<input type="submit" name="submit" value="提交"  />
+<input type="reset" name="reset" value="重设" />
+</p>
+</form>
+<br />
+<br />
+<p>
+其他：<br />
+<a href = "adminu/change_password.php">修改密码</a>
+</p>

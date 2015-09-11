@@ -1,0 +1,52 @@
+<div class="area">
+	<!-- 块 开始 -->
+	<div class="mainright">
+<?{include file = "useradmin/_cloumnright.html"}?>
+	</div>
+	<!-- 介绍 开始 -->
+	<div class="mainleft">
+		<div class="help-right">
+		<div id="companies-list-box">
+			<div class="tit"><h2><?{$arrGWeb.module_name}?></h2></div>
+			<table class="showes-list">
+			<form name='delform' action="?action=" method="post">
+				<tr class="showes-listes">
+					<th width="10%">ID</th>
+					<th><?{$arrGWeb.module_name}?>名称</th>
+					<th width="10%">点击数</th>
+					<th width="5%">审核</th>
+					<th width="18%">发布时间</th>
+					<th width="5%"><input type='checkbox' name='chkSelectAll' onclick="doCheckAll(this)" /></th>
+				</tr>
+				<?{foreach key=key  item=arrData from=$arrData}?>
+				<tr align="center">
+					<td><a href='modifyinfo.php?type_id=<?{$arrData.type_id}?>&id=<?{$arrData.id}?>&page=<?{$get.page}?>'><?{$arrData.id}?></a></td>
+					<td align="left"><b>[<?{$arrData.type_title}?>]</b><a href='modifyinfo.php?type_id=<?{$arrData.type_id}?>&id=<?{$arrData.id}?>&page=<?{$get.page}?>'><?{$arrData.title}?></a></td>
+					<td><?{$arrData.clicktimes}?></td>
+					<td><?{if $arrData.pass == 1}?>√<?{/if}?>
+					<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?></td>
+					<td><?{$arrData.submit_date}?></td>
+					<td><input type=checkbox name=select[] value="<?{$arrData.id}?>"></td>
+				</tr>
+				<?{/foreach}?>
+			</form>
+			</table>
+		</div>
+		</div>
+		<div class="clearboth">
+			<ul class="sea-pageses">
+			<div class="sea-pager"><form name='actionform' method=post>
+			操作：<select size=1 name=selection>
+			<option value='moveup'>提前</option>
+			<option value='del'>删除</option>
+			</select> 
+			<input type='button' class='btn' value='执行' onclick="checkAction(document.actionform.selection.options[document.actionform.selection.selectedIndex].value)">
+			</form></div>
+			<?{$strPage}?>
+			<div class="clr"></div>
+			</ul>
+		</div>	
+	</div>
+	<!-- 介绍 结束 -->
+</div>
+<div class="block10"></div>

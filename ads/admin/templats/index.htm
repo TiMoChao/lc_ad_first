@@ -1,0 +1,73 @@
+<div class="ccc2">
+	<ul>
+		<li>
+		<form action="?" method="get">
+			<span class="right"><input type="button" onClick="location.href='addinfo.php?page=<?{$get.page}?>'" value="新增<?{$arrGWeb.module_name}?>" class="gray mini"></span>
+			<input type="hidden" name="action" value='search'>
+			标题：<input type=text size=15 name='title' value='<?{$get.title}?>'>
+			是否审核：<select name='pass' size=1>
+			<option value='' <?{if $smarty.get.pass === ''}?>selected="selected" class="selected"<?{/if}?>>全部</option>
+			<option value='1' <?{if $smarty.get.pass == '1'}?>selected="selected" class="selected"<?{/if}?>>已审核</option>
+			<option value='0' <?{if $smarty.get.pass == '0'}?>selected="selected" class="selected"<?{/if}?>>未审核</option>
+			</select> 
+			<input type="submit" value='查 询' class="gray mini">
+			/id号可精确查询
+	 </form>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form action='?links_id=<?{$links_id}?>&page=<?{$smarty.get.page}?>&title=<?{$smarty.get.title}?>&action=' method="post" name="delform">
+	<tr class="firstr">
+		<th width='6%'>ID</th>
+		<th width='10%'>广告名称</th>
+		<th width='15%'>广告链接</th>
+		<th width='15%'>广告位置</th>
+		<th>链接图片</th>
+		<th width='6%'>审核</th>
+		<th width='10%'>过期时间</th>
+		<th width='6%'><input type='checkbox' name='chkSelectAll' onclick="doCheckAll(this)"></th>
+	</tr>
+	<?{foreach key=key  item=arrData from=$arrData}?>
+	<tr align=center>
+		<td><a href='modifyinfo.php?id=<?{$arrData.id}?>&page=<?{$get.page}?>'><?{$arrData.id}?></a></td>
+		<td><a href='modifyinfo.php?id=<?{$arrData.id}?>&page=<?{$get.page}?>'><?{$arrData.webname}?></a></td>
+		<td><a href="<?{if $arrData.webhost!='http://'}?><?{$arrData.webhost}?><?{/if}?>" target='_blank'><?{$arrData.webhost}?></a></td>
+		<td><?{foreach from=$arrPosition item=value key=key}?><?{if $arrData.position == $key}?><?{$value}?>(<?{$key}?>)<?{/if}?><?{/foreach}?></td>
+		<td>
+		<?{if $arrData.UploadFile != ""}?>
+			<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$arrGWeb.WEB_ROOT_pre}?><?{$FileCallPath}?>/<?{$arrData.UploadFile}?>" menu="false" quality="high" width="194" height="92" />
+			<?{else}?><img src="<?{$arrGWeb.WEB_ROOT_pre}?><?{$FileCallPath}?>/<?{$arrData.UploadFile}?>" border="1"  onload='resizepic(this,240)'>
+			<?{/if}?>
+		<?{/if}?>
+		</td>
+		<td>
+			<?{if $arrData.pass == 1}?>√<?{/if}?>
+			<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+			</td>
+		<td align=center><?{$arrData.submit_date|date_format:'%Y-%m-%d'}?></td>
+		<td align=center><input type=checkbox name=select[] value="<?{$arrData.id}?>"></td>
+	</tr>
+	<?{/foreach}?>
+	<tr>
+		<td colspan='8'>
+		<span  class="actionform">
+		<form name='actionform' method="post">
+		操作：<select name="selection">
+		<option value='moveup'>提前</option>
+		<option value='del'>删除</option>
+		<option value='delpic'>删除图片</option>
+		<option value='check'>通过审核</option>
+		<option value='uncheck'>取消通过</option>
+		</select> 
+		<input type="button" class="gray mini" value='执行' onclick=javascript:index=document.getElementsByName('selection')[0].selectedIndex;checkAction(document.getElementsByName('selection')[0].options[index].value);>
+		</form>
+		</span>
+		<?{$strPage}?>
+		</td>
+	</tr>
+</form>
+</table>
+</div>
+

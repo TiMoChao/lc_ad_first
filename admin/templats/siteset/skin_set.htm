@@ -1,0 +1,34 @@
+<div class="ccc2">
+	<ul>
+		<li><img src="../images/warn.gif" align="absmiddle"> 模板更新后，静态页面及缓存均已自动更新，客户端缓存过了缓存时间也会自动更新！无需手动更新！
+		</li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="2"><?{$strNav|default:"`$arrGWeb.module_name`管理"}?></td>
+    </tr>
+    <tr>
+      <td width="15%">模板名称：</td>
+      <td>
+			<select name="templates_id" onchange="showSkinImg(this.options[this.selectedIndex].value)">
+				<?{foreach key=key item=arrData from=$arrSkin}?>
+				<option value='<?{$arrData}?>' <?{if $arrData == $arrGWeb.templates_id}?>selected=selected<?{/if}?>><?{$arrData}?></option>
+				<?{/foreach}?>
+			</select>
+			</td>
+    </tr>
+    <tr>
+      <td>模板预览：</td>
+      <td><img src="<?{$arrGWeb.templats_root}?>/skin/skin.png" name="img" alt="模板<?{$arrGWeb.templates_id}?>" onload="resizepic(this,600)" /></td>
+    </tr>
+		<tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="Submit" value="提 交" class="mini" />&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" onclick="history.back()" value="返 回" class="mini" /></td>
+    </tr>
+</table>
+</div>
+</form>
+

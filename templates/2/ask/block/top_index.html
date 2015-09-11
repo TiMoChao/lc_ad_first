@@ -1,0 +1,30 @@
+		<div class="block7"></div>
+		<div id="eask">
+				<div class="tit"><h2><a href="<?{url url='/ask/'}?>">使用问答</a></h2>
+				</div>
+				<p class="ea1"><span>问答大百科，有问必答</span></p>
+				<div class="ea4">
+					<div id="ea4but">
+						<ul>
+							<li class="curMenu"><a target="_blank" onmouseover="secBoard('ea4but','ealist',1)">最新问题</a></li>
+							<li class="ocurMenu"><a target="_blank" onmouseover="secBoard('ea4but','ealist',2)">热点问题</a></li>
+						</ul>
+					</div>
+					<div class="con">
+						<div id="ealist_1">
+						<ul>
+						<?{foreach from=$arrTopaskNew.datas item=arrData}?>
+							<li><a href="<?{url url = "/ask/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?></a></li>
+						<?{/foreach}?>
+						</ul>
+						</div><!--ealist_1 end-->
+						<div id="ealist_2" class="a_hide">
+						<ul>
+						<?{foreach from=$arrTopaskHot.datas item=arrData}?>
+							<li><a href="<?{url url = "/ask/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?></a></li>
+						<?{/foreach}?>							
+						</ul>
+						</div><!--ealist_2 end-->
+					</div>
+				</div><!--ea4 end-->
+			</div><!--eask end-->

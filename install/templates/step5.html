@@ -1,0 +1,54 @@
+<div class="c"></div>
+<script language="JavaScript">
+function postcheck(){
+	document.install.biweb.disabled=true;
+	document.install.biweb.value="安装中...";
+	return true;
+}
+</script>
+<div id="content">
+<form name="install" action="?step=6" method="post" onsubmit="return postcheck();">
+  <div class="wrapD">
+	<div class="wrapE">
+	  <div class="boxA">
+		<div style="width:57%; float:left">
+		  <h3>可选安装栏目信息</h3>
+		  <table class="dlA">
+		  <?{foreach key=key item=arrData from=$arrModuleDirs}?>
+			<?{if $arrData.state == 0 }?>
+			<tr>
+			  <td width="40%"><?{$arrData.name}?>(<?{$arrData.id}?>)：</td>
+			  <td><label><input type="checkbox" value="<?{$arrData.id}?>" name="install_module[]" checked="checked">安装</label> </td>
+			</tr>
+			<?{/if}?>
+		  <?{/foreach}?>
+		    <tr>
+			  <td colspan="2" class="s3_color">特别提醒：此处选择安装的仅为栏目程序，跟页面模板并不同步，此处没安装的模块，页面还需要手动删除！</td>
+			</tr>
+		  </table>
+		</div>
+		<div>
+		  <h3>系统必装栏目信息</h3>
+		  <table class="dlB">
+			<?{foreach key=key item=arrData from=$arrModuleDirs}?>
+			<?{if $arrData.state == 2 }?>
+			<tr>
+			  <td><?{$arrData.name}?>(<?{$arrData.id}?>)：</td>
+			  <td>[√]安装 </td>
+			</tr>
+			<?{/if}?>
+		  <?{/foreach}?>
+		  </table>
+		</div>
+		
+	  </div>
+	  <div class="c"></div>
+	</div>
+  </div>
+  <div class="stepbt">
+	<input type="button" onclick="javascript:history.go(-1);" class="biweb large last" value="上一步：设置数据库及管理员信息">
+		<input class="next biweb large" type="submit" value="进入下一步" name="biweb" id="biweb"></button>
+  </div>
+</form>
+</div>
+</div>

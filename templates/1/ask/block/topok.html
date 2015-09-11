@@ -1,0 +1,11 @@
+		<div class="right-block">
+			<div class="tit"><h2>热门已解决问题</h2></div>
+			<div class="news-text-box">
+				<ul class="quiz-list quiz-solve">
+					<li id="no-background"><span>人气</span>问题</li>
+					<?{foreach from=$arrTopaskOK.datas item=arrData}?>
+					<li><span><?{$arrData.clicktimes}?></span><a href="<?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?></a></li>
+					<?{/foreach}?>
+				</ul>
+			</div>
+		</div>

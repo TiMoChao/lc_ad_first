@@ -1,0 +1,287 @@
+textarea{padding:3px;font-size:12px;overflow:auto;}
+
+input.text{padding:2px 4px; height:20px; width:200px}
+input.biwebtn {background-color:#89bf01;border-color:#4c9542 #124680;border-style:solid;border-width:1px;color:#fff;cursor:pointer;font-size:12px;padding:2px 15px;text-align:center}
+
+input.gray,input.btn{padding:2px 0 0 0;border:1px solid;cursor:pointer;border-color:#fff #848484 #848484 #fff !important;background:#f0f0f0 !important;color:#333 !important}
+
+input.mini{padding:2px 4px!important;padding:2px 2px 0;}
+input.large{padding:3px 15px!important;font-size:14px}
+
+/*new_buttons*/
+a.button, a.button span, a.button span i{
+	display: block;
+	float: left;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+a.a, a.a span, a.a span i{
+	color: #fff;
+	background: #fff url(../../images/button/a.gif) no-repeat left top;
+}
+
+a.b, a.b span, a.b span i{
+	color: #513e0a;
+	background: #fff url(../../images/button/b.gif) no-repeat left top;
+}
+
+a.c, a.c span, a.c span i{
+	color: #002f51;
+	background: #fff url(../../images/button/c.gif) no-repeat left top;
+}
+
+a.button:link, a.button:visited{
+	text-decoration: none;
+}
+
+a.button span i{
+	background-color: transparent;
+	overflow: hidden;
+}
+
+/* button A hover color */
+a.button:hover span{
+	color: #fffa7e;
+}
+
+/* button A xxl */
+a.xxl:link, a.xxl:visited, a.xxl{
+	padding: 0 20px 0 0;
+	background-position: right top;
+	font-size: 16px;
+}
+
+a.xxl:hover{
+	background-position: right -150px;
+}
+
+a.xxl:link span, a.xxl:visited span{
+	height: 43px;
+	line-height: 38px;
+	padding: 0 0 0 20px;
+}
+
+a.xxl:hover span{
+	background-position: left -150px;
+}
+
+a.xxl span i{
+	width: 30px;
+	height: 30px;
+	background-position: -5px -304px;
+	margin: 4px 5px 0 -14px;
+}
+
+a.xxl span i.r{
+	float: right;
+	margin: 4px -13px 0 5px;
+}
+
+a.xxl span i.al{
+	background-position: -52px -304px;
+}
+
+/* button A xl */
+a.xl:link, a.xl:visited, a.xl{
+	padding: 0 15px 0 0;
+	background-position: right -43px;
+	font-size: 14px;
+}
+
+a.xl:hover{
+	background-position: right -193px;
+}
+
+a.xl:link span, a.xl:visited span{
+	height: 34px;
+	line-height: 30px;
+	*line-height: 31px;
+	padding: 0 0 0 15px;
+	background-position: left -43px;
+}
+
+a.xl:hover span{
+	background-position: left -193px;
+}
+
+a.xl span i{
+	width: 22px;
+	height: 22px;
+	background-position: -6px -347px;
+	margin: 4px 3px 0 -10px;
+}
+
+a.xl span i.r{
+	float: right;
+	margin: 4px -10px 0 3px;
+}
+
+a.xl span i.al{
+	background-position: -53px -347px;
+}
+
+/* button A l */
+a.l:link, a.l:visited, a.l{
+	padding: 0 15px 0 0;
+	background-position: right -77px;
+}
+
+a.l:hover{
+	background-position: right -227px;
+}
+
+a.l:link span, a.l:visited span{
+	height: 29px;
+	line-height: 25px;
+	padding: 0 0 0 15px;
+	background-position: left -77px;
+	font-size: 14px;
+}
+
+a.l:hover span{
+	background-position: left -227px;
+}
+
+a.l span i{
+	width: 19px;
+	height: 19px;
+	background-position: -4px -380px;
+	margin: 3px 3px 0 -10px;
+}
+
+a.l span i.r{
+	float: right;
+	margin: 3px -10px 0 3px;
+}
+
+a.l span i.al{
+	background-position: -51px -380px;
+}
+
+/* button A m */
+a.m:link, a.m:visited, a.m{
+	padding: 0 13px 0 0;
+	background-position: right -106px;
+}
+
+a.m:hover{
+	background-position: right -256px;
+}
+
+a.m:link span, a.m:visited span{
+	height: 25px;
+	line-height: 22px;
+	*line-height: 24px;
+	padding: 0 0 0 13px;
+	background-position: left -106px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+a.m:hover span{
+	background-position: left -256px;
+}
+
+a.m span i{
+	width: 17px;
+	height: 17px;
+	background-position: -5px -409px;
+	margin: 3px 2px 0 -8px;
+}
+
+a.m span i.r{
+	float: right;
+	margin: 2px -8px 0 2px;
+}
+
+a.m span i.al{
+	background-position: -52px -409px;
+}
+
+/* button A s */
+a.s:link, a.s:visited, a.s{
+	padding: 0 12px 0 0;
+	background-position: right -131px;
+}
+
+a.s:hover{
+	background-position: right -281px;
+}
+
+a.s:link span, a.s:visited span{
+	height: 19px;
+	line-height: 17px;
+	*line-height: 19px;
+	padding: 0 0 0 12px;
+	background-position: left -131px;
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+a.s:hover span{
+	background-position: left -281px;
+}
+
+a.s span i{
+	width: 15px;
+	height: 15px;
+	background-position: -3px -432px;
+	margin: 1px 2px 0 -8px;
+}
+
+a.s span i.r{
+	float: right;
+	margin: 1px -7px 0 2px;
+}
+
+a.s span i.al{
+	background-position: -50px -432px;
+}
+
+/* button B & C */
+a.b:link, a.b:link span{
+	color: #513e0a;
+}
+
+a.c:link, a.c:link span{
+	color: #002f51;
+}
+
+/* button B hover color */
+a.b:hover span{
+	color: #a57900;
+}
+
+/* button C hover color */
+a.c:hover span{
+	color: #006ebd;
+}
+
+/* hacks for ie6 & ff2 */
+a.button span{
+	_position: relative;
+}
+
+a.button:link span.r, a.button:visited span.r{
+	_padding-right: 15px;
+}
+
+a.xxl:link span.r, a.xxl:visited span.r{
+	_padding-right: 25px;
+}
+
+a.button span i{
+	_margin-left: -5px;
+}
+
+a.button span i.r{
+	_position: absolute;
+	_right: 0;
+	_top: 0;
+}
+.clr{
+	clear:both;
+	font-size:0;
+}

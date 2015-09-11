@@ -1,0 +1,76 @@
+<div class="ccc2">
+	<ul>
+		<li>
+		<form action="?" method="get">
+			<span class="right"><input type="button" onClick="location.href='addinfo.php?page=<?{$smarty.get.page}?>'" value="新增友情链接" class="gray mini"></span>
+
+			<input type="hidden" name="action" value='search'>
+			关键字：<input class="text" type="input" name='title' value='<?{$smarty.get.title}?>'>
+			
+			是否审核：<select name='pass' size=1>
+			<option value='' <?{if $smarty.get.pass === ''}?>selected="selected" class="selected"<?{/if}?>>全部</option>
+			<option value='1' <?{if $smarty.get.pass == '1'}?>selected="selected" class="selected"<?{/if}?>>已审核</option>
+			<option value='0' <?{if $smarty.get.pass == '0'}?>selected="selected" class="selected"<?{/if}?>>未审核</option>
+			</select> 
+			
+			<input type="submit" value='查 询' class="gray mini">
+			/id号可精确查询
+	 </form>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form action='?id=<?{$id}?>&action=' method="post" name="delform">
+	<tr class="firstr">
+		<th width='6%'>ID</th>
+		<th width='20%'>网站名称</th>
+		<th width='20%'>网站链接</th>
+		<th>链接图片</th>
+		<th width='7%'>审核</th>
+		<th width='14%'>时间</th>
+		<th width='6%'><input type='checkbox' name='chkSelectAll' onclick="doCheckAll(this)"></th>
+	</tr>
+	<?{foreach key=key item=arrData from=$arrData}?>
+	<tr align=center>
+		<td><a href='modifyinfo.php?id=<?{$arrData.id}?>&page=<?{$smarty.get.page}?>'><?{$arrData.id}?></a></td>
+		<td align="left">&nbsp;<a href='modifyinfo.php?id=<?{$arrData.id}?>&page=<?{$smarty.get.page}?>'><?{$arrData.webname}?></a></td>
+		<td align="left">&nbsp;<a href='<?{$arrData.webhost}?>' target='_blank'><?{$arrData.webhost}?></a></td>
+		<td>
+		<?{if $arrData.UploadFile != ""}?>
+			<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$FileCallPath}?><?{$arrData.UploadFile}?>" menu="false" quality="high" />
+			<?{else}?><img src="<?{$FileCallPath}?><?{$arrData.UploadFile}?>" boder="1"><?{/if}?>
+		<?{else}?>
+			<?{if $arrData.weblogo != ""}?>
+				<?{if $arrData.FileExt == ".swf"}?><embed src="<?{$arrData.weblogo}?>" menu="false" quality="high" />
+				<?{else}?><img src="<?{$arrData.weblogo}?>" boder="1"><?{/if}?>
+			<?{/if}?>
+		<?{/if}?>&nbsp;
+		</td>
+		<td>
+			<?{if $arrData.pass == 1}?>√<?{/if}?>
+			<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+		</td>
+		<td><?{$arrData.submit_date}?></td>
+		<td align=center><input type="checkbox" name="select[]" value="<?{$arrData.id}?>"></td>
+	<?{/foreach}?>
+	</tr>
+	<tr>
+		<td colspan='7'>
+		<span  class="actionform">
+		<form name='actionform' method="post">
+		操作：<select name="selection">
+		<option value='del'>删除</option>
+		<option value='delpic'>删除图片</option>
+		<option value='check'>通过审核</option>
+		<option value='uncheck'>取消通过</option>
+		</select> 
+		<input type="button" class="gray mini" value='执行' onclick=javascript:index=document.getElementsByName('selection')[0].selectedIndex;checkAction(document.getElementsByName('selection')[0].options[index].value);>
+		</form>
+		</span>
+		<?{$strPage}?>
+		</td>
+	</tr>
+</form>
+</table>
+</div>

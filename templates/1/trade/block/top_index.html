@@ -1,0 +1,51 @@
+	<div class="col2">
+		<div id="trade">
+			<div id="se1">
+				<ul>
+					<li class="clickfirst_tt4"><a target="_blank" onmouseover="secBoard_tt4('se1','tt4_list',1)">供应</a></li>
+					<li class="ocurMenu_tt4"><a target="_blank" onmouseover="secBoard_tt4('se1','tt4_list',2)">求购</a></li>
+					<li class="last_tt4"><a target="_blank" onmouseover="secBoard_tt4('se1','tt4_list',3)">招标</a></li>
+					<li class="last_tt4"><a target="_blank" onmouseover="secBoard_tt4('se1','tt4_list',4)">合作</a></li>
+				</ul>
+			</div><!--se1 end-->
+			<div class="se2">
+				<div id="tt4_list_1">
+					<div class="r">
+						<ul>
+						<?{foreach from=$arrToptrade1.0 item=arrData}?>
+							<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/trade/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?> </a></li>
+						<?{/foreach}?>
+						</ul>
+					</div>
+				</div><!--tt4_list_1 end-->
+				<div id="tt4_list_2" class="a_hide">
+					<div class="r">
+						<ul>
+						<?{foreach from=$arrToptrade1.1 item=arrData}?>
+							<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/trade/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?> </a></li>
+						<?{/foreach}?>						
+						</ul>
+					</div>
+				</div><!--2[招标] end-->
+				<div id="tt4_list_3" class="a_hide">
+					<div class="r">
+						<ul>
+						<?{foreach from=$arrToptrade1.2 item=arrData}?>
+							<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/trade/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?> </a></li>
+						<?{/foreach}?>						
+						</ul>
+					</div>
+				</div><!--3[中标] end-->
+				<div id="tt4_list_4" class="a_hide">
+					<div class="r">
+						<ul>
+						<?{foreach from=$arrToptrade1.3 item=arrData}?>
+							<li><a target="_blank" href="<?{if $arrData.linkurl!=''}?><?{$arrData.linkurl}?><?{else}?><?{url url = "/trade/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?><?{/if}?>" title="<?{$arrData.summary}?>"><?{$arrData.title|csubstr:0:20}?> </a></li>
+						<?{/foreach}?>		
+						</ul>
+					</div>
+				</div><!--3[中标] end-->
+			</div><!--se2 end-->
+
+		</div><!--trade end-->
+	</div><!--area[4]>col2 end-->

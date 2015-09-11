@@ -1,0 +1,27 @@
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+	<tr class='firstr'>
+    <th align="left">数据表</th>
+    <th>数据表类型</th>
+	<th>记录数</th>
+	<th>数据</th>
+	<th>碎片</th>
+	<th>字符集</th>
+  </tr>
+   <?{foreach from=$list  item=item}?>
+	<tr>
+	  <td><?{$item.table}?></td>
+	  <td align ="middle"><?{$item.type}?></td>
+	  <td align ="middle"><?{$item.rec_num}?></td>
+	  <td align ="middle"><?{$item.rec_size}?></td>
+	  <td align ="middle"><?{$item.rec_chip}?></td>
+	  <td align ="middle"><?{$item.chartset}?></td>
+	</tr>
+	  <?{/foreach}?>
+	<tr>
+		<td align="middle" colSpan="6"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type="reset" value="重 置"></td>
+	</tr>
+</table>
+</div>
+</form>

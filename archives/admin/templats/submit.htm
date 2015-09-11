@@ -1,0 +1,40 @@
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+    <tr class="firstr">
+    <td colspan="2">当前位置：<?{$archives_title}?>内容管理</td>
+    </tr>
+    <tr>
+      <td width="15%">页面标题：</td>
+      <td><input maxlength="100" size="68" name="meta_Title" value="<?{$arrData.meta_Title}?>"> 用于搜索引擎优化，不填系统会自动生成 </td>
+    </tr> 
+    <tr>
+      <td width="15%">页面摘要：</td>
+      <td><textarea name="meta_Description" rows="3" cols="50"><?{$arrData.meta_Description}?></textarea> 用于搜索引擎优化，不填系统会自动生成</td>
+    </tr> 	
+    <tr>
+      <td width="15%">页面关键字：</td>
+      <td><textarea name="meta_Keywords" rows="3" cols="50"><?{$arrData.meta_Keywords}?></textarea> 用于搜索引擎优化，不填系统会自动生成</td>
+    </tr>
+    <tr>
+      <td width="15%">文章内容：</td>
+      <td><?{if $smarty.session.browser.0 == 'ie'}?>
+	<input type="hidden" name="intro" value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> <iframe id="eWebEditor1" 
+      src="../../plug-in/eWebEditor/ewebeditor.htm?id=intro&style=light" frameBorder="0" width="600" scrolling="no" 
+      height="350"></iframe>
+	<?{else}?>
+	<input id="content" style="DISPLAY: none" type="hidden" name="intro" value="<?{$arrData.intro|htmlspecialchars|stripslashes}?>"> 
+	<input id="content___Config" style="DISPLAY: none" type=hidden> 
+	<iframe id="content___Frame" src="../../plug-in/fckeditor/editor/fckeditor.html?InstanceName=intro&Toolbar=ArthurXF" frameBorder="0" width="600" scrolling="no" height="350"> 
+	</iframe>
+	<?{/if}?>
+	</td>
+    </tr>	
+	<tr>
+       <td align="middle" colSpan="2"><input type="submit" id="okgo" name="okgo" value="确　定"> <input type="reset" value="重 置"></td></tr>
+    	<input type="hidden" name="id" value="<?{$smarty.get.id}?>">
+    </tr>
+</table>
+</div>
+</form>
+

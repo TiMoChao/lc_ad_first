@@ -1,0 +1,63 @@
+<div class="ccc2">
+	<ul>
+		<li>
+			<span class="right"><input type="button" onClick="location.href='addinfo.php'" value="新增邮局信息" class="gray mini"></span>
+			<?{$strNav}?>可设定您发送邮件的SMTP邮局，在发送邮件时，系统会根据设定的邮局进行连接发送；
+	<font color="#ff6600">（建议设定大量的SMTP邮局增加发送的成功机率）</font>
+	 </li>
+	</ul>
+</div>
+<div id="biweb">
+<table border="0" cellspacing="0" align="center" class="biweb">
+<form action='?action=' method="post" name="delform">
+	<tr class='firstr'>
+		<th width='6%'>ID</th>
+		<th width='25%'>帐号</th>
+		<th>SMTP邮局</th>
+		<th width='6%'>SSL</th>
+		<th width='6%'>验证</th>
+		<th width='6%'>审核</th>
+		<th width='4%' align=center><input type='checkbox' name='chkSelectAll' onclick="doCheckAll(this)"></th>
+	</tr>
+	<?{foreach key=key  item=arrData from=$arrData}?>
+	<tr align=center>
+		<td><a href='modifyinfo.php?id=<?{$key}?>&page=<?{$smarty.get.page}?>'><?{$key+1}?></a></td>
+		<td>
+		<a href='modifyinfo.php?id=<?{$key}?>&page=<?{$smarty.get.page}?>'><?{$arrData.username}?></a>
+		</td>
+		<td>
+		<?{$arrData.host}?>:<?{$arrData.port}?>
+		</td>
+		<td>
+			<?{if $arrData.ssl == 'ssl'}?>√<?{/if}?>
+			<?{if $arrData.ssl != 'ssl'}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+		</td>
+		<td>
+			<?{if $arrData.auth == 1}?>√<?{/if}?>
+			<?{if $arrData.auth != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+		</td>
+		<td>
+			<?{if $arrData.pass == 1}?>√<?{/if}?>
+			<?{if $arrData.pass != 1}?><font color=red>&nbsp;×&nbsp;</font><?{/if}?>
+		</td>
+		<td align=center><input type=checkbox name=select[] value="<?{$key}?>"></td>
+	</tr>
+	<?{/foreach}?>
+	<tr>
+		<td colspan='9'>
+		<span  class="actionform">
+		<form name='actionform' method="post">
+		操作：<select name="selection">
+		<option value='del'>删除</option>
+		<option value='check'>通过审核</option>
+		<option value='uncheck'>取消通过</option>
+		</select> 
+		<input type="button" class="gray mini" value='执行' onclick=javascript:index=document.getElementsByName('selection')[0].selectedIndex;checkAction(document.getElementsByName('selection')[0].options[index].value);>
+		</form>
+		</span>
+		<?{$strPage}?>
+		</td>
+	</tr>
+</form>
+</table>
+</div>

@@ -1,0 +1,15 @@
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.wochacha.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/40_1432092551.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.wochacha.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/39_1432092511.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.wochacha.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/38_1432092474.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/37_1432092415.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/36_1432092182.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/29_1431667280.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/28_1431667254.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/27_1431667205.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/26_1431667170.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/25_1431667110.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/24_1431667079.jpg\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/23_1431667026.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/22_1431666762.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/21_1431666448.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");
+document.writeln("<div class='v4_ad'><a target=\"_blank\" href=\"http://www.baidu.com\" title =\"\"><img src=\"/lc_ad/uploadfile/ads/1/20_1431661212.gif\" border=\"0\" width=\"154\" height=\"55\"></a></div>");

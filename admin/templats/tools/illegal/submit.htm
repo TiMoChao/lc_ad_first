@@ -1,0 +1,41 @@
+<div class="ccc2">
+	<ul>
+		<li><span class="right"><input type="button" onClick="location.href='javascript:history.back()'" value="返回过滤信息列表" class="gray mini"/></span>
+非法信息过滤功能可根据您设定需要排除的非法信息关键字，在其他栏目发布信息时，系统会根据设定的关键字自动将内容中的关键字替换成设定值；
+	<font color="#ff6600">（影响效率，不建议大量使用）</font>
+		</li>
+	</ul>
+</div>
+<form name="form1" id="form1" onsubmit="return checkForm()" action="" method="post" enctype="multipart/form-data">
+<div id="biweb">
+<table border="0" cellspacing="0" cellpadding="0" class="biweb">
+
+    <tr>
+		<td width='15%'>非法关键字名称：</td>
+		<td align='left'>
+		<input value="<?{$smarty.get.id}?>" name="title" size="50"/>设置关键字
+		</td>
+	</tr>
+    <tr>
+		<td>替换关键字名称：</td>
+		<td align='left'>
+		<input value="<?{$arrData.replace}?>" name="replace" size="50"/>将要替换成的关键字，不填为直接删除非法信息
+		</td>
+	</tr>
+	<tr>
+		<td align='middle' colspan='3'><input type='submit' id="okgo" name="okgo" value='确　定'/> <input type='reset' value="重 置"/></td>
+	</tr>
+	<input type='hidden' name='id' value="<?{$smarty.get.id}?>"/>
+</table>
+</div>
+</form>
+<script language="javascript">
+	function check(){
+	if(this.form1.title.value==""){
+	     alert("关键字名称不能为空！");
+		 return false;
+	 }
+	 this.form1.okgo.disabled=true;
+	 return true;
+	}
+</script> 

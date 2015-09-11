@@ -1,0 +1,55 @@
+<div class="block7"></div>
+
+<div class="area">
+	<div class="main-left">
+		<div class="news-box">
+			<div class="tit"><h2><a href="">问题分类</a></h2><span><a href="#ask">>>我要提问</a></span></div>
+			<div class="quiz-type">
+				<ul>
+				<?{foreach from=$arrMType item=type key=key}?>
+					<li><span><a href=""><a href="<?{url url = "/`$arrGWeb.module_id`/list.php?type_id=`$key`&status=`$smarty.get.status`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrData.summary}?>">[<?{$type}?>]</a></li>
+				<?{/foreach}?>
+				</ul>
+			</div>
+		</div>
+		<div class="block7"></div>
+		
+		<div class="news-box">
+			<div class="tit"><h2><?{if $smarty.get.status == 1}?>已<?{else}?>待<?{/if}?>解决的问题</h2></div>
+			<div class="news-text-box">
+				<ul class="quiz-list <?{if $smarty.get.status == 1}?>quiz-solve<?{else}?>quiz-issues<?{/if}?>">
+				<?{foreach from=$arrInfoList item=arrData}?>
+					<li><span><?{$arrData.submit_date|date_format:"%Y/%m/%d"}?></span><em class="<?{$arrData.type_title_color}?>">[<?{$arrMType[$arrData.type_id]}?>]</em><a href="<?{url url = "/`$arrGWeb.module_id`/detail.php?id=`$arrData.id`" cache = "`$arrGWeb.file_static`"}?>" title="<?{$arrData.summary}?>" target="_blank"><?{$arrData.title}?></a></li>
+				<?{/foreach}?>
+				</ul>
+				</ul>
+				<ul class="sea-page">
+					<li class="right"><?{$strPage}?></li>
+				</ul>
+			</div>
+		</div>
+		<div class="block7"></div>
+		<div class="news-box">
+			<div class="tit"><h2>提问区</h2><a name="ask"></a></div>
+			<div class="">
+				<ul class="submit-quiz">
+				<form action="<?{$arrGWeb.WEB_ROOT_pre}?>/ask/postnew.php" method="post">
+					<li><span>问题标题：</span><input size="50" name="title" class="input"  value=""> * 登录后才能提问</li>
+					<li><span>问题详细：</span><textarea name="intro" cols="50" rows="6" class="textarea"></textarea></li>
+					<li><span>问题分类：</span>
+						<select name="type_id">
+							<?{foreach from=$arrMType item=type key=key}?>
+							<option value="<?{$key}?>" <?{if $type == $get.type_id}?>selected=selected<?{/if}?>><?{$type}?></option>
+							<?{/foreach}?>
+						</select>
+					</li>
+					<li><span>&nbsp;</span><input name="button" class="btn" type="submit" value="提交问题" /></li>
+				</form>
+				</ul>
+			</div>
+			<div class="block7"></div>
+		</div>
+	</div>
+
+	<?{include file = "`$arrGWeb.module_id`/_cloumnright.html"}?>
+	<div class="block10"></div>

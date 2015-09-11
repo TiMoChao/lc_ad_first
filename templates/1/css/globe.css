@@ -1,0 +1,416 @@
+/*行业视频 开始*/
+.flash2{
+	float:left;
+	display:inline;
+	margin:10px 10px 0px 10px;
+}
+.flash3{
+	width:96%;
+	border-bottom: #b2b2b2 1px dashed;
+	height:120px;
+	margin:2px auto 4px auto;
+	
+}
+.vflash2{
+	float:left;
+	margin:10px 0px 0px 0px;
+	width:480px;
+}
+.vflash ul,.vflash2 ul{
+	list-style-type: none;
+	width:100%;
+	line-height:20px;
+}
+.vflash ul li span,.vflash2 ul li span{
+	text-align:left;
+	color:#4a61b2;
+}
+.vmenu{
+	width:659px;
+	height:27px;
+	background:#AEDCF5;
+	border:1px solid #000;
+}
+.vone li{
+	float:left;
+}
+.beg{
+	width:100px;
+	height:28px;
+	border-right:1px solid #000;
+	text-align:center;
+	line-height:24px;
+}
+.flash1{
+	float:left;
+	display:inline;
+	margin:10px 10px 0px 10px;
+}
+.vflash{
+	float:left;
+	margin:10px 0px 0px 0px;
+	width:310px;
+}
+.ttitle{
+	padding-left: 20px;
+	font-weight: bold;
+	font-size: 14px;
+	overflow: hidden;
+	color: #6581bb;
+	line-height: 25px;
+	height: 25px;
+	background:url(../images/li1.gif) no-repeat 0px 50%;
+}
+.dottedline li{
+	border-bottom: #b2b2b2 1px dashed;
+}
+.clearboth{
+	clear:both;
+}
+.piclinkclr{
+	clear:both;
+	font-size:0;
+}
+.piclinkclr2{
+	height:5px;
+	clear:both;
+	font-size:0;
+}
+.sea-page{
+	height: 22px !important;
+	height:12px;
+	padding:2px 10px;
+	border:1px solid #fff;
+	background:#D8EEFA;
+}
+.left{
+	float:left;
+}
+.right{
+	text-align:center;
+}
+.font-red{
+	color:red;
+}
+.font-red a{
+	color:red;
+}
+.title{
+	font-size:18px;
+	text-align:center;
+	padding:8px 0;
+}
+.r11 ul li{
+	padding-left: 12px;
+	margin:8px 0 0 12px;
+	
+}
+.news-box-info{
+	padding:6px;
+	margin:6px auto 10px auto;
+	text-align:center;
+	width:90%;
+	border-bottom:1px solid #ccc;
+}
+.date{list-style-type: none;}
+.date li {
+	padding:0 10px; COLOR: #666;
+}
+.flash9{
+	float:left;
+	margin:0 0 4px 160px;
+	display:inline;
+}
+.wenzi{
+	overflow:hidden;
+	width:640px;
+	clear:both;
+	line-height:24px;
+	padding:0 0 0 9px;
+	text-indent:22px;
+}
+.type-info-lists{
+	padding:2px 6px;
+}
+.type-info-lists ul{
+	width:20%;
+	float:left;
+	line-height:24px;
+	list-style-type:none;
+}
+.type-info-lists ul li{
+	padding:6px 0 0 20px;
+	text-align:center;
+}
+/*帮助中心 开始*/
+.help-right{
+	float: right;
+	display:inline;
+	width:730px;
+}
+.help-left{
+	float: left;
+	width: 170px;
+}
+.help-list{
+	width:92%;
+	font-size:14px;
+}
+.help-list li{
+	line-height:30px;
+	padding:0 10px 0 24px;
+	clear:both;
+	background:url(../images/arrow.gif) no-repeat 5px 50%;
+	border-bottom:1px dotted #ddd;
+}
+.help-text-box{
+	padding:10px;
+	line-height:24px;
+	font-size:14px;
+}
+.help-text-box p{
+	text-indent:24px;
+}
+.help-text-box img{
+	margin:5px;
+}
+
+.submit-quiz{
+	padding:10px;
+	line-height:24px;
+}
+.submit-quiz li{
+	clear:both;
+}
+.submit-quiz li span{
+	width:20%;
+	float:left;
+	text-align:right;
+}
+#left-porduct-type{
+	width:200px;
+	display:table;
+	border: 1px solid #95CBED;
+}
+#left-porduct-type .tit{
+	width:100%;
+	height: 23px;
+	background:url(../images/tit4.gif);
+	clear: both;
+}
+#companies-list-box{
+	display:table;
+	border: 1px solid #95CBED;
+	width:730px;
+}
+
+#companies-list-box .tit{
+	height: 23px;
+	background:url(../images/pictit.gif) ;
+	clear: both;
+}
+#companies-list-box .tit span{
+	float:right;
+	padding-top: 5px;
+	margin-right:10px;
+}
+.join-title{
+	width:100%;
+	clear:both;
+	margin:0 auto;
+	text-align:center;
+}
+.join-title dt{
+	width:100%;
+	height:24px;
+	line-height:24px;
+	text-align:center;
+	font-size:14px;
+	font-weight:bold;
+	background:#FFDEFE;
+}
+.join-title dd{
+	display:inline;
+	height:24px;
+	line-height:24px;
+	padding:0 3px;
+}
+.join-tit{
+	height:24px;
+	line-height:24px;
+	font-weight:bold;
+	background:#E0F2FC;
+	padding:0 10px;
+}
+.join-tit span{
+	float:right;
+	font-weight:normal ;
+}
+.mainleft{
+	width:735px;
+	float:right;
+	padding:0 0 0 4px;
+}
+/*用户后台 开始*/
+.online{
+	clear:both;
+	width:99%;
+	height:1px;
+	overflow:hidden;
+	border-top:1px dotted #95CBED;
+	margin:5px auto;
+}
+.pageup{
+	text-align:right;
+	margin-top:8px;
+	margin-bottom:8px;
+	margin-right:20px;
+	clear:both;
+}
+.user-manage-list{
+	line-height:24px;
+}
+.user-manage-list span{
+	float:right;
+	width:15%;
+	margin-left:3px;
+}
+.user-manage-list dd span{
+	color:#999;
+}
+.user-manage-list dt{
+	font-weight:bold;
+	border-bottom:1px dotted #C0C0C0;
+}
+.user-manage-list dd{
+	border-bottom:1px dotted #ddd;
+	background:url(../images/li6.gif) no-repeat 0 45%;
+	padding:0 0 0 12px;
+}
+.help-text-boxes{
+	background:url(../images/login.gif) no-repeat;
+	float:right;
+	padding:0 8px 0 2px;
+	margin-right:10px;
+}
+.user-supply-ul li{
+	clear:both;
+}
+.user-supply-ul li span{
+	float:left;
+	width:15%;
+	text-align:right;
+}
+.help-text-box ul li{
+	text-indent:10px;
+}
+.linees{
+	width:600px;
+	line-height:24px;
+}
+.showes-listes{
+	background:#ddd;
+}
+.showes-list{
+	border-collapse:collapse;
+	width:100%;	
+}
+.showes-list th{
+	border:1px solid #95CBED;
+	padding:2px;
+	line-height:24px;
+	background:#C7E7F8;
+}
+.showes-list td{
+	border:1px solid #95CBED;
+	padding:2px;
+	line-height:24px;
+}
+.showes-list tr{
+	background:#DDF3FF;
+}
+.sea-pageses{
+	height:12px;
+	padding:5px 10px;
+	border:1px solid #fff;
+}
+.sea-pageses li span{
+	float:right;
+}
+.help-text-box-es li span{
+	float:right;
+}
+.help-text-box-es{
+	width:712px;
+	padding:8px;
+	line-height:24px;
+}
+.help-text-box-es p{
+	text-indent:22px;
+}
+
+/*友情链接*/
+#links{
+	width: 908px;
+	margin: 0 auto;
+	clear: both;
+	border: 1px solid #95CBED;
+	display:table;
+}
+#links .link-img ul{
+	margin: 12px;
+	clear:both;
+	display:table;
+}
+#links .link-img ul li{
+	text-align: left;
+	float:left;
+	margin:2px 10px 2px 0;
+	width:88px;
+	height:31px;
+}
+.coces{
+	font-size:14px;
+	margin:6px 0 0 6px;
+}
+.tites{
+	width: 908px;
+	height: 24px;
+	line-height: 24px;
+	background:url(../images/pictit.gif) no-repeat;
+}
+.tites span{
+	float: left;
+	text-indent: 26px;
+}
+.tites a{
+	float: right;
+	margin-right: 7px;
+}
+.coes ul{
+	margin:10px;
+}
+.coes ul li{
+	text-align: left;
+	display: inline;
+	margin-right: 13px;
+	height: 20px;
+	line-height: 20px;
+}
+.link-app-ul li{
+	padding:5px 0;
+	line-height:24px;
+	clear:both;
+}
+.link-app-ul li span{
+	float:left;
+	width:20%;
+	text-align:right;
+}
+/**color style**/
+.red{
+	color:red;
+}
+
+
+
