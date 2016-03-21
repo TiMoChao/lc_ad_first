@@ -86,15 +86,15 @@ if(empty($_SESSION['browser'])){
 //数据库参数
 $arrGPdoDB = array();
 $arrGPdoDB['db_driver'] = 'mysql';
-if(empty($arrGWeb['db_host'])) $arrGPdoDB['db_host'] = '';
+if(empty($arrGWeb['db_host'])) $arrGPdoDB['db_host'] = 'localhost';
 else $arrGPdoDB['db_host'] = $arrGWeb['db_host'];
-if(empty($arrGWeb['db_port'])) $arrGPdoDB['db_port'] = '';
+if(empty($arrGWeb['db_port'])) $arrGPdoDB['db_port'] = '3306';
 else $arrGPdoDB['db_port'] = $arrGWeb['db_port'];
-if(empty($arrGWeb['db_name'])) $arrGPdoDB['db_name'] = '';
+if(empty($arrGWeb['db_name'])) $arrGPdoDB['db_name'] = 'biweb';
 else $arrGPdoDB['db_name'] = $arrGWeb['db_name'];
 $arrGPdoDB['db_char'] = "utf8";
 $arrGPdoDB['dsn'] = $arrGPdoDB['db_driver'].':host='.$arrGPdoDB['db_host'].';port='.$arrGPdoDB['db_port'].';dbname='.$arrGPdoDB['db_name'].';charset='.$arrGPdoDB['db_char'];
-if(empty($arrGWeb['db_user'])) $arrGPdoDB['db_user'] = '';
+if(empty($arrGWeb['db_user'])) $arrGPdoDB['db_user'] = 'root';
 else $arrGPdoDB['db_user'] = $arrGWeb['db_user'];
 if(empty($arrGWeb['db_password'])) $arrGPdoDB['db_password'] = '';
 else $arrGPdoDB['db_password'] = $arrGWeb['db_password'];
