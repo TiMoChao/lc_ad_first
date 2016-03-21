@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2015-06-04 15:05:27
+<?php /* Smarty version 2.6.20, created on 2015-10-26 18:27:37
          compiled from links/block/top_index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'url', 'links/block/top_index.html', 2, false),)), $this); ?>
