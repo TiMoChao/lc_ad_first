@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2015-06-04 15:05:27
+<?php /* Smarty version 2.6.20, created on 2015-10-26 18:27:36
          compiled from theme/title.html */ ?>
 
 <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />

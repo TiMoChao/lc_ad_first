@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.20, created on 2015-06-04 15:05:27
+<?php /* Smarty version 2.6.20, created on 2015-10-26 18:27:36
          compiled from Community_ad/block/top_index.html */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'url', 'Community_ad/block/top_index.html', 6, false),array('modifier', 'csubstr', 'Community_ad/block/top_index.html', 6, false),array('modifier', 'date_format', 'Community_ad/block/top_index.html', 8, false),)), $this); ?>
