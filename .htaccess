@@ -1,0 +1,5 @@
+ErrorDocument 404 "/plug-in/404/404.php"
+ErrorDocument 301 "/plug-in/404/404.php"
+<FilesMatch "^[^\.]*.$">
+	ForceType application/x-httpd-php
+</FilesMatch>
